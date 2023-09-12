@@ -15,7 +15,6 @@ const TempComponent = () => {
       <div className="search-bar">
         <img src={SearchIcon} alt="" />
         <input placeholder="Search"></input>
-        
       </div>
 
       <div>Dropdown</div>
