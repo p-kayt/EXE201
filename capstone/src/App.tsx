@@ -2,7 +2,7 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import TempComponent from './pages/tempComponent'
+import TempComponent from './pages/TempComponent'
 
 function App() {
   const [count, setCount] = useState(0)
