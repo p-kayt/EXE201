@@ -1,5 +1,6 @@
 import React from "react";
 import Arrow from "../../assets/icons/arrow.svg";
+import Check from '../../assets/icons/check.svg';
 import "../common.scss";
 
 type dropdownProps = {
@@ -21,7 +22,7 @@ class Dropdown extends React.Component<dropdownProps, dropdownState> {
     };
 
     this.onClickLabel = this.onClickLabel.bind(this);
-    this.onClickItem = this.onClickItem.bind(this);
+    // this.onClickItem = this.onClickItem.bind(this);
   }
 
   onClickLabel() {
@@ -32,7 +33,7 @@ class Dropdown extends React.Component<dropdownProps, dropdownState> {
 
   // onClickItem(value: String) {
   //   this.setState({
-  //     this.prop.selectedItem: value,
+  //     this.props.selectedItem: value,
   //   });
   // }
 
@@ -47,8 +48,8 @@ class Dropdown extends React.Component<dropdownProps, dropdownState> {
         {this.state.status ? (
           <div className="dropdown-content">
             {this.props.valueList?.map((value) => (
-              <div className="dropdown-item" onClick={() => this.onClickItem(value)}>
-                <img/>
+              <div className="dropdown-item">
+                {(this.props.selectedItem) === value ? (<img src={Check}/>) : <img/>}
                 <p>{value}</p>
                 </div>
             ))}

@@ -1,5 +1,6 @@
 import React from "react";
 import Button from "../components/button/Button";
+import DropdownSearchBar from "../components/dropdown/DropdownSearchBar";
 import Dropdown from "../components/dropdown/Dropdown";
 import AddCircleBold from "../assets/icons/add-circle-bold.svg";
 import IconButton from "../components/button/IconButton";
@@ -17,6 +18,10 @@ const TempComponent = () => {
         <img src={SearchIcon} alt="" />
         <input placeholder="Search"></input>
       </div>
+      <br/>
+
+      <DropdownSearchBar/>
+      <br/>
 
       <Dropdown
         dropdownText="Dropdown"

@@ -3,7 +3,7 @@ $neutral-1: #e8eaf0;
 $neutral-2: #c5c7cc;
 $neutral-3: #00000080;
 $neutral-4: #000000;
-$background-light-yellow: #FBF0C8;
+$background-light-yellow: #fbf0c8;
 // button
 .button {
   position: relative;
@@ -102,32 +102,50 @@ $background-light-yellow: #FBF0C8;
   display: flex;
   flex-direction: row;
   align-items: center;
-  height: 48px;
-  width: 200px;
+  height: 24px;
+  width: 172px;
+  padding: 12px 12px 12px 16px;
   border: 2px solid $neutral-4;
   border-radius: 8px;
-
+  gap: 8px;
   &:focus-within {
-    box-shadow: 0px 0px 7px 1px rgba(203, 218, 252, 0.75);
-    -webkit-box-shadow: 0px 0px 7px 1px rgba(203, 218, 252, 0.75);
-    -moz-box-shadow: 0px 0px 7px 1px rgba(203, 218, 252, 0.75);
+    box-shadow: 0px 0px 0px 4px rgba(203, 218, 252, 0.75);
+    -webkit-box-shadow: 0px 0px 0px 4px rgba(203, 218, 252, 0.75);
+    -moz-box-shadow: 0px 0px 0px 4px rgba(203, 218, 252, 0.75);
   }
   img {
-    flex: 1;
+    width: 20px;
     height: 20px;
-    margin: 0 0 0 8px;
   }
   input {
-    flex: 4;
     border-color: transparent;
     width: 140px;
-    margin: 0 8px 0 8px;
     justify-items: flex-start;
     height: 20px;
     font-size: 16px;
+    padding: 0px;
+    border: 0px;
     &:focus {
       outline: none;
     }
+  }
+
+  input::placeholder {
+    color: #C5C7CC;
+  }
+}
+
+.dropdown-search-bar {
+  @extend .search-bar;
+  gap: 8px;
+
+  input {
+    width: 120px;
+  }
+
+  .search-bar-arrow {
+    width: 16px;
+    height: 16px;
   }
 }
 
@@ -149,6 +167,7 @@ $background-light-yellow: #FBF0C8;
   font-style: normal;
   font-weight: 400;
   line-height: 24px;
+  cursor: pointer;
   p {
     width: 176px;
     text-align: start;
@@ -183,6 +202,7 @@ $background-light-yellow: #FBF0C8;
   font-style: normal;
   font-weight: 400;
   line-height: 24px;
+  cursor: pointer;
   p {
     width: 176px;
     text-align: start;
@@ -215,11 +235,15 @@ $background-light-yellow: #FBF0C8;
     padding: 12px 20px 12px 16px;
     align-items: center;
     gap: 8px;
-
+    cursor: pointer;
     p {
       margin: 0px;
     }
-  
+
+    img {
+      width: 24px;
+    }
+
     &:hover {
       background-color: $background-light-yellow;
     }
@@ -237,7 +261,7 @@ $background-light-yellow: #FBF0C8;
     }
   }
 
-  .dropdown-item:last-child{
+  .dropdown-item:last-child {
     display: flex;
     width: 204px;
     padding: 12px 20px 12px 16px;
@@ -248,6 +272,4 @@ $background-light-yellow: #FBF0C8;
       background-color: $background-light-yellow;
     }
   }
-  
 }
-
