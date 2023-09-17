@@ -50,20 +50,27 @@ class Hearder extends React.Component<headerProps, headerState> {
         </div>
 
         <div className="header-right-content">
-          <Button type="enable" icon={Share} btnText="Mời bạn" />
+          <Button theme="normal" type="enable" icon={Share} btnText="Mời bạn" />
 
           {this.state.checkLogIn ? (
             <>
               <IconButton type="enable" icon={Notification} />
               <IconButton type="enable" icon={Messenger} />
-              <AvatarButton type="enable" 
-              source="https://www.arsenal.com/sites/default/files/shorthand/stories/R7nKRzpKMp/2023-05-15T13%3A02%3A04.201Z/assets/x0FLXAhH2V/gettyimages-1488192786_enhanced-750x500.jpg"
-              avatarType="rounded" 
-              size={32}
-              btnText="Bukayo Saka"/>
+              <AvatarButton
+                type="enable"
+                source="https://www.arsenal.com/sites/default/files/shorthand/stories/R7nKRzpKMp/2023-05-15T13%3A02%3A04.201Z/assets/x0FLXAhH2V/gettyimages-1488192786_enhanced-750x500.jpg"
+                avatarType="rounded"
+                size={32}
+                btnText="Bukayo Saka"
+              />
             </>
           ) : (
-            <Button type="enable" icon={""} btnText="Đăng nhập" />
+            <Button
+              theme="normal"
+              type="enable"
+              icon={""}
+              btnText="Đăng nhập"
+            />
           )}
         </div>
       </div>

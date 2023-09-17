@@ -1,0 +1,144 @@
+$neutral-0: #ffffff;
+$neutral-1: #e8eaf0;
+$neutral-2: #c5c7cc;
+$neutral-3: #00000080;
+$neutral-4: #000000;
+$background-light-yellow: #fbf0c8;
+
+@font-face {
+  font-family: Quicksand;
+  src: url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300&family=Montserrat:wght@400;700&family=Quicksand:wght@600&family=Roboto:ital,wght@0,300;1,400;1,900&display=swap");
+}
+
+.footer-container {
+  background-color: $neutral-4;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+
+  border-radius: 24px 24px 0 0;
+  .email-sub {
+    // width: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    .motiv {
+      flex: 1;
+      display: flex;
+      color: $neutral-0;
+      align-items: center;
+      justify-content: start;
+      margin: 0 60px;
+      gap: 8px;
+      font-size: 18px;
+      font-weight: bold;
+      img {
+        height: 38px;
+        width: 38px;
+      }
+    }
+    .input-field {
+      height: 112px;
+      flex: 1;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 8px;
+      .input {
+        display: flex;
+        flex-direction: row;
+        justify-content: start;
+        align-items: center;
+        gap: 8px;
+        padding: 0 20px;
+        height: 48px;
+        width: 555px;
+        border-radius: 8px;
+        background: $neutral-0;
+        color: $neutral-4;
+        input {
+          font-size: 18px;
+          width: 100%;
+          border-color: transparent;
+          &:focus {
+            outline: none;
+          }
+          &:placeholder {
+            color: #c5c7cc;
+          }
+        }
+      }
+    }
+  }
+  .divider {
+    border: 1px solid $neutral-2;
+  }
+  .bottom-half {
+    display: flex;
+    flex-direction: column;
+    background: $neutral-0;
+    height: 386px !important;
+    padding: 20px 80px 80px;
+    .info {
+      display: flex;
+      flex-direction: row;
+      padding-bottom: 20px;
+      .quote {
+        flex: 1;
+        .footer-brand {
+          display: flex;
+          flex-direction: row;
+          width: 355px;
+          gap: 10px;
+          align-items: center;
+          .footer-brand-logo {
+            height: 90px;
+            width: 90px;
+          }
+          .footer-brand-name {
+            font-size: 51px;
+            font-weight: 700;
+          }
+        }
+
+        .slogan {
+          padding: 10px 0;
+          width: 492px;
+          text-align: left;
+        }
+        .social {
+          display: flex;
+          gap: 8px;
+          img {
+            height: 40px;
+            width: 40px;
+          }
+        }
+      }
+      .footer-nav {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        flex: 1;
+        .col {
+          display: flex;
+          flex: 1;
+          flex-direction: column;
+          gap: 8px;
+          text-align: left;
+          font-size: 16px;
+          font-weight: bold;
+          color: $neutral-4;
+        }
+      }
+    }
+
+    .copy-right {
+      padding: 20px 0;
+      font-size: 16px;
+    }
+  }
+}

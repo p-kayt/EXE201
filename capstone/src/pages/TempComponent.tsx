@@ -7,25 +7,31 @@ import IconButton from "../components/button/IconButton";
 import SearchIcon from "../assets/icons/search-linear.svg";
 import Avatar from "../components/avatar/Avatar";
 import Hearder from "../components/header/Hearder";
+import Footer from "../components/footer/Footer";
 
 const TempComponent = () => {
   return (
     <>
-      <Hearder/>
+      <Hearder />
 
       <div>tempComponent</div>
-      <Button type="disabled" icon={""} btnText="Button" />
-      <Button type="enable" icon={AddCircleBold} btnText="Button" />
+      <Button theme="normal" type="disabled" icon={""} btnText="Button" />
+      <Button
+        theme="normal"
+        type="enable"
+        icon={AddCircleBold}
+        btnText="Button"
+      />
       <IconButton type="enable" icon={AddCircleBold} />
 
       <div className="search-bar">
         <img src={SearchIcon} alt="" />
         <input placeholder="Search"></input>
       </div>
-      <br/>
+      <br />
 
-      <DropdownSearchBar/>
-      <br/>
+      <DropdownSearchBar />
+      <br />
 
       <Dropdown
         dropdownText="Dropdown"
@@ -42,11 +48,14 @@ const TempComponent = () => {
       <div>Mini kit</div>
       <div>Chips</div>
       <div>Avatar</div>
-        <Avatar source="https://www.arsenal.com/sites/default/files/shorthand/stories/R7nKRzpKMp/2023-05-15T13%3A02%3A04.201Z/assets/x0FLXAhH2V/gettyimages-1488192786_enhanced-750x500.jpg"
-                size={32}
-                type={"rounded"}/>
+      <Avatar
+        source="https://www.arsenal.com/sites/default/files/shorthand/stories/R7nKRzpKMp/2023-05-15T13%3A02%3A04.201Z/assets/x0FLXAhH2V/gettyimages-1488192786_enhanced-750x500.jpg"
+        size={32}
+        type={"rounded"}
+      />
       <div>Toast</div>
       <div>Cards</div>
+      <Footer />
     </>
   );
 };
