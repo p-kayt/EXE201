@@ -4,9 +4,9 @@ import Check from '../../assets/icons/check.svg';
 import "../common.scss";
 
 type dropdownProps = {
-  dropdownText: String,
-  valueList?: String[];
-  selectedItem: String
+  dropdownText: string,
+  valueList?: string[];
+  selectedItem: string
 };
 
 type dropdownState = {

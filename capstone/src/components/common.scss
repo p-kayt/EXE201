@@ -4,6 +4,11 @@ $neutral-2: #c5c7cc;
 $neutral-3: #00000080;
 $neutral-4: #000000;
 $background-light-yellow: #fbf0c8;
+
+@font-face {
+  font-family: Quicksand;
+  src: url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300&family=Montserrat:wght@400;700&family=Quicksand:wght@600&family=Roboto:ital,wght@0,300;1,400;1,900&display=swap");
+}
 // button
 .button {
   position: relative;
@@ -131,7 +136,7 @@ $background-light-yellow: #fbf0c8;
   }
 
   input::placeholder {
-    color: #C5C7CC;
+    color: #c5c7cc;
   }
 }
 
@@ -272,4 +277,68 @@ $background-light-yellow: #fbf0c8;
       background-color: $background-light-yellow;
     }
   }
+}
+
+.rounded-avatar {
+  vertical-align: middle;
+  border-radius: 50%;
+  border: 4px solid #000;
+}
+
+.header {
+  display: flex;
+  padding: 16px 0;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+  max-width: 100%;
+}
+
+.header-left-content {
+  padding-left: 60px;
+  display: flex;
+  align-items: center;
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+
+  .header-brand {
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    margin-right: 32px;
+
+    p {
+      font-size: 22.857px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      font-family: "Quicksand", sans-serif;
+      // lin
+    }
+  }
+
+  .header-tabs {
+    cursor: pointer;
+    padding: 10px 20px;
+    background-color: #fff;
+    border-radius: 8px;
+
+    p {
+      margin: 0px;
+    }
+
+    &:hover {
+      background-color: #000;
+      color: #fff;
+    }
+  }
+}
+
+.header-right-content {
+  display: inline-flex;
+  padding-right: 60px;
+  gap: 16px;
 }

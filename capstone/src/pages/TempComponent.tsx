@@ -5,10 +5,14 @@ import Dropdown from "../components/dropdown/Dropdown";
 import AddCircleBold from "../assets/icons/add-circle-bold.svg";
 import IconButton from "../components/button/IconButton";
 import SearchIcon from "../assets/icons/search-linear.svg";
+import Avatar from "../components/avatar/Avatar";
+import Hearder from "../components/header/Hearder";
 
 const TempComponent = () => {
   return (
     <>
+      <Hearder/>
+
       <div>tempComponent</div>
       <Button type="disabled" icon={""} btnText="Button" />
       <Button type="enable" icon={AddCircleBold} btnText="Button" />
@@ -38,6 +42,9 @@ const TempComponent = () => {
       <div>Mini kit</div>
       <div>Chips</div>
       <div>Avatar</div>
+        <Avatar source="https://www.arsenal.com/sites/default/files/shorthand/stories/R7nKRzpKMp/2023-05-15T13%3A02%3A04.201Z/assets/x0FLXAhH2V/gettyimages-1488192786_enhanced-750x500.jpg"
+                size={32}
+                type={"rounded"}/>
       <div>Toast</div>
       <div>Cards</div>
     </>
