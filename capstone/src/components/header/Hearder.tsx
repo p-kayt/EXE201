@@ -6,6 +6,7 @@ import Messenger from "../../assets/icons/messenger.svg";
 import Button from "../button/Button";
 import IconButton from "../button/IconButton";
 import AvatarButton from "../button/AvatarButton";
+import "./header.scss"
 
 type headerProps = {};
 

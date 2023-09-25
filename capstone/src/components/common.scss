@@ -4,11 +4,8 @@ $neutral-2: #c5c7cc;
 $neutral-3: #00000080;
 $neutral-4: #000000;
 $background-light-yellow: #fbf0c8;
+* {-webkit-font-smoothing: antialiased;}
 
-@font-face {
-  font-family: Quicksand;
-  src: url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300&family=Montserrat:wght@400;700&family=Quicksand:wght@600&family=Roboto:ital,wght@0,300;1,400;1,900&display=swap");
-}
 // button
 .button {
   position: relative;
@@ -18,6 +15,8 @@ $background-light-yellow: #fbf0c8;
   border-radius: calc(8px + 2px);
   padding: 1px;
   cursor: pointer;
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-weight: 500;
 
   span {
     position: absolute;
@@ -34,6 +33,7 @@ $background-light-yellow: #fbf0c8;
     border-radius: 8px;
     background-color: $neutral-0;
     border: 2px solid $neutral-4;
+    font-weight: 500;
     color: $neutral-4;
     // color: #000000;
     &:hover {
@@ -176,6 +176,7 @@ $background-light-yellow: #fbf0c8;
   border: 2px solid $neutral-4;
   border-radius: 8px;
   gap: 8px;
+
   &:focus-within {
     box-shadow: 0px 0px 0px 4px rgba(203, 218, 252, 0.75);
     -webkit-box-shadow: 0px 0px 0px 4px rgba(203, 218, 252, 0.75);
@@ -193,6 +194,9 @@ $background-light-yellow: #fbf0c8;
     font-size: 16px;
     padding: 0px;
     border: 0px;
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-weight: 400;
+
     &:focus {
       outline: none;
     }
@@ -232,9 +236,7 @@ $background-light-yellow: #fbf0c8;
   box-shadow: 4px 4px #000;
   transition: transform 0.5s, box-shadow 0.5s;
   font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 24px;
+  
   cursor: pointer;
   p {
     width: 176px;
@@ -267,9 +269,9 @@ $background-light-yellow: #fbf0c8;
   box-shadow: 4px 4px #000;
   transition: transform 0.5s, box-shadow 0.5s;
   font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 24px;
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-weight: 500;
+
   cursor: pointer;
   p {
     width: 176px;
@@ -293,9 +295,8 @@ $background-light-yellow: #fbf0c8;
   border: 2px solid #000;
   background: var(--neutral-0, #fff);
   font-size: 16px;
-  font-style: normal;
+  font-family: 'Be Vietnam Pro', sans-serif;
   font-weight: 400;
-  line-height: 24px;
 
   .dropdown-item {
     display: flex;
@@ -348,70 +349,15 @@ $background-light-yellow: #fbf0c8;
   border: 4px solid #000;
 }
 
-.header {
-  display: flex;
-  padding: 16px 0;
-  justify-content: space-between;
-  align-items: center;
-  width: 100vw;
-  max-width: 100%;
-}
-
-.header-left-content {
-  padding-left: 60px;
-  display: flex;
-  align-items: center;
-  font-family: "Be Vietnam Pro", sans-serif;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 500;
-
-  .header-brand {
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    gap: 3px;
-    margin-right: 32px;
-
-    p {
-      font-size: 22.857px;
-      font-style: normal;
-      font-weight: 700;
-      line-height: normal;
-      font-family: "Quicksand", sans-serif;
-      // lin
-    }
-  }
-
-  .header-tabs {
-    cursor: pointer;
-    padding: 10px 20px;
-    background-color: #fff;
-    border-radius: 8px;
-
-    p {
-      margin: 0px;
-    }
-
-    &:hover {
-      background-color: #000;
-      color: #fff;
-    }
-  }
-}
-
-.header-right-content {
-  display: inline-flex;
-  padding-right: 60px;
-  gap: 16px;
-}
-
 .tab-conatainer {
   display: flex;
   flex-direction: row;
   height: 44px;
   // border: 1px solid $neutral-4;
   align-items: center;
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-weight: 500;
+
   .tab-item {
     border-style: solid;
     border-width: 2px 0px 2px 2px;

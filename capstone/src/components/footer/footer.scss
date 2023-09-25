@@ -12,11 +12,12 @@ $background-light-yellow: #fbf0c8;
 
 .footer-container {
   background-color: $neutral-4;
-  flex: 1;
   display: flex;
   flex-direction: column;
-
   border-radius: 24px 24px 0 0;
+  width: 100vw;
+  max-width: 100%;
+
   .email-sub {
     // width: 100%;
     flex: 1;
@@ -24,6 +25,8 @@ $background-light-yellow: #fbf0c8;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    padding: 0px 64px;
+    gap: 48px;
 
     .motiv {
       flex: 1;
@@ -31,10 +34,11 @@ $background-light-yellow: #fbf0c8;
       color: $neutral-0;
       align-items: center;
       justify-content: start;
-      margin: 0 60px;
-      gap: 8px;
+      gap: 12px;
       font-size: 18px;
-      font-weight: bold;
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-weight: 600;
+
       img {
         height: 38px;
         width: 38px;
@@ -46,7 +50,8 @@ $background-light-yellow: #fbf0c8;
       display: flex;
       flex-direction: row;
       align-items: center;
-      gap: 8px;
+      gap: 12px;
+
       .input {
         display: flex;
         flex-direction: row;
@@ -82,12 +87,16 @@ $background-light-yellow: #fbf0c8;
     background: $neutral-0;
     height: 386px !important;
     padding: 20px 80px 80px;
+    font-family: 'Inter', sans-serif;
+    border-radius: 64px 64px 0px 0px;
+
     .info {
       display: flex;
       flex-direction: row;
       padding-bottom: 20px;
       .quote {
         flex: 1;
+        gap: 16px;
         .footer-brand {
           display: flex;
           flex-direction: row;
@@ -99,12 +108,14 @@ $background-light-yellow: #fbf0c8;
             width: 90px;
           }
           .footer-brand-name {
+            font-family: 'Quicksand', sans-serif;
             font-size: 51px;
             font-weight: 700;
           }
         }
 
         .slogan {
+          font-weight: 400;
           padding: 10px 0;
           width: 492px;
           text-align: left;
@@ -130,7 +141,7 @@ $background-light-yellow: #fbf0c8;
           gap: 8px;
           text-align: left;
           font-size: 16px;
-          font-weight: bold;
+          font-weight: 600;
           color: $neutral-4;
         }
       }
