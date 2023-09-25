@@ -2,28 +2,34 @@ import React from "react";
 import "../common.scss";
 
 type BtnProps = {
-  // theme: string;
+  theme: string;
   type: string;
   icon: string;
   btnText?: string;
 };
 
-const Button = ({ type, icon, btnText }: BtnProps) => {
+const Button = ({ theme, type, icon, btnText }: BtnProps) => {
   // console.log(theme.concat(" ", type, " " + (showIcon ? "icon" : "" )) );
+  let btnClass = "";
+  if (theme === "normal") {
+    btnClass = "button";
+  }
+  if (theme === "stripe") {
+    btnClass = "stripe-button";
+  }
 
   return (
     <>
       {icon ? (
-        <div className={"button" + " " + type + " " + "with-icon"}>
+        <div className={btnClass + " " + type + " " + "with-icon"}>
           <span>
             {<img src={icon}></img>}
             {btnText}
           </span>
         </div>
       ) : (
-        <div className={"button" + " " + type}>
+        <div className={btnClass + " " + type}>
           <span>{btnText}</span>
-        
         </div>
       )}
     </>

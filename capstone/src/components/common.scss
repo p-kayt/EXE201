@@ -49,6 +49,69 @@ $background-light-yellow: #fbf0c8;
     }
   }
 
+  &.with-avatar {
+    width: 175px;
+    span {
+      width: 174px;
+    }
+  }
+
+  &.disabled {
+    background-color: $neutral-2;
+    span {
+      color: $neutral-2;
+      border: 2px solid $neutral-2;
+      top: 0;
+      left: 0;
+    }
+  }
+}
+
+.stripe-button {
+  position: relative;
+  height: 48px;
+  width: 94px;
+  background-color: $neutral-0;
+  border: 1px solid $neutral-4;
+  border-radius: calc(8px + 2px);
+  padding: 1px;
+  cursor: pointer;
+
+  span {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+    height: 47px;
+    width: 93px;
+    top: -5px;
+    left: -5px;
+    transition: 0.5s ease-out;
+    border-radius: 8px;
+    background-color: $neutral-0;
+    border: 2px solid $neutral-4;
+    color: $neutral-4;
+    // color: #000000;
+    &:hover {
+      top: 0;
+      left: 0;
+    }
+  }
+
+  &.with-icon {
+    width: 118px;
+    span {
+      width: 117px;
+    }
+  }
+  &.with-avatar {
+    width: 175px;
+    span {
+      width: 174px;
+    }
+  }
   &.disabled {
     background-color: $neutral-2;
     span {
@@ -341,4 +404,59 @@ $background-light-yellow: #fbf0c8;
   display: inline-flex;
   padding-right: 60px;
   gap: 16px;
+}
+
+.tab-conatainer {
+  display: flex;
+  flex-direction: row;
+  height: 44px;
+  // border: 1px solid $neutral-4;
+  align-items: center;
+  .tab-item {
+    border-style: solid;
+    border-width: 2px 0px 2px 2px;
+    border-color: $neutral-4;
+    width: 85px;
+    // border: 2px solid $neutral-4;
+    padding: 8px;
+
+    &:hover {
+      background-color: $background-light-yellow;
+    }
+  }
+  .tab-item:first-child {
+    border-radius: 8px 0px 0px 8px;
+  }
+  .tab-item:last-child {
+    border-radius: 0px 8px 8px 0px;
+    border-width: 2px 2px 2px 2px;
+  }
+  .tab-item.selected {
+    background-color: $background-light-yellow;
+  }
+}
+
+.card {
+  position: relative;
+  border-radius: 10px;
+  border: 2px solid $neutral-4;
+  background-color: $neutral-1;
+  span {
+    border-radius: 8px;
+    border-style: solid;
+    border-width: 0px 2px 2px 0px;
+    border-color: $neutral-4;
+    background-color: $neutral-0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transition: 0.5s ease-out;
+    &:hover {
+      border-width: 2px;
+      top: -8px;
+      left: -8px;
+    }
+  }
 }
