@@ -1,12 +1,12 @@
 .header {
-  position: fixed;
-  top:0px;    
-  right:0px;
+  position: sticky;
+  top: 0px;
+  right: 0px;
   display: flex;
   padding: 16px 0;
   justify-content: space-between;
   align-items: center;
-  width: 100vw;
+  width: calc(100vw - 16px);
   max-width: 100%;
   background-color: #fff;
   z-index: 1;
@@ -33,7 +33,7 @@
       font-style: normal;
       font-weight: 700;
       line-height: normal;
-      font-family: 'Quicksand', sans-serif;
+      font-family: "Quicksand", sans-serif;
     }
   }
 

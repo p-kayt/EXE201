@@ -1,21 +1,15 @@
-$neutral-0: #ffffff;
-$neutral-1: #e8eaf0;
-$neutral-2: #c5c7cc;
-$neutral-3: #00000080;
-$neutral-4: #000000;
-$background-light-yellow: #fbf0c8;
-* {-webkit-font-smoothing: antialiased;}
+@import "../assets/constants.scss";
 
 // button
 .button {
   position: relative;
   height: 48px;
-  width: 94px;
+  width: 100%;
   background-color: $neutral-4;
   border-radius: calc(8px + 2px);
   padding: 1px;
   cursor: pointer;
-  font-family: 'Be Vietnam Pro', sans-serif;
+  font-family: "Be Vietnam Pro", sans-serif;
   font-weight: 500;
 
   span {
@@ -26,7 +20,7 @@ $background-light-yellow: #fbf0c8;
     align-items: center;
     justify-content: center;
     height: 47px;
-    width: 93px;
+    width: 100%;
     top: -5px;
     left: -5px;
     transition: 0.5s ease-out;
@@ -70,7 +64,7 @@ $background-light-yellow: #fbf0c8;
 .stripe-button {
   position: relative;
   height: 48px;
-  width: 94px;
+  width: 100%;
   background-color: $neutral-0;
   border: 1px solid $neutral-4;
   border-radius: calc(8px + 2px);
@@ -85,7 +79,7 @@ $background-light-yellow: #fbf0c8;
     align-items: center;
     justify-content: center;
     height: 47px;
-    width: 93px;
+    width: 100%;
     top: -5px;
     left: -5px;
     transition: 0.5s ease-out;
@@ -126,7 +120,7 @@ $background-light-yellow: #fbf0c8;
 .icon-button {
   position: relative;
   height: 48px;
-  width: 60px;
+  width: 100%;
   background-color: $neutral-4;
   border-radius: calc(8px + 2px);
   padding: 1px;
@@ -140,7 +134,7 @@ $background-light-yellow: #fbf0c8;
     align-items: center;
     justify-content: center;
     height: 47px;
-    width: 59px;
+    width: 100%;
     top: -5px;
     left: -5px;
     transition: 0.5s ease-out;
@@ -194,7 +188,7 @@ $background-light-yellow: #fbf0c8;
     font-size: 16px;
     padding: 0px;
     border: 0px;
-    font-family: 'Be Vietnam Pro', sans-serif;
+    font-family: "Be Vietnam Pro", sans-serif;
     font-weight: 400;
 
     &:focus {
@@ -236,7 +230,7 @@ $background-light-yellow: #fbf0c8;
   box-shadow: 4px 4px #000;
   transition: transform 0.5s, box-shadow 0.5s;
   font-size: 16px;
-  
+
   cursor: pointer;
   p {
     width: 176px;
@@ -269,7 +263,7 @@ $background-light-yellow: #fbf0c8;
   box-shadow: 4px 4px #000;
   transition: transform 0.5s, box-shadow 0.5s;
   font-size: 16px;
-  font-family: 'Be Vietnam Pro', sans-serif;
+  font-family: "Be Vietnam Pro", sans-serif;
   font-weight: 500;
 
   cursor: pointer;
@@ -295,7 +289,7 @@ $background-light-yellow: #fbf0c8;
   border: 2px solid #000;
   background: var(--neutral-0, #fff);
   font-size: 16px;
-  font-family: 'Be Vietnam Pro', sans-serif;
+  font-family: "Be Vietnam Pro", sans-serif;
   font-weight: 400;
 
   .dropdown-item {
@@ -355,7 +349,7 @@ $background-light-yellow: #fbf0c8;
   height: 44px;
   // border: 1px solid $neutral-4;
   align-items: center;
-  font-family: 'Be Vietnam Pro', sans-serif;
+  font-family: "Be Vietnam Pro", sans-serif;
   font-weight: 500;
 
   .tab-item {
