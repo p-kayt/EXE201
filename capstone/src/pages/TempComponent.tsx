@@ -21,16 +21,23 @@ const TempComponent = () => {
     <>
       <Hearder />
       {/* ----------------------------------------------------------- */}
-      <Button theme="normal" type="disabled" icon={""} btnText="Button" />
+      <div style={{ width: "100px" }}>
+        <Button theme="normal" type="disabled" btnText="Button" />
+      </div>
+      {/* ----------------------------------------------------------- */}{" "}
+      <div style={{ width: "100px" }}>
+        <Button
+          theme="normal"
+          type="enable"
+          icon={addCircleBold}
+          btnText="Button"
+        />
+      </div>
       {/* ----------------------------------------------------------- */}
-      <Button
-        theme="normal"
-        type="enable"
-        icon={addCircleBold}
-        btnText="Button"
-      />
-      {/* ----------------------------------------------------------- */}
-      <IconButton type="enable" icon={addCircleBold} />
+      <div style={{ width: "100px" }}>
+        {" "}
+        <IconButton type="enable" icon={addCircleBold} />
+      </div>
       {/* ----------------------------------------------------------- */}
       <div className="search-bar">
         <img src={searchIcon} alt="" />
@@ -38,7 +45,6 @@ const TempComponent = () => {
       </div>
       {/* ----------------------------------------------------------- */}
       <br />
-
       <DropdownSearchBar />
       <br />
       {/* ----------------------------------------------------------- */}
@@ -62,7 +68,6 @@ const TempComponent = () => {
       {/* ----------------------------------------------------------- */}
       <div>Mini kit</div>
       <div>Chips</div>
-
       {/* ----------------------------------------------------------- */}
       <Avatar
         source="https://www.arsenal.com/sites/default/files/shorthand/stories/R7nKRzpKMp/2023-05-15T13%3A02%3A04.201Z/assets/x0FLXAhH2V/gettyimages-1488192786_enhanced-750x500.jpg"
@@ -79,7 +84,6 @@ const TempComponent = () => {
       <div>
         <button onClick={() => displayToast()}>Display Toast</button>
       </div>
-
       <Footer />
     </>
   );

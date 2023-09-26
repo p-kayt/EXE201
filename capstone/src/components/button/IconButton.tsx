@@ -5,19 +5,20 @@ type IconBtnProps = {
   // theme: string;
   type: string;
   icon: string;
-
+  onClick?: (params: any) => any;
 };
 
-const IconButton = ({ type, icon }: IconBtnProps) => {
-  
+const IconButton = ({ type, icon, onClick }: IconBtnProps) => {
   return (
     <>
-        <div className={"icon-button" + " " + type + " " + "with-icon"}>
-          <span >
-            <img src={icon}></img>
-          </span>
-        </div>
-
+      <div
+        className={"icon-button" + " " + type + " " + "with-icon"}
+        onClick={onClick}
+      >
+        <span>
+          <img src={icon}></img>
+        </span>
+      </div>
     </>
   );
 };

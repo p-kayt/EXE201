@@ -24,7 +24,9 @@ const Footer = (props: Props) => {
               <img src={sms} />
               <input type="text" placeholder="Nhập địa chỉ email của bạn" />
             </div>
-            <Button theme="stripe" type="enable" icon={""} btnText="Gửi" />
+            <div className="btn-submit">
+              <Button theme="stripe" type="enable" btnText="Gửi" />
+            </div>
           </div>
         </div>
         <div className="bottom-half">
