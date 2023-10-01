@@ -6,7 +6,7 @@ import Messenger from "../../assets/icons/messenger.svg";
 import Button from "../button/Button";
 import IconButton from "../button/IconButton";
 import AvatarButton from "../button/AvatarButton";
-import "./header.scss"
+import "./header.scss";
 
 type headerProps = {};
 
@@ -66,12 +66,7 @@ class Hearder extends React.Component<headerProps, headerState> {
               />
             </>
           ) : (
-            <Button
-              theme="normal"
-              type="enable"
-              icon={""}
-              btnText="Đăng nhập"
-            />
+            <Button theme="normal" type="enable" btnText="Đăng nhập" />
           )}
         </div>
       </div>
