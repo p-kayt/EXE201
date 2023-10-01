@@ -1,0 +1,21 @@
+.homepage-content {
+  margin-top: 80px;
+}
+
+.homepage-introduction {
+  display: flex;
+  padding: 65px 64px;
+}
+
+.homepage-introduction-left-content {
+  display: block;
+  width: 40%;
+  div {
+    // width: 100%;
+  }
+}
+
+.homepage-introduction-search-bar{
+  display: flex;
+  gap: 18px;
+}
