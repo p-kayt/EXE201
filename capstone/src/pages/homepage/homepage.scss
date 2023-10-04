@@ -1,21 +1,79 @@
-.homepage-content {
-  margin-top: 80px;
-}
-
 .homepage-introduction {
+  font-family: "Be Vietnam Pro", sans-serif;
   display: flex;
   padding: 65px 64px;
+  text-align: left;
 }
 
 .homepage-introduction-left-content {
   display: block;
   width: 40%;
-  div {
-    // width: 100%;
-  }
+  margin-top: 38px;
 }
 
-.homepage-introduction-search-bar{
+.homepage-introduction-heading {
+  font-size: 56px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 68px;
+}
+
+.homepage-introduction-description {
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  margin-top: 12px;
+}
+
+.homepage-introduction-stats {
+  display: flex;
+  gap: 32px;
+  margin-top: 24px;
+}
+
+.homepage-introduction-heading-brand {
+  color: #6b48f2;
+}
+
+.homepage-introduction-search-bar {
   display: flex;
   gap: 18px;
+  margin-top: 32px;
+  font-weight: 400;
+}
+
+.homepage-introduction-stats-number {
+  font-weight: 600;
+}
+
+.homepage-association {
+  margin: 64px 64px;
+  box-shadow: 
+  8px 8px #E2EAFD, /* The original shadow */
+  16px 0 0 1px #000, /* Top-right border */
+  0 16px 0 1px #000, /* Bottom-left border */
+  16px 16px 0 1px #000; /* Bottom-right border */
+  border-radius: 8px;
+}
+
+.homepage-association-heading {
+  display: flex;
+  padding: 24px 0px;
+  justify-content: center;
+  align-items: center;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 600;
+  border-radius: 8px 8px 0px 0px;
+  border: 2px solid #000;
+}
+
+.homepage-association-content {
+  display: flex;
+  flex-direction: row;
+  padding: 31px 47px;
+  align-items: center;
+  gap: 94px;
+  border-radius: 0px 0px 8px 8px;
+  border: 2px solid #000;
 }
