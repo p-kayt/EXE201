@@ -3,10 +3,9 @@ import Logo from "../../assets/icons/logo.svg";
 import Share from "../../assets/icons/share.svg";
 import Notification from "../../assets/icons/notification.svg";
 import Messenger from "../../assets/icons/messenger.svg";
-import Button from "../button/Button";
-import IconButton from "../button/IconButton";
-import AvatarButton from "../button/AvatarButton";
+
 import "./header.scss";
+import NewButton from "../button/NewButton";
 
 type headerProps = {};
 
@@ -51,22 +50,46 @@ class Hearder extends React.Component<headerProps, headerState> {
         </div>
 
         <div className="header-right-content">
-          <Button theme="normal" type="enable" icon={Share} btnText="Mời bạn" />
+          <NewButton
+            theme="light"
+            style={{ width: "120px" }}
+            iconSrc={Share}
+            enabled={true}
+            btnText="Mời bạn"
+          />
 
           {this.state.checkLogIn ? (
             <>
-              <IconButton type="enable" icon={Notification} />
-              <IconButton type="enable" icon={Messenger} />
-              <AvatarButton
-                type="enable"
-                source="https://www.arsenal.com/sites/default/files/shorthand/stories/R7nKRzpKMp/2023-05-15T13%3A02%3A04.201Z/assets/x0FLXAhH2V/gettyimages-1488192786_enhanced-750x500.jpg"
-                avatarType="rounded"
-                size={32}
+              <NewButton
+                theme="light"
+                style={{ width: "50px" }}
+                enabled={true}
+                iconSrc={Notification}
+              />
+              <NewButton
+                theme="light"
+                style={{ width: "50px" }}
+                enabled={true}
+                iconSrc={Messenger}
+              />
+              <NewButton
+                theme="light"
+                style={{ width: "200px" }}
+                enabled={true}
+                imgSrc="https://www.arsenal.com/sites/default/files/shorthand/stories/R7nKRzpKMp/2023-05-15T13%3A02%3A04.201Z/assets/x0FLXAhH2V/gettyimages-1488192786_enhanced-750x500.jpg"
+                imgOptions="rounded"
+                imgSize={32}
                 btnText="Bukayo Saka"
               />
             </>
           ) : (
-            <Button theme="normal" type="enable" btnText="Đăng nhập" />
+            <NewButton
+              theme="light"
+              style={{ width: "150px" }}
+              iconSrc={Share}
+              enabled={true}
+              btnText="Đăng nhập"
+            />
           )}
         </div>
       </div>

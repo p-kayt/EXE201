@@ -1,11 +1,11 @@
 import React from "react";
 import "./login.scss";
-import Button from "../../components/button/Button";
 import { Link } from "react-router-dom";
 import eye from "../../assets/icons/eye.svg";
 import eyeSlash from "../../assets/icons/eye-slash.svg";
 import loginBanner from "../../assets/images/loginbanner.png";
 import Logo from "../../assets/icons/logo.svg";
+import NewButton from "../../components/button/NewButton";
 type Props = {};
 
 const Login = (props: Props) => {
@@ -25,12 +25,7 @@ const Login = (props: Props) => {
               <Link to={"/register"}>Đăng kí ở đây.</Link>
             </span>
             <div className="form-google">
-              <Button
-                theme="normal"
-                type="disabled"
-                icon=""
-                btnText="Google login"
-              />
+              <NewButton theme="light" enabled={false} btnText="Google login" />
             </div>
             <div className="divider">Hoặc</div>
             <label>Địa chỉ Email</label>
@@ -49,12 +44,7 @@ const Login = (props: Props) => {
               />
             </div>
             <div className="form-footer">
-              <Button
-                theme="normal"
-                type="enable"
-                icon=""
-                btnText="Đăng Nhập"
-              />
+              <NewButton theme="light" enabled={true} btnText="Đăng Nhập" />
               <Link to={""}>Bạn quên mật khẩu ?</Link>
             </div>
           </div>

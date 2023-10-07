@@ -1,4 +1,3 @@
-import Button from "../button/Button";
 import "./footer.scss";
 import React from "react";
 import flame from "../../assets/icons/Flame.svg";
@@ -8,6 +7,7 @@ import facebook from "../../assets/icons/facebook.svg";
 import insta from "../../assets/icons/instagram.svg";
 import twitch from "../../assets/icons/twitch.svg";
 import youtube from "../../assets/icons/youtube.svg";
+import NewButton from "../button/NewButton";
 type Props = {};
 
 const Footer = (props: Props) => {
@@ -25,7 +25,7 @@ const Footer = (props: Props) => {
               <input type="text" placeholder="Nhập địa chỉ email của bạn" />
             </div>
             <div className="btn-submit">
-              <Button theme="stripe" type="enable" btnText="Gửi" />
+              <NewButton theme="stripe" enabled={true} btnText="Gửi" />
             </div>
           </div>
         </div>

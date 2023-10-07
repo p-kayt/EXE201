@@ -1,11 +1,11 @@
 import React from "react";
 import "../login/login.scss";
-import Button from "../../components/button/Button";
 import { Link } from "react-router-dom";
 import eye from "../../assets/icons/eye.svg";
 import eyeSlash from "../../assets/icons/eye-slash.svg";
 import loginBanner from "../../assets/images/loginbanner.png";
 import Logo from "../../assets/icons/logo.svg";
+import NewButton from "../../components/button/NewButton";
 type Props = {};
 
 const PhoneVerify = (props: Props) => {
@@ -24,12 +24,7 @@ const PhoneVerify = (props: Props) => {
               Bạn đã có tài khoàn? <Link to={"/login"}>Đăng nhập.</Link>
             </span>
             <div className="form-google">
-              <Button
-                theme="normal"
-                type="disabled"
-                icon=""
-                btnText="Google login"
-              />
+              <NewButton theme="light" enabled={false} btnText="Google login" />
             </div>
             <div className="divider">Hoặc</div>
             <label>Tên của bạn</label>
@@ -52,12 +47,7 @@ const PhoneVerify = (props: Props) => {
               />
             </div>
             <div className="form-footer">
-              <Button
-                theme="normal"
-                type="enable"
-                icon=""
-                btnText="Tạo tài khoản"
-              />
+              <NewButton theme="light" enabled={true} btnText="Tạo tài khoản" />
             </div>
           </div>
 
