@@ -1,8 +1,6 @@
 import React from "react";
 
-import addCircleBold from "../assets/icons/add-circle-bold.svg";
-import searchIcon from "../assets/icons/search-linear.svg";
-
+import { SearchIcon, AddCircleBold } from "../assets/Icons";
 import DropdownSearchBar from "../components/dropdown/DropdownSearchBar";
 import Dropdown from "../components/dropdown/Dropdown";
 
@@ -11,7 +9,7 @@ import Hearder from "../components/header/Hearder";
 import Footer from "../components/footer/Footer";
 import TabBar from "../components/tabs/TabBar";
 import { ToastContainer, toast } from "react-toastify";
-import NewButton from "../components/button/NewButton";
+import CustomButton from "../components/button/CustomButton";
 
 const TempComponent = () => {
   const displayToast = () => {
@@ -22,16 +20,16 @@ const TempComponent = () => {
       <Hearder />
       {/* ---------------normal button-------------------------------------------- */}
       <div style={{ width: "100px", margin: "20px" }}>
-        <NewButton
+        <CustomButton
           theme="light"
-          enabled={false}
+          // enabled={false}
           btnText="ss"
           onClick={() => console.log("a")}
         />
       </div>
       {/* -------------stripe button---------------------------------------------- */}
       <div style={{ width: "100px", margin: "20px" }}>
-        <NewButton
+        <CustomButton
           theme="stripe"
           enabled={true}
           btnText="ss"
@@ -40,7 +38,7 @@ const TempComponent = () => {
       </div>
       {/* -------------color normal button---------------------------------------------- */}
       <div style={{ width: "100px", margin: "20px" }}>
-        <NewButton
+        <CustomButton
           theme="light"
           enabled={true}
           color={"#FECE00"}
@@ -50,7 +48,7 @@ const TempComponent = () => {
       </div>
       {/* -------------color stripe button---------------------------------------------- */}
       <div style={{ width: "100px", margin: "20px" }}>
-        <NewButton
+        <CustomButton
           theme="stripe"
           enabled={false}
           color={"#FECE00"}
@@ -61,10 +59,10 @@ const TempComponent = () => {
 
       {/* -------------icon button with text---------------------------------------------- */}
       <div style={{ width: "100px", margin: "20px" }}>
-        <NewButton
+        <CustomButton
           theme="light"
           enabled={true}
-          iconSrc={addCircleBold}
+          iconSrc={AddCircleBold}
           btnText="ss"
           onClick={() => console.log("a")}
         />
@@ -72,16 +70,16 @@ const TempComponent = () => {
 
       {/* -------------icon button no text---------------------------------------------- */}
       <div style={{ width: "100px", margin: "20px" }}>
-        <NewButton
+        <CustomButton
           theme="light"
           enabled={true}
-          iconSrc={addCircleBold}
+          iconSrc={AddCircleBold}
           onClick={() => console.log("a")}
         />
       </div>
       {/* -------------button with img with text---------------------------------------------- */}
       <div style={{ width: "100px", margin: "20px" }}>
-        <NewButton
+        <CustomButton
           theme="light"
           enabled={true}
           imgSrc="https://www.arsenal.com/sites/default/files/shorthand/stories/R7nKRzpKMp/2023-05-15T13%3A02%3A04.201Z/assets/x0FLXAhH2V/gettyimages-1488192786_enhanced-750x500.jpg"
@@ -93,7 +91,7 @@ const TempComponent = () => {
       </div>
       {/* -------------button with img no text---------------------------------------------- */}
       <div style={{ width: "100px", margin: "20px" }}>
-        <NewButton
+        <CustomButton
           theme="light"
           enabled={true}
           imgSrc="https://www.arsenal.com/sites/default/files/shorthand/stories/R7nKRzpKMp/2023-05-15T13%3A02%3A04.201Z/assets/x0FLXAhH2V/gettyimages-1488192786_enhanced-750x500.jpg"
@@ -104,7 +102,7 @@ const TempComponent = () => {
       </div>
       {/* ----------------------------------------------------------- */}
       <div className="search-bar">
-        <img src={searchIcon} alt="" />
+        <img src={SearchIcon} alt="" />
         <input placeholder="Search"></input>
       </div>
       {/* ----------------------------------------------------------- */}

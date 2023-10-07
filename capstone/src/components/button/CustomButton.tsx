@@ -5,7 +5,7 @@ import Avatar from "../avatar/Avatar";
 type BtnProps = {
   theme: "light" | "dark" | "stripe";
   style?: object;
-  enabled: boolean;
+  enabled?: boolean;
   color?: any;
 
   iconSrc?: string;
@@ -16,16 +16,16 @@ type BtnProps = {
   onClick?: (params: any) => any;
 };
 
-const NewButton = (props: BtnProps) => {
+const CustomButton = (props: BtnProps) => {
   const {
     theme,
     style,
-    enabled,
+    enabled = true,
     color,
     iconSrc,
     imgSrc,
-    imgOptions,
-    imgSize,
+    imgOptions = "rounded",
+    imgSize = 32,
     btnText,
     onClick,
   } = props;
@@ -70,11 +70,7 @@ const NewButton = (props: BtnProps) => {
   if (imgSrc) {
     if (imgOptions)
       mediaContent = (
-        <Avatar
-          source={imgSrc}
-          type={imgOptions}
-          size={imgSize ? imgSize : 32}
-        />
+        <Avatar source={imgSrc} type={imgOptions} size={imgSize} />
       );
   }
   //
@@ -96,4 +92,4 @@ const NewButton = (props: BtnProps) => {
   );
 };
 
-export default NewButton;
+export default CustomButton;

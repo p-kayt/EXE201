@@ -1,11 +1,10 @@
 import React from "react";
 import "../login/login.scss";
 import { Link } from "react-router-dom";
-import eye from "../../assets/icons/eye.svg";
-import eyeSlash from "../../assets/icons/eye-slash.svg";
 import loginBanner from "../../assets/images/loginbanner.png";
-import Logo from "../../assets/icons/logo.svg";
-import NewButton from "../../components/button/NewButton";
+
+import { Logo, Eye, EyeSlash } from "../../assets/Icons";
+import CustomButton from "../../components/button/CustomButton";
 type Props = {};
 
 const Register = (props: Props) => {
@@ -24,7 +23,11 @@ const Register = (props: Props) => {
               Bạn đã có tài khoàn? <Link to={"/login"}>Đăng nhập.</Link>
             </span>
             <div className="form-google">
-              <NewButton theme="light" enabled={false} btnText="Google login" />
+              <CustomButton
+                theme="light"
+                enabled={false}
+                btnText="Google login"
+              />
             </div>
             <div className="divider">Hoặc</div>
             <label>Tên của bạn</label>
@@ -42,12 +45,16 @@ const Register = (props: Props) => {
                 placeholder="Nhập mật khẩu"
               />
               <img
-                src={passwordShown ? eye : eyeSlash}
+                src={passwordShown ? Eye : EyeSlash}
                 onClick={() => setPasswordShown(!passwordShown)}
               />
             </div>
             <div className="form-footer">
-              <NewButton theme="light" enabled={true} btnText="Tạo tài khoản" />
+              <CustomButton
+                theme="light"
+                enabled={true}
+                btnText="Tạo tài khoản"
+              />
             </div>
           </div>
 

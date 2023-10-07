@@ -1,11 +1,8 @@
 import React from "react";
-import Logo from "../../assets/icons/logo.svg";
-import Share from "../../assets/icons/share.svg";
-import Notification from "../../assets/icons/notification.svg";
-import Messenger from "../../assets/icons/messenger.svg";
 
+import { Logo, Share, Notification, Messenger } from "../../assets/Icons";
 import "./header.scss";
-import NewButton from "../button/NewButton";
+import CustomButton from "../button/CustomButton";
 
 type headerProps = {};
 
@@ -50,7 +47,7 @@ class Hearder extends React.Component<headerProps, headerState> {
         </div>
 
         <div className="header-right-content">
-          <NewButton
+          <CustomButton
             theme="light"
             style={{ width: "120px" }}
             iconSrc={Share}
@@ -60,19 +57,19 @@ class Hearder extends React.Component<headerProps, headerState> {
 
           {this.state.checkLogIn ? (
             <>
-              <NewButton
+              <CustomButton
                 theme="light"
                 style={{ width: "50px" }}
                 enabled={true}
                 iconSrc={Notification}
               />
-              <NewButton
+              <CustomButton
                 theme="light"
                 style={{ width: "50px" }}
                 enabled={true}
                 iconSrc={Messenger}
               />
-              <NewButton
+              <CustomButton
                 theme="light"
                 style={{ width: "200px" }}
                 enabled={true}
@@ -83,7 +80,7 @@ class Hearder extends React.Component<headerProps, headerState> {
               />
             </>
           ) : (
-            <NewButton
+            <CustomButton
               theme="light"
               style={{ width: "150px" }}
               iconSrc={Share}
