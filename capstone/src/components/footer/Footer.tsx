@@ -1,13 +1,15 @@
-import Button from "../button/Button";
 import "./footer.scss";
 import React from "react";
-import flame from "../../assets/icons/Flame.svg";
-import Logo from "../../assets/icons/logo.svg";
-import sms from "../../assets/icons/sms.svg";
-import facebook from "../../assets/icons/facebook.svg";
-import insta from "../../assets/icons/instagram.svg";
-import twitch from "../../assets/icons/twitch.svg";
-import youtube from "../../assets/icons/youtube.svg";
+import {
+  Logo,
+  Flame,
+  Sms,
+  Facebook,
+  Instagram,
+  Twitch,
+  Youtube,
+} from "../../assets/Icons";
+import CustomButton from "../button/CustomButton";
 type Props = {};
 
 const Footer = (props: Props) => {
@@ -16,16 +18,16 @@ const Footer = (props: Props) => {
       <div className="footer-container">
         <div className="email-sub">
           <span className="motiv">
-            <img src={flame}></img>
+            <img src={Flame}></img>
             Đăng ký để nhận ưu đãi sớm nhất
           </span>
           <div className="input-field">
             <div className="input">
-              <img src={sms} />
+              <img src={Sms} />
               <input type="text" placeholder="Nhập địa chỉ email của bạn" />
             </div>
             <div className="btn-submit">
-              <Button theme="stripe" type="enable" btnText="Gửi" />
+              <CustomButton theme="stripe" enabled={true} btnText="Gửi" />
             </div>
           </div>
         </div>
@@ -41,10 +43,10 @@ const Footer = (props: Props) => {
                 sự truyền tải tri thức và thúc đẩy sự nghiệp toàn cầu.
               </div>
               <div className="social">
-                <img src={facebook} />
-                <img src={insta} />
-                <img src={twitch} />
-                <img src={youtube} />
+                <img src={Facebook} />
+                <img src={Instagram} />
+                <img src={Twitch} />
+                <img src={Youtube} />
               </div>
             </div>
 

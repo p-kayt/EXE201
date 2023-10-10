@@ -1,16 +1,17 @@
 import React from "react";
-import Arrow from "../../assets/icons/arrow.svg";
-import Check from '../../assets/icons/check.svg';
+
 import "../common.scss";
 
+import { Arrow, Check } from "../../assets/Icons";
+
 type dropdownProps = {
-  dropdownText: string,
+  dropdownText: string;
   valueList?: string[];
-  selectedItem: string
+  selectedItem: string;
 };
 
 type dropdownState = {
-  status: boolean,
+  status: boolean;
 };
 
 class Dropdown extends React.Component<dropdownProps, dropdownState> {
@@ -40,7 +41,12 @@ class Dropdown extends React.Component<dropdownProps, dropdownState> {
   render() {
     return (
       <div>
-        <div className={(this.state.status) ? "dropdown-label-clicked" : "dropdown-label"} onClick={this.onClickLabel}>
+        <div
+          className={
+            this.state.status ? "dropdown-label-clicked" : "dropdown-label"
+          }
+          onClick={this.onClickLabel}
+        >
           <p>{this.props.dropdownText}</p>
           <img src={Arrow} />
         </div>
@@ -49,16 +55,21 @@ class Dropdown extends React.Component<dropdownProps, dropdownState> {
           <div className="dropdown-content">
             {this.props.valueList?.map((value) => (
               <div className="dropdown-item">
-                {(this.props.selectedItem) === value ? (<img src={Check}/>) : <img/>}
+                {this.props.selectedItem === value ? (
+                  <img src={Check} />
+                ) : (
+                  <img />
+                )}
                 <p>{value}</p>
-                </div>
+              </div>
             ))}
           </div>
-        ) : ("")}
+        ) : (
+          ""
+        )}
       </div>
     );
   }
 }
-
 
 export default Dropdown;
