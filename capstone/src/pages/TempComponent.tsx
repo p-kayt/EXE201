@@ -1,17 +1,15 @@
 import React from "react";
 
-import addCircleBold from "../assets/icons/add-circle-bold.svg";
-import searchIcon from "../assets/icons/search-linear.svg";
-
-import Button from "../components/button/Button";
+import { SearchIcon, AddCircleBold } from "../assets/Icons";
 import DropdownSearchBar from "../components/dropdown/DropdownSearchBar";
 import Dropdown from "../components/dropdown/Dropdown";
-import IconButton from "../components/button/IconButton";
+
 import Avatar from "../components/avatar/Avatar";
 import Hearder from "../components/header/Hearder";
 import Footer from "../components/footer/Footer";
 import TabBar from "../components/tabs/TabBar";
 import { ToastContainer, toast } from "react-toastify";
+import CustomButton from "../components/button/CustomButton";
 
 const TempComponent = () => {
   const displayToast = () => {
@@ -20,27 +18,91 @@ const TempComponent = () => {
   return (
     <>
       <Hearder />
-      {/* ----------------------------------------------------------- */}
-      <div style={{ width: "100px" }}>
-        <Button theme="normal" type="disabled" btnText="Button" />
+      {/* ---------------normal button-------------------------------------------- */}
+      <div style={{ width: "100px", margin: "20px" }}>
+        <CustomButton
+          theme="light"
+          // enabled={false}
+          btnText="ss"
+          onClick={() => console.log("a")}
+        />
       </div>
-      {/* ----------------------------------------------------------- */}{" "}
-      <div style={{ width: "100px" }}>
-        <Button
-          theme="normal"
-          type="enable"
-          icon={addCircleBold}
-          btnText="Button"
+      {/* -------------stripe button---------------------------------------------- */}
+      <div style={{ width: "100px", margin: "20px" }}>
+        <CustomButton
+          theme="stripe"
+          enabled={true}
+          btnText="ss"
+          onClick={() => console.log("a")}
+        />
+      </div>
+      {/* -------------color normal button---------------------------------------------- */}
+      <div style={{ width: "100px", margin: "20px" }}>
+        <CustomButton
+          theme="light"
+          enabled={true}
+          color={"#FECE00"}
+          btnText="ss"
+          onClick={() => console.log("a")}
+        />
+      </div>
+      {/* -------------color stripe button---------------------------------------------- */}
+      <div style={{ width: "100px", margin: "20px" }}>
+        <CustomButton
+          theme="stripe"
+          enabled={false}
+          color={"#FECE00"}
+          btnText="ss"
+          onClick={() => console.log("a")}
+        />
+      </div>
+
+      {/* -------------icon button with text---------------------------------------------- */}
+      <div style={{ width: "100px", margin: "20px" }}>
+        <CustomButton
+          theme="light"
+          enabled={true}
+          iconSrc={AddCircleBold}
+          btnText="ss"
+          onClick={() => console.log("a")}
+        />
+      </div>
+
+      {/* -------------icon button no text---------------------------------------------- */}
+      <div style={{ width: "100px", margin: "20px" }}>
+        <CustomButton
+          theme="light"
+          enabled={true}
+          iconSrc={AddCircleBold}
+          onClick={() => console.log("a")}
+        />
+      </div>
+      {/* -------------button with img with text---------------------------------------------- */}
+      <div style={{ width: "100px", margin: "20px" }}>
+        <CustomButton
+          theme="light"
+          enabled={true}
+          imgSrc="https://www.arsenal.com/sites/default/files/shorthand/stories/R7nKRzpKMp/2023-05-15T13%3A02%3A04.201Z/assets/x0FLXAhH2V/gettyimages-1488192786_enhanced-750x500.jpg"
+          imgSize={32} /* default 32*/
+          imgOptions={"rounded"} /* required to display*/
+          btnText="aaaa"
+          onClick={() => console.log("a")}
+        />
+      </div>
+      {/* -------------button with img no text---------------------------------------------- */}
+      <div style={{ width: "100px", margin: "20px" }}>
+        <CustomButton
+          theme="light"
+          enabled={true}
+          imgSrc="https://www.arsenal.com/sites/default/files/shorthand/stories/R7nKRzpKMp/2023-05-15T13%3A02%3A04.201Z/assets/x0FLXAhH2V/gettyimages-1488192786_enhanced-750x500.jpg"
+          imgSize={32} /* default 32*/
+          imgOptions={"rounded"} /* required to display*/
+          onClick={() => console.log("a")}
         />
       </div>
       {/* ----------------------------------------------------------- */}
-      <div style={{ width: "100px" }}>
-        {" "}
-        <IconButton type="enable" icon={addCircleBold} />
-      </div>
-      {/* ----------------------------------------------------------- */}
       <div className="search-bar">
-        <img src={searchIcon} alt="" />
+        <img src={SearchIcon} alt="" />
         <input placeholder="Search"></input>
       </div>
       {/* ----------------------------------------------------------- */}

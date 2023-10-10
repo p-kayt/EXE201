@@ -21,8 +21,8 @@
     justify-content: center;
     height: 47px;
     width: 100%;
-    top: -5px;
-    left: -5px;
+    top: -6px;
+    left: -8px;
     transition: 0.5s ease-out;
     border-radius: 8px;
     background-color: $neutral-0;
@@ -31,30 +31,20 @@
     color: $neutral-4;
     // color: #000000;
     &:hover {
+      width: calc(100% - 3px);
       top: 0;
       left: 0;
     }
   }
 
-  &.with-icon {
-    width: 118px;
-    span {
-      width: 117px;
-    }
-  }
-
-  &.with-avatar {
-    width: 175px;
-    span {
-      width: 174px;
-    }
-  }
-
   &.disabled {
-    background-color: $neutral-2;
+    // background-color: $neutral-2;
+    opacity: 50%;
+    cursor: default;
     span {
-      color: $neutral-2;
-      border: 2px solid $neutral-2;
+      // color: $neutral-2;
+      // border: 2px solid $neutral-2;
+      width: calc(100% - 3px);
       top: 0;
       left: 0;
     }
@@ -66,7 +56,7 @@
   height: 48px;
   width: 100%;
   background-color: $neutral-0;
-  border: 1px solid $neutral-4;
+  border: 2px solid $neutral-4;
   border-radius: calc(8px + 2px);
   padding: 1px;
   cursor: pointer;
@@ -81,7 +71,7 @@
     height: 47px;
     width: 100%;
     top: -5px;
-    left: -5px;
+    left: -8px;
     transition: 0.5s ease-out;
     border-radius: 8px;
     background-color: $neutral-0;
@@ -89,28 +79,17 @@
     color: $neutral-4;
     // color: #000000;
     &:hover {
+      width: calc(100% - 3px);
       top: 0;
       left: 0;
     }
   }
-
-  &.with-icon {
-    width: 118px;
-    span {
-      width: 117px;
-    }
-  }
-  &.with-avatar {
-    width: 175px;
-    span {
-      width: 174px;
-    }
-  }
   &.disabled {
-    background-color: $neutral-2;
+    cursor: default;
+    opacity: 50%;
     span {
-      color: $neutral-2;
       border: 2px solid $neutral-2;
+      width: calc(100% - 3px);
       top: 0;
       left: 0;
     }
