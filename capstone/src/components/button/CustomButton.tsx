@@ -74,7 +74,6 @@ const CustomButton = (props: BtnProps) => {
       );
   }
   //
-  console.log({ btnClass, color, iconSrc });
 
   return (
     <>

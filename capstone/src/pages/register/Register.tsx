@@ -1,15 +1,85 @@
 import React from "react";
 import "../login/login.scss";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import loginBanner from "../../assets/images/loginbanner.png";
 
-import { Logo, Eye, EyeSlash } from "../../assets/Icons";
+import { Logo, Eye, EyeSlash, InfoCircle } from "../../assets/Icons";
 import CustomButton from "../../components/button/CustomButton";
 type Props = {};
+type TooltipProps = { value: string };
 
 const Register = (props: Props) => {
+  const expression: RegExp = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
+  const navigate = useNavigate();
+  // local state
   const [passwordShown, setPasswordShown] = React.useState(false);
+  const [name, setName] = React.useState("");
+  const [email, setEmail] = React.useState("");
+  const [password, setPassword] = React.useState("");
+  const [nameValidate, setNameValidate] = React.useState("");
+  const [emailValidate, setEmailValidate] = React.useState("");
+  const [passwordValidate, setPasswordValidate] = React.useState("");
 
+  // handler
+  const handleSubmit = () => {
+    if (password.length == 0) {
+      setPasswordValidate("Nhập mật khẩu!");
+    }
+    if (email.length == 0) {
+      setEmailValidate("Nhập Email đăng ký!");
+    }
+    if (name.length == 0) {
+      setNameValidate("Nhập tên của bạn!");
+    }
+    navigate("./verify");
+    console.log({ name, email, password });
+  };
+
+  const handleName = (e: any) => {
+    setName(e.target.value);
+  };
+  const handlePassword = (e: any) => {
+    setPassword(e.target.value);
+  };
+  const handleEmail = (e: any) => {
+    // reset
+    setEmailValidate("");
+    //
+    if (e.target.value.length > 0) {
+      if (expression.test(e.target.value)) {
+        setEmail(e.target.value);
+      } else {
+        setEmailValidate("Email không hợp lệ!");
+      }
+    } else {
+      setEmailValidate("Nhập email đăng nhập!");
+    }
+  };
+
+  // mini component
+  const TooltipIcon = (props: TooltipProps) => {
+    const { value } = props;
+    const [hover, setHover] = React.useState(false);
+    const handleMouseIn = () => {
+      setHover(true);
+    };
+    const handleMouseOut = () => {
+      setHover(false);
+    };
+
+    return (
+      <>
+        <div
+          className="tooltip"
+          onMouseOver={handleMouseIn}
+          onMouseOut={handleMouseOut}
+        >
+          <img src={InfoCircle} />
+          {hover ? <span className="tooltip-text">{value}</span> : ""}
+        </div>
+      </>
+    );
+  };
   return (
     <>
       <div className="login-container">
@@ -32,17 +102,32 @@ const Register = (props: Props) => {
             <div className="divider">Hoặc</div>
             <label>Tên của bạn</label>
             <div className="input">
-              <input type="text" placeholder="Tên của bạn" />
+              <input
+                type="text"
+                placeholder="Tên của bạn"
+                onChange={(e) => handleName(e)}
+              />
             </div>
             <label>Địa chỉ Email</label>
             <div className="input">
-              <input type="text" placeholder="Email" />
+              <input
+                type="text"
+                placeholder="Email"
+                required
+                onChange={(e) => handleEmail(e)}
+              />
+              {emailValidate === "" ? (
+                ""
+              ) : (
+                <TooltipIcon value={emailValidate} />
+              )}
             </div>
             <label>Mật khẩu</label>
             <div className="input">
               <input
                 type={passwordShown ? "text" : "password"}
                 placeholder="Nhập mật khẩu"
+                onChange={(e) => handlePassword(e)}
               />
               <img
                 src={passwordShown ? Eye : EyeSlash}
@@ -54,6 +139,7 @@ const Register = (props: Props) => {
                 theme="light"
                 enabled={true}
                 btnText="Tạo tài khoản"
+                onClick={() => handleSubmit()}
               />
             </div>
           </div>

@@ -15,7 +15,8 @@ import AddCircleBold from "./icons/add-circle-bold.svg";
 // import searchIcon from "icons/search-linear.svg";
 import Eye from "./icons/eye.svg";
 import EyeSlash from "./icons/eye-slash.svg";
-
+import InfoCircle from "./icons/info-circle.svg";
+import ArrowLeft from "./icons/arrow-left.svg";
 export {
   Logo,
   Flame,
@@ -33,4 +34,6 @@ export {
   Messenger,
   Eye,
   EyeSlash,
+  InfoCircle,
+  ArrowLeft,
 };
