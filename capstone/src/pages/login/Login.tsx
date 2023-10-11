@@ -19,7 +19,7 @@ const Login = (props: Props) => {
   const [emailValidate, setEmailValidate] = React.useState("");
   const [passwordValidate, setPasswordValidate] = React.useState("");
 
-  // handleer
+  // handler
   const handleSubmit = () => {
     if (password.length == 0) {
       setPasswordValidate("Nhập mật khẩu!");

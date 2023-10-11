@@ -16,7 +16,7 @@ import AddCircleBold from "./icons/add-circle-bold.svg";
 import Eye from "./icons/eye.svg";
 import EyeSlash from "./icons/eye-slash.svg";
 import InfoCircle from "./icons/info-circle.svg";
-
+import ArrowLeft from "./icons/arrow-left.svg";
 export {
   Logo,
   Flame,
@@ -35,4 +35,5 @@ export {
   Eye,
   EyeSlash,
   InfoCircle,
+  ArrowLeft,
 };

@@ -5,11 +5,11 @@ import "./index.css";
 import { Provider } from "react-redux";
 import { store } from "./store/store.tsx";
 
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import Login from "./pages/login/Login.tsx";
 import ErrorPage from "./pages/error/ErrorPage.tsx";
 import Register from "./pages/register/Register.tsx";
-import PhoneVerify from "./pages/register/PhoneVerify.tsx";
+import Verify from "./pages/register/Verify.tsx";
 
 const router = createBrowserRouter([
   {
@@ -23,11 +23,14 @@ const router = createBrowserRouter([
   },
   {
     path: "/register",
-    element: <Register />,
     children: [
       {
+        index: true,
+        element: <Register />,
+      },
+      {
         path: "/register/verify",
-        element: <PhoneVerify />,
+        element: <Verify />,
       },
     ],
   },
