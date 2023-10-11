@@ -116,3 +116,34 @@
     }
   }
 }
+
+.tooltip {
+  display: inline-flex;
+  position: relative;
+  img {
+    height: 25px;
+  }
+  .tooltip-text::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: 60px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent $neutral-3 transparent;
+  }
+  .tooltip-text {
+    top: 120%;
+    right: -140%;
+    position: absolute;
+    width: 200px;
+    border: solid $neutral-3 0.2px;
+    background-color: $neutral-0;
+    color: $neutral-4;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 10px;
+    text-align: center;
+  }
+}
