@@ -26,7 +26,7 @@ const Register = (props: Props) => {
       setPasswordValidate("Nhập mật khẩu!");
     }
     if (email.length == 0) {
-      setEmailValidate("Nhập Email đăng nhập!");
+      setEmailValidate("Nhập Email đăng ký!");
     }
     if (name.length == 0) {
       setNameValidate("Nhập tên của bạn!");
