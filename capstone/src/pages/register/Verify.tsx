@@ -82,6 +82,9 @@ const Verify = (props: Props) => {
                 onClick={() => handleSubmit()}
               />
             </div>
+            <span>
+              Bạn đã có tài khoàn? <Link to={"/login"}>Đăng nhập.</Link>
+            </span>
           </div>
 
           <img className="login-banner" src={loginBanner} />
