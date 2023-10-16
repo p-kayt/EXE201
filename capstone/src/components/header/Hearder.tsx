@@ -47,16 +47,15 @@ class Hearder extends React.Component<headerProps, headerState> {
         </div>
 
         <div className="header-right-content">
-          <CustomButton
-            theme="light"
-            style={{ width: "120px" }}
-            iconSrc={Share}
-            enabled={true}
-            btnText="Mời bạn"
-          />
-
           {this.state.checkLogIn ? (
             <>
+              <CustomButton
+                theme="light"
+                style={{ width: "120px" }}
+                iconSrc=""
+                enabled={true}
+                btnText="0đ"
+              />
               <CustomButton
                 theme="light"
                 style={{ width: "50px" }}

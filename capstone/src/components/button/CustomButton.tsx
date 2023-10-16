@@ -81,7 +81,7 @@ const CustomButton = (props: BtnProps) => {
         style={style}
         className={btnClass}
         onClick={enabled ? onClick : () => {}}
-      >
+      > 
         <span style={{ backgroundColor: color }}>
           {iconSrc || imgSrc ? mediaContent : ""}
           {btnText}

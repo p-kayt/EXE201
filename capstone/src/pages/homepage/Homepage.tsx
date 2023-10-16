@@ -2,18 +2,38 @@ import React from "react";
 import Hearder from "../../components/header/Hearder";
 import Footer from "../../components/footer/Footer";
 import "./homepage.scss";
-import GirlPicture from "../../assets/images/Frame-48097841.png";
 import DropdownSearchBar from "../../components/dropdown/DropdownSearchBar";
-import Button from "../../components/button/Button";
-import HorizontalLine from "../../assets/icons/Horizontal-line.svg";
-import Polygon from "../../assets/icons/polygon-(matic).svg";
-import Hutech from "../../assets/images/hutechlogo.png";
-import BK from "../../assets/images/bklogo.png";
-import NgoaiThuong from "../../assets/images/ngoaithuonglogo.png";
-import VanLang from "../../assets/images/vl-PhotoRoom.png";
-import UAH from "../../assets/images/UAH.png";
-import FPTU from "../../assets/images/FPTU.png";
-import NEU from "../../assets/images/NEU.png";
+import Button from "../../components/button/CustomButton";
+import CustomButton from "../../components/button/CustomButton";
+import {
+  PurpleBackgroundCheck,
+  HorizontalLine,
+  Polygon,
+  Calculator,
+  Brain,
+  Business,
+  Community,
+  Computer,
+  Graph,
+  Heart,
+  IT,
+  Paint,
+  Physics,
+  Language,
+} from "../../assets/Icons";
+
+import {
+  GirlPicture,
+  CourseCard1,
+  CourseCard2,
+  Hutech,
+  BK,
+  NgoaiThuong,
+  VanLang,
+  UAH,
+  FPTU,
+  NEU,
+} from "../../assets/Images";
 
 const Homepage = () => {
   return (
@@ -35,8 +55,15 @@ const Homepage = () => {
             </div>
 
             <div className="homepage-introduction-search-bar">
-              <DropdownSearchBar />{" "}
-              <Button icon="" type="enable" btnText="Tìm Kiếm" theme="normal" />
+              <DropdownSearchBar style={{ width: "70%" }} />
+              <Button
+                style={{ width: "30%" }}
+                iconSrc=""
+                enabled={true}
+                btnText="Tìm Kiếm"
+                theme="light"
+                color={"#F0631C"}
+              />
             </div>
 
             <div className="homepage-introduction-stats">
@@ -73,6 +100,149 @@ const Homepage = () => {
             <img src={UAH} />
             <img src={FPTU} />
             <img src={NEU} />
+          </div>
+        </div>
+
+        <div className="homepage-description">
+          <div className="homepage-description-section">
+            <div className="homepage-description-section-content">
+              <p className="homepage-description-section-content-title">
+                Tìm kiếm gia sư <span>nhanh chóng</span>
+              </p>
+
+              <p className="homepage-description-section-content-description">
+                Mạng lưới rộng lớn các gia sư đại học giàu kinh nghiệm và hiểu
+                biết từ các lĩnh vực khác nhau.
+              </p>
+
+              <div className="homepage-description-section-content-valid">
+                <div className="homepage-description-section-content-check">
+                  <img src={PurpleBackgroundCheck} />
+                  <p>Uy Tín</p>
+                </div>
+
+                <div className="homepage-description-section-content-check">
+                  <img src={PurpleBackgroundCheck} />
+                  <p>Phản hồi giải đáp nhanh chóng</p>
+                </div>
+
+                <div className="homepage-description-section-content-check">
+                  <img src={PurpleBackgroundCheck} />
+                  <p>Chất lượng bài học đầu tư kỹ lưỡng</p>
+                </div>
+              </div>
+
+              <CustomButton
+                style={{ width: "20%", textAlign: "center" }}
+                btnText="Khám phá ngay"
+                theme="light"
+                enabled={true}
+              />
+            </div>
+
+            <div className="homepage-description-section-image">
+              <img src={CourseCard1} />
+            </div>
+          </div>
+
+          <div className="homepage-description-section">
+            <div className="homepage-description-section-image">
+              <img src={CourseCard2} />
+            </div>
+
+            <div
+              className="homepage-description-section-content"
+              style={{ marginRight: "9%" }}
+            >
+              <p className="homepage-description-section-content-title">
+                Tìm kiếm khoá học <span>nhanh chóng</span>
+              </p>
+
+              <p className="homepage-description-section-content-description">
+                Mạng lưới rộng lớn các gia sư đại học giàu kinh nghiệm và hiểu
+                biết từ các lĩnh vực khác nhau.
+              </p>
+
+              <div className="homepage-description-section-content-valid">
+                <div className="homepage-description-section-content-check">
+                  <img src={PurpleBackgroundCheck} />
+                  <p>Uy Tín</p>
+                </div>
+
+                <div className="homepage-description-section-content-check">
+                  <img src={PurpleBackgroundCheck} />
+                  <p>Phản hồi giải đáp nhanh chóng</p>
+                </div>
+
+                <div className="homepage-description-section-content-check">
+                  <img src={PurpleBackgroundCheck} />
+                  <p>Chất lượng bài học đầu tư kỹ lưỡng</p>
+                </div>
+              </div>
+
+              <CustomButton
+                style={{ width: "20%", textAlign: "center" }}
+                btnText="Khám phá ngay"
+                theme="light"
+                enabled={true}
+              />
+            </div>
+          </div>
+        </div>
+
+        <div className="homepage-majors">
+          <div className="homepage-majors-title">
+            Các chuyên ngành <span>nổi bật</span>
+          </div>
+          
+          <div className="homepage-majors-rows">
+            <div className="homepage-majors-rows-item">
+              <img src={Calculator} />
+              Toán học & Logic
+            </div>
+            <div className="homepage-majors-rows-item">
+              <img src={Business} />
+              Kinh doanh
+            </div>
+            <div className="homepage-majors-rows-item">
+              <img src={IT} />
+              Công nghệ thông tin 
+            </div>
+            <div className="homepage-majors-rows-item">
+              <img src={Computer} />
+              Khoa học máy tính
+            </div>
+            <div className="homepage-majors-rows-item">
+              <img src={Paint} />
+              Nghệ thuật & Nhân văn
+            </div>
+          </div>
+
+          <div className="homepage-majors-rows">
+            <div className="homepage-majors-rows-item">
+              <img src={Graph} />
+              Khoa học dữ liệu
+            </div>
+            <div className="homepage-majors-rows-item">
+              <img src={Community} />
+              Khoa học xã hội
+            </div>
+            <div className="homepage-majors-rows-item">
+              <img src={Physics} />
+              Vật lý & Kỹ thuật
+            </div>
+            <div className="homepage-majors-rows-item">
+              <img src={Brain} />
+              Phát triển cá nhân
+            </div>
+            <div className="homepage-majors-rows-item">
+              <img src={Heart} />
+              Sức khỏe
+            </div>
+            <div className="homepage-majors-rows-item">
+              <img src={Language} />
+              Ngôn ngữ
+            </div>
           </div>
         </div>
       </div>

@@ -1,8 +1,12 @@
-.homepage-introduction {
+.homepage-content {
   font-family: "Be Vietnam Pro", sans-serif;
+}
+
+.homepage-introduction {
   display: flex;
   padding: 65px 64px;
   text-align: left;
+  justify-content: space-between;
 }
 
 .homepage-introduction-left-content {
@@ -13,14 +17,14 @@
 
 .homepage-introduction-heading {
   font-size: 56px;
-  font-style: normal;
+
   font-weight: 700;
   line-height: 68px;
 }
 
 .homepage-introduction-description {
   font-size: 20px;
-  font-style: normal;
+
   font-weight: 600;
   margin-top: 12px;
 }
@@ -48,11 +52,9 @@
 
 .homepage-association {
   margin: 64px 64px;
-  box-shadow: 
-  8px 8px #E2EAFD, /* The original shadow */
-  16px 0 0 1px #000, /* Top-right border */
-  0 16px 0 1px #000, /* Bottom-left border */
-  16px 16px 0 1px #000; /* Bottom-right border */
+  box-shadow: 8px 8px #e2eafd, /* The original shadow */ 9px 7px 0 1px #000,
+    /* Top-right border */ 7px 9px 0 1px #000,
+    /* Bottom-left border */ 9px 9px 0 1px #000; /* Bottom-right border */
   border-radius: 8px;
 }
 
@@ -62,7 +64,7 @@
   justify-content: center;
   align-items: center;
   font-size: 32px;
-  font-style: normal;
+
   font-weight: 600;
   border-radius: 8px 8px 0px 0px;
   border: 2px solid #000;
@@ -73,7 +75,99 @@
   flex-direction: row;
   padding: 31px 47px;
   align-items: center;
-  gap: 94px;
+  gap: 7%;
   border-radius: 0px 0px 8px 8px;
   border: 2px solid #000;
+  justify-content: center;
+}
+
+.homepage-description-section {
+  display: flex;
+  justify-content: space-between;
+  padding: 64px 64px;
+}
+
+.homepage-description-section-content {
+  text-align: left;
+  width: 35%;
+}
+
+.homepage-description-section-image {
+  img {
+    width: 100%;
+  }
+}
+
+.homepage-description-section-content-title {
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 120%;
+  margin: 0px;
+  padding-top: 4%;
+
+  span {
+    color: #f0631c;
+  }
+}
+
+.homepage-description-section-content-valid {
+  margin: 24px 0px;
+}
+
+.homepage-description-section-content-description {
+  font-size: 18px;
+  font-weight: 400;
+  margin: 0px;
+  padding-top: 16px;
+}
+
+.homepage-description-section-content-check {
+  display: flex;
+  gap: 8px;
+
+  p {
+    font-size: 16px;
+    font-weight: 400;
+  }
+}
+
+.homepage-description-second-section-right-content {
+  text-align: right;
+}
+
+.homepage-majors {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+  padding: 80px 64px;
+}
+
+.homepage-majors-title {
+  font-size: 48px;
+  font-weight: 600;
+
+  span {
+    color: #f0631c;
+  }
+}
+
+.homepage-majors-rows {
+  display: flex;
+  justify-content: center;
+  gap: 2%;
+  height: 150px;
+}
+
+.homepage-majors-rows-item {
+  display: flex;
+  flex-direction: column;
+  width: 15%;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  border: 2px solid #000;
+  gap: 12px;
+  font-size: 16px;
+  font-weight: 500;
 }

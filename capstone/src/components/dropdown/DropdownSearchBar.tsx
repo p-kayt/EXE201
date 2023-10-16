@@ -2,9 +2,15 @@ import React from "react";
 
 import { Arrow, SearchIcon } from "../../assets/Icons";
 
-const DropdownSearchBar = () => {
+type SearchBarProps = {
+  style?: object;
+};
+
+const DropdownSearchBar = (props: SearchBarProps) => {
+  const { style } = props;
+
   return (
-    <div className="dropdown-search-bar">
+    <div className="dropdown-search-bar" style={style}>
       <img src={SearchIcon} alt="" />
       <input placeholder="Search"></input>
       <img src={Arrow} className="search-bar-arrow" />
