@@ -3,6 +3,7 @@ import React from "react";
 import { Logo, Share, Notification, Messenger } from "../../assets/Icons";
 import "./header.scss";
 import CustomButton from "../button/CustomButton";
+import { Link } from "react-router-dom";
 
 type headerProps = {};
 
@@ -38,7 +39,9 @@ class Hearder extends React.Component<headerProps, headerState> {
           </div>
 
           <div className="header-tabs">
-            <p>Khóa học online</p>
+            <p>
+              <Link to={"./course-list"}>Khóa học online</Link>
+            </p>
           </div>
 
           <div className="header-tabs">

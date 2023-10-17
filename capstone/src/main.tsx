@@ -10,12 +10,24 @@ import Login from "./pages/login/Login.tsx";
 import ErrorPage from "./pages/error/ErrorPage.tsx";
 import Register from "./pages/register/Register.tsx";
 import Verify from "./pages/register/Verify.tsx";
+import CoursesList from "./pages/courses/CoursesList.tsx";
+import TempComponent from "./pages/TempComponent.tsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
     errorElement: <ErrorPage />,
+    children: [
+      {
+        path: "/course-list",
+        element: <CoursesList />,
+      },
+      {
+        path: "/example",
+        element: <TempComponent />,
+      },
+    ],
   },
   {
     path: "/login",

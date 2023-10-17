@@ -10,6 +10,7 @@ import Footer from "../components/footer/Footer";
 import TabBar from "../components/tabs/TabBar";
 import { ToastContainer, toast } from "react-toastify";
 import CustomButton from "../components/button/CustomButton";
+import { Outlet } from "react-router-dom";
 
 const TempComponent = () => {
   const displayToast = () => {
@@ -17,7 +18,8 @@ const TempComponent = () => {
   };
   return (
     <>
-      <Hearder />
+      {/* <Hearder /> */}
+
       {/* ---------------normal button-------------------------------------------- */}
       <div style={{ width: "100px", margin: "20px" }}>
         <CustomButton
@@ -138,7 +140,7 @@ const TempComponent = () => {
       />
       {/* ----------------------------------------------------------- */}
       <div className="card" style={{ width: "200px", margin: "20px" }}>
-        <span>
+        <span className="span">
           <div>content</div>
         </span>
       </div>
@@ -146,7 +148,7 @@ const TempComponent = () => {
       <div>
         <button onClick={() => displayToast()}>Display Toast</button>
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 };

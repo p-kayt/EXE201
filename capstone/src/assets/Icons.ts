@@ -32,6 +32,8 @@ import Paint from "./icons/Paint.svg";
 import Physics from "./icons/Physics.svg";
 import Language from "./icons/Language.svg";
 
+import HeartLinear from "./icons/heart-linear.svg";
+import StarFilled from "./icons/Star-filled.svg";
 export {
   Logo,
   Flame,
@@ -65,4 +67,6 @@ export {
   Paint,
   Physics,
   Language,
+  HeartLinear,
+  StarFilled,
 };
