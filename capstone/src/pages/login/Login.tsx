@@ -6,6 +6,8 @@ import loginBanner from "../../assets/images/loginbanner.png";
 
 import CustomButton from "../../components/button/CustomButton";
 import { Logo, Eye, EyeSlash, InfoCircle } from "../../assets/Icons";
+import { login } from "../../api/user/login";
+import { VERSION, instance } from "../../api/api";
 type Props = {};
 type TooltipProps = { value: string };
 
@@ -20,7 +22,7 @@ const Login = (props: Props) => {
   const [passwordValidate, setPasswordValidate] = React.useState("");
 
   // handler
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     if (password.length == 0) {
       setPasswordValidate("Nhập mật khẩu!");
     }
@@ -28,7 +30,10 @@ const Login = (props: Props) => {
       setEmailValidate("Nhập Email đăng nhập!");
     }
 
-    console.log({ email, password });
+    const data = await login(
+      JSON.stringify({ email: email, password: password })
+    );
+    console.log(data);
   };
 
   const handlePassword = (e: any) => {
