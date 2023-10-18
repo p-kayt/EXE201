@@ -11,11 +11,11 @@ const Header = (props: HeaderProps) => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const endOfURL = location.pathname.split('/').pop();
+  const endOfURL = location.pathname.split("/").pop();
 
   const handleNavigation = (route: string) => {
     navigate(route);
-    window.scrollTo(0, 0); 
+    window.scrollTo(0, 0);
   };
 
   return (
@@ -25,18 +25,32 @@ const Header = (props: HeaderProps) => {
           <img className="header-brand-logo" src={Logo} />
           <p className="header-brand-name">Zuni Tutor</p>
         </div>
-        <div className={(endOfURL == "") ? "header-tabs-active" : "header-tabs"} onClick={() => handleNavigation("./")}>
-          <p>Tranh chủ</p>
+        <div
+          className={endOfURL == "" ? "header-tabs-active" : "header-tabs"}
+          onClick={() => handleNavigation("./")}
+        >
+          <p>Trang chủ</p>
         </div>
-        <div className="header-tabs">
+        <div
+          className={
+            endOfURL == "course-list" ? "header-tabs-active" : "header-tabs"
+          }
+          onClick={() => handleNavigation("./course-list")}
+        >
           <p>Học với gia sư</p>
         </div>
-        <div className={(endOfURL == "course-list") ? "header-tabs-active" : "header-tabs"} onClick={() => handleNavigation("./course-list")}>
-          <p>
-            Khóa học online
-          </p>
+        <div
+          className={"header-tabs"}
+          onClick={() => handleNavigation("./course-list")}
+        >
+          <p>Khóa học online</p>
         </div>
-        <div className={(endOfURL == "about-us") ? "header-tabs-active" : "header-tabs"} onClick={() => handleNavigation("./about-us")}>
+        <div
+          className={
+            endOfURL == "about-us" ? "header-tabs-active" : "header-tabs"
+          }
+          onClick={() => handleNavigation("./about-us")}
+        >
           <p>Về chúng tôi</p>
         </div>
       </div>

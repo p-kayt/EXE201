@@ -9,10 +9,8 @@ const authSlice = createSlice({
   name: "auth",
   initialState: initialState,
   reducers: {
-    setUser: (state, action) => {
-      const user = action.payload;
-      state.role = user.role;
-      // state.permissions = user.permissions;
+    setAuthUser: (state: any, action: any) => {
+      state.user = action.payload;
     },
   },
   extraReducers: (builder) => {
@@ -25,8 +23,13 @@ const authSlice = createSlice({
         state.loading = "succeeded";
         state.error = null;
         if (action.payload.message === "Success") {
-          const token: string = action.payload.result;
-          const auth: any = jwtDecode(token);
+          const accessToken: string = action.payload.result;
+          const refreshToken: string = action.payload.refreshToken;
+          const auth: any = jwtDecode(accessToken);
+          localStorage.setItem(
+            "user",
+            JSON.stringify({ accessToken, refreshToken })
+          );
           console.log(auth);
           state.user = auth;
         } else {
@@ -43,7 +46,7 @@ const authSlice = createSlice({
   //   [loginUser.pending]:(state:any, action:any)=>{},
   // }
 });
-export const { setUser } = authSlice.actions;
+export const { setAuthUser } = authSlice.actions;
 
 // export const selectUser = state => state.auth;
 
