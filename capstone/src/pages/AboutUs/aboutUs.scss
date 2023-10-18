@@ -1,11 +1,13 @@
 .aboutUs-content {
+  text-align: center;
   font-family: "Be Vietnam Pro", sans-serif;
   padding: 0px 60px;
 
-  .aboutUs-tutor-register{
+  .aboutUs-tutor-register {
     padding: 64px 0px;
+    justify-content: center;
 
-    .aboutUs-tutor-register-title{
+    .aboutUs-tutor-register-title {
       font-size: 32px;
       font-weight: 600;
     }
@@ -17,6 +19,42 @@
       margin-top: 12px;
       margin-bottom: 32px;
     }
+
+    .aboutUs-tutor-register-images {
+      display: flex;
+      justify-content: center;
+      gap: 2%;
+    }
   }
 }
 
+.aboutUs-tutor-experience {
+  margin: 64px 60px 80px 60px;
+  padding: 60px;
+  background-color: #e2eafd;
+  border-radius: 16px;
+  text-align: center;
+
+  .aboutUs-tutor-experience-title {
+    margin: 0px 206.5px;
+    font-size: 48px;
+    font-weight: 600;
+
+    span {
+      color: #f0631c;
+    }
+  }
+
+  .aboutUs-tutor-experience-description {
+    margin-top: 16px;
+    font-size: 20px;
+    font-weight: 500;
+  }
+
+  .aboutUs-tutor-experience-images {
+    margin-top: 48px;
+    display: flex;
+    justify-content: center;
+    gap: 2%;
+  }
+}

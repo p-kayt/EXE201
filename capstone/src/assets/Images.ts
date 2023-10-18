@@ -9,4 +9,11 @@ export { default as UAH } from "./images/UAH.png";
 export { default as FPTU } from "./images/FPTU.png";
 export { default as NEU } from "./images/NEU.png";
 export { default as ManImage } from "./images/Man-image.png";
+export { default as AboutUsLeft } from "./images/AboutUsLeft.png";
+export { default as AboutUsCenter1 } from "./images/AboutUsCenter1.png";
+export { default as AboutUsCenter2 } from "./images/AboutUsCenter2.png";
+export { default as AboutUsRight } from "./images/AboutUsRight.png";
+export { default as AboutUsQuality1 } from "./images/AboutUsQuality1.png";
+export { default as AboutUsQuality2 } from "./images/AboutUsQuality2.png";
+export { default as AboutUsQuality3 } from "./images/AboutUsQuality3.png";
 

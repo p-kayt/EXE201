@@ -12,8 +12,9 @@ import Register from "./pages/register/Register.tsx";
 import Verify from "./pages/register/Verify.tsx";
 import CoursesList from "./pages/courses/CoursesList.tsx";
 import TempComponent from "./pages/TempComponent.tsx";
-import Homepage from "./pages/HomePage/Homepage.tsx";
+import Homepage from "./pages/homepage/Homepage.tsx";
 import AboutUs from "./pages/AboutUs/AboutUs.tsx";
+import RegisterTutor from "./pages/RegisterTutor/RegisterTutor.tsx";
 
 const router = createBrowserRouter([
   {
@@ -36,7 +37,11 @@ const router = createBrowserRouter([
       {
         path: "/about-us",
         element: <AboutUs />,
-      }
+      },
+      {
+        path: "/register-tutor",
+        element: <RegisterTutor />,
+      },
     ],
   },
   {
