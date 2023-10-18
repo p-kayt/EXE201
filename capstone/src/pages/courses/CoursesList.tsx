@@ -2,6 +2,7 @@ import React from "react";
 import "./courseList.scss";
 import { HeartLinear, SearchIcon, StarFilled } from "../../assets/Icons";
 import Dropdown from "../../components/dropdown/Dropdown";
+import { items } from "./data";
 
 type Props = {};
 
@@ -110,66 +111,4 @@ const CoursesList = (props: Props) => {
   );
 };
 
-const items = [
-  {
-    id: "1",
-    CourseName: "Luyện tiếng Nhật ngữ pháp N2 (Phần 1)",
-    RatingStar: 5.0,
-    Fullname: "Đinh Thùy Linh", //TutorName
-    CoursePrice: 99000,
-    CourseImage:
-      "https://images.idgesg.net/images/article/2019/05/cso_best_security_software_best_ideas_best_technology_lightbulb_on_horizon_of_circuit_board_landscape_with_abstract_digital_connective_technology_atmosphere_ideas_innovation_creativity_by_peshkov_gettyimages-965785212_3x2_2400x1600-100797318-large.jpg?auto=webp&quality=85,70", //MISSING
-    CourseMajorName: "Ngôn ngữ nhưng dài hơn",
-  },
-  {
-    id: "2",
-    CourseName: "Luyện tiếng Nhật ngữ pháp N2 (Phần 1)",
-    RatingStar: 5.0,
-    Fullname: "Đinh Thùy Linh", //TutorName
-    CoursePrice: 99000,
-    CourseImage:
-      "https://images.idgesg.net/images/article/2019/05/cso_best_security_software_best_ideas_best_technology_lightbulb_on_horizon_of_circuit_board_landscape_with_abstract_digital_connective_technology_atmosphere_ideas_innovation_creativity_by_peshkov_gettyimages-965785212_3x2_2400x1600-100797318-large.jpg?auto=webp&quality=85,70", //MISSING
-    CourseMajorName: "Ngôn ngữ",
-  },
-  {
-    id: "3",
-    CourseName: "Luyện tiếng Nhật ngữ pháp N2 (Phần 1)",
-    RatingStar: 5.0,
-    Fullname: "Đinh Thùy Linh", //TutorName
-    CoursePrice: 99000,
-    CourseImage:
-      "https://images.idgesg.net/images/article/2019/05/cso_best_security_software_best_ideas_best_technology_lightbulb_on_horizon_of_circuit_board_landscape_with_abstract_digital_connective_technology_atmosphere_ideas_innovation_creativity_by_peshkov_gettyimages-965785212_3x2_2400x1600-100797318-large.jpg?auto=webp&quality=85,70", //MISSING
-    CourseMajorName: "Ngôn ngữ",
-  },
-  {
-    id: "4",
-    CourseName: "Luyện tiếng Nhật ngữ pháp N2 (Phần 1)",
-    RatingStar: 5.0,
-    Fullname: "Đinh Thùy Linh", //TutorName
-    CoursePrice: 99000,
-    CourseImage:
-      "https://images.idgesg.net/images/article/2019/05/cso_best_security_software_best_ideas_best_technology_lightbulb_on_horizon_of_circuit_board_landscape_with_abstract_digital_connective_technology_atmosphere_ideas_innovation_creativity_by_peshkov_gettyimages-965785212_3x2_2400x1600-100797318-large.jpg?auto=webp&quality=85,70", //MISSING
-    CourseMajorName: "Ngôn ngữ",
-  },
-  {
-    id: "5",
-    CourseName: "Luyện tiếng Nhật ngữ pháp N2 (Phần 1)",
-    RatingStar: 5.0,
-    Fullname: "Đinh Thùy Linh", //TutorName
-    CoursePrice: 99000,
-    CourseImage:
-      "https://images.idgesg.net/images/article/2019/05/cso_best_security_software_best_ideas_best_technology_lightbulb_on_horizon_of_circuit_board_landscape_with_abstract_digital_connective_technology_atmosphere_ideas_innovation_creativity_by_peshkov_gettyimages-965785212_3x2_2400x1600-100797318-large.jpg?auto=webp&quality=85,70", //MISSING
-    CourseMajorName: "Ngôn ngữ",
-  },
-  {
-    id: "6",
-    CourseName: "Luyện tiếng Nhật ngữ pháp N2 (Phần 1)",
-    RatingStar: 5.0,
-    Fullname: "Đinh Thùy Linh", //TutorName
-    CoursePrice: 99000,
-    CourseImage:
-      "https://images.idgesg.net/images/article/2019/05/cso_best_security_software_best_ideas_best_technology_lightbulb_on_horizon_of_circuit_board_landscape_with_abstract_digital_connective_technology_atmosphere_ideas_innovation_creativity_by_peshkov_gettyimages-965785212_3x2_2400x1600-100797318-large.jpg?auto=webp&quality=85,70", //MISSING
-    CourseMajorName: "Ngôn ngữ",
-  },
-];
 export default CoursesList;

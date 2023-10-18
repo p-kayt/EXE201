@@ -12,6 +12,7 @@ import Register from "./pages/register/Register.tsx";
 import Verify from "./pages/register/Verify.tsx";
 import CoursesList from "./pages/courses/CoursesList.tsx";
 import TempComponent from "./pages/TempComponent.tsx";
+import Homepage from "./pages/Homepage.tsx";
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
     element: <App />,
     errorElement: <ErrorPage />,
     children: [
+      {
+        index: true,
+        element: <Homepage />,
+      },
       {
         path: "/course-list",
         element: <CoursesList />,

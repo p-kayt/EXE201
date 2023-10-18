@@ -19,6 +19,7 @@ import InfoCircle from "./icons/info-circle.svg";
 import ArrowLeft from "./icons/arrow-left.svg";
 import HeartLinear from "./icons/heart-linear.svg";
 import StarFilled from "./icons/Star-filled.svg";
+
 export {
   Logo,
   Flame,
