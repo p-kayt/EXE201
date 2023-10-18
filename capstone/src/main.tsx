@@ -12,8 +12,9 @@ import Register from "./pages/register/Register.tsx";
 import Verify from "./pages/register/Verify.tsx";
 import CoursesList from "./pages/courses/CoursesList.tsx";
 import TempComponent from "./pages/TempComponent.tsx";
-import Homepage from "./pages/homepage/Homepage.tsx";
 import AboutUs from "./pages/AboutUs/AboutUs.tsx";
+import AuthRoutes from "./components/route/AuthRoutes.tsx";
+import Homepage from "./pages/homepage/Homepage.tsx";
 import RegisterTutor from "./pages/RegisterTutor/RegisterTutor.tsx";
 
 const router = createBrowserRouter([
@@ -58,6 +59,34 @@ const router = createBrowserRouter([
       {
         path: "/register/verify",
         element: <Verify />,
+      },
+    ],
+  },
+  {
+    element: <AuthRoutes />,
+    children: [
+      {
+        path: "/",
+        element: <App />,
+        errorElement: <ErrorPage />,
+        children: [
+          {
+            index: true,
+            element: <Homepage />,
+          },
+          {
+            path: "/course-list",
+            element: <CoursesList />,
+          },
+          {
+            path: "/example",
+            element: <TempComponent />,
+          },
+          {
+            path: "/about-us",
+            element: <AboutUs />,
+          },
+        ],
       },
     ],
   },
