@@ -1,9 +1,7 @@
 import React, { useEffect } from "react";
 import "./login.scss";
 import { Link, useNavigate } from "react-router-dom";
-
 import loginBanner from "../../assets/images/loginbanner.png";
-
 import CustomButton from "../../components/button/CustomButton";
 import { Logo, Eye, EyeSlash, InfoCircle } from "../../assets/Icons";
 import { useDispatch, useSelector } from "react-redux";
