@@ -1,8 +1,14 @@
 import React from "react";
 import "./courseList.scss";
-import { HeartLinear, SearchIcon, StarFilled } from "../../assets/Icons";
+import {
+  Arrow,
+  Category,
+  HeartLinear,
+  SearchIcon,
+  StarFilled,
+} from "../../assets/Icons";
 import Dropdown from "../../components/dropdown/Dropdown";
-import { items } from "./data";
+import { categories, items } from "./data";
 
 type Props = {};
 
@@ -24,26 +30,31 @@ const CoursesList = (props: Props) => {
   return (
     <>
       <div className="list-container">
-        <h1>Khoá học online</h1>
+        <h1>Khoá học với gia sư</h1>
         <div className="content">
           <div className="filter-container">
-            <div>
-              <h3>Bộ lọc</h3>
+            <div className="filter-item">
+              <h2>Bộ lọc</h2>
             </div>
-            <div>
+            <div className="filter-item">
               <h3>Giá</h3>
+              <img src={Arrow} />
             </div>
-            <div>
+            <div className="filter-item">
               <h3>Đánh giá</h3>
+              <img src={Arrow} />
             </div>
-            <div>
+            <div className="filter-item">
               <h3>Hình thức</h3>
+              <img src={Arrow} />
             </div>
-            <div>
+            <div className="filter-item">
               <h3>Thời gian bắt đầu</h3>
+              <img src={Arrow} />
             </div>
-            <div>
+            <div className="filter-item">
               <h3>Thời lượng buổi học</h3>
+              <img src={Arrow} />
             </div>
           </div>
           <div className="list-item-container">
@@ -53,19 +64,21 @@ const CoursesList = (props: Props) => {
                 <input placeholder="Tìm kiếm bằng từ khoá hoặc mã môn"></input>
               </div>
               <div className="sort-box">
-                <Dropdown
-                  dropdownText="Sắp xếp"
-                  valueList={[
-                    "Dropdown item 1",
-                    "Dropdown item 2",
-                    "Dropdown item 3",
-                    "Dropdown item 4",
-                  ]}
-                  selectedItem={"Dropdown item 1"}
-                />
+                <Dropdown dropdownText="Sắp xếp" selectedItem={""} />
               </div>
             </div>
-            <div className="category">Categories</div>
+            <div className="category">
+              <div className="category-item selected">
+                <img src={Category} />
+                <p>Tất cả</p>
+              </div>
+              {categories.map((item, index) => (
+                <div className="category-item" key={item.id}>
+                  <img src={item.icon} />
+                  <p>{item.courseMajorName}</p>
+                </div>
+              ))}
+            </div>
             <div className="item-group">
               {items?.map((item, index) => (
                 <div
