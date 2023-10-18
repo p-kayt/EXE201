@@ -20,6 +20,9 @@ import {
   Paint,
   Physics,
   Language,
+  Hat,
+  Choose,
+  MultipleArrow,
 } from "../../assets/Icons";
 
 import {
@@ -33,12 +36,12 @@ import {
   UAH,
   FPTU,
   NEU,
+  ManImage,
 } from "../../assets/Images";
 
 const Homepage = () => {
   return (
     <>
-      <Hearder />
       <div className="homepage-content">
         <div className="homepage-introduction">
           <div className="homepage-introduction-left-content">
@@ -194,7 +197,7 @@ const Homepage = () => {
           <div className="homepage-majors-title">
             Các chuyên ngành <span>nổi bật</span>
           </div>
-          
+
           <div className="homepage-majors-rows">
             <div className="homepage-majors-rows-item">
               <img src={Calculator} />
@@ -206,7 +209,7 @@ const Homepage = () => {
             </div>
             <div className="homepage-majors-rows-item">
               <img src={IT} />
-              Công nghệ thông tin 
+              Công nghệ thông tin
             </div>
             <div className="homepage-majors-rows-item">
               <img src={Computer} />
@@ -245,8 +248,76 @@ const Homepage = () => {
             </div>
           </div>
         </div>
+
+        <div className="homepage-experience">
+          <div className="homepage-experience-content">
+            <div className="homepage-experience-content-title">
+              Trải nghiệm và chất lượng
+            </div>
+
+            <div className="homepage-experience-content-description">
+              Zuni Tutor là một ứng dụng hết sức hữu ích và đáng giá cho việc
+              thuê gia sư đại học và tìm kiếm khóa học đa dạng.
+            </div>
+
+            <div className="homepage-experience-content-grid">
+              <div className="homepage-experience-content-grid-item">
+                <div className="homepage-experience-content-grid-item-title">
+                  Đội ngũ gia sư
+                </div>
+
+                <div className="homepage-experience-content-grid-item-content">
+                  Zuni Tutor đảm bảo chất lượng gia sư bằng cách xác minh và
+                  kiểm tra kỹ lưỡng trước khi chấp nhận họ vào hệ thống.
+                </div>
+
+                <img src={Hat} />
+              </div>
+
+              <div className="homepage-experience-content-grid-item">
+                <div className="homepage-experience-content-grid-item-title">
+                  Đội ngũ gia sư
+                </div>
+
+                <div className="homepage-experience-content-grid-item-content">
+                  Zuni Tutor đảm bảo chất lượng gia sư bằng cách xác minh và
+                  kiểm tra kỹ lưỡng trước khi chấp nhận họ vào hệ thống.
+                </div>
+
+                <img src={Hat} />
+              </div>
+
+              <div className="homepage-experience-content-grid-item">
+                <div className="homepage-experience-content-grid-item-title">
+                  Đội ngũ gia sư
+                </div>
+
+                <div className="homepage-experience-content-grid-item-content">
+                  Zuni Tutor đảm bảo chất lượng gia sư bằng cách xác minh và
+                  kiểm tra kỹ lưỡng trước khi chấp nhận họ vào hệ thống.
+                </div>
+
+                <img src={Choose} />
+              </div>
+
+              <div className="homepage-experience-content-grid-item">
+                <div className="homepage-experience-content-grid-item-title">
+                  Đội ngũ gia sư
+                </div>
+
+                <div className="homepage-experience-content-grid-item-content">
+                  Zuni Tutor đảm bảo chất lượng gia sư bằng cách xác minh và
+                  kiểm tra kỹ lưỡng trước khi chấp nhận họ vào hệ thống.
+                </div>
+
+                <img src={MultipleArrow} />
+              </div>
+            </div>
+          </div>
+
+          <img src={ManImage} />
+        </div>
       </div>
-      <Footer />
     </>
   );
 };

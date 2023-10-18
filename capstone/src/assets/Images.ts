@@ -8,3 +8,5 @@ export { default as VanLang } from "./images/vl-PhotoRoom.png";
 export { default as UAH } from "./images/UAH.png";
 export { default as FPTU } from "./images/FPTU.png";
 export { default as NEU } from "./images/NEU.png";
+export { default as ManImage } from "./images/Man-image.png";
+

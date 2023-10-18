@@ -31,7 +31,9 @@ import IT from "./icons/IT.svg";
 import Paint from "./icons/Paint.svg";
 import Physics from "./icons/Physics.svg";
 import Language from "./icons/Language.svg";
-
+import Hat from "./icons/Hat.svg";
+import Choose from "./icons/choose.svg";
+import MultipleArrow from "./icons/Multiple-arrows.svg";
 import HeartLinear from "./icons/heart-linear.svg";
 import StarFilled from "./icons/Star-filled.svg";
 export {
@@ -69,4 +71,7 @@ export {
   Language,
   HeartLinear,
   StarFilled,
+  Hat,
+  Choose,
+  MultipleArrow,
 };
