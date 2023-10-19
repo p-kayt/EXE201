@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Hearder from "../../components/header/Hearder";
 import Footer from "../../components/footer/Footer";
 import "./homepage.scss";
@@ -39,15 +39,18 @@ import {
   NEU,
   ManImage,
 } from "../../assets/Images";
+import { useDispatch, useSelector } from "react-redux";
+import { messageSelector } from "../../store/selector";
+import { setMessage } from "../../store/features/message.Slice";
 
-type HomepageProps = {
-  message?: string;
-};
+const Homepage = () => {
+  const auth = useSelector(messageSelector);
+  const dispatch = useDispatch();
 
-const Homepage = (props: HomepageProps) => {
-  return (
-    <>
-      {toast.info(props.message, {
+  useEffect(() => {
+    if (auth.data) {
+      console.log(1)
+      toast.info(auth.data, {
         position: "top-right",
         autoClose: 5000,
         hideProgressBar: false,
@@ -56,8 +59,13 @@ const Homepage = (props: HomepageProps) => {
         draggable: true,
         progress: undefined,
         theme: "dark",
-      })}
+      });
+      dispatch(setMessage(null));
+    }
+  }, [auth.data]);
 
+  return (
+    <>
       <ToastContainer
         position="top-right"
         autoClose={5000}
@@ -88,12 +96,12 @@ const Homepage = (props: HomepageProps) => {
             <div className="homepage-introduction-search-bar">
               <DropdownSearchBar style={{ width: "70%" }} />
               <Button
-                style={{ width: "30%" }}
+                style={{ width: "30%"}}
                 iconSrc=""
                 enabled={true}
                 btnText="Tìm Kiếm"
                 theme="light"
-                color={"#F0631C"}
+                btnColor={"#F0631C"}
               />
             </div>
 

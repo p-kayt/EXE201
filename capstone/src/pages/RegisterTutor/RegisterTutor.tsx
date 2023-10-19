@@ -4,6 +4,8 @@ import { Call, InfoCircle, Location, Sms, SmsSolid } from "../../assets/Icons";
 import { useNavigate } from "react-router-dom";
 import Dropdown from "../../components/dropdown/Dropdown";
 import CustomButton from "../../components/button/CustomButton";
+import { useDispatch } from "react-redux";
+import { setMessage } from "../../store/features/message.Slice";
 
 
 type TooltipProps = { value: string };
@@ -15,12 +17,13 @@ const RegisterTutor = () => {
   const [name, setName] = React.useState("");
   const [email, setEmail] = React.useState("");
   const [phone, setPhone] = React.useState("");
-  const [message, setMessage] = React.useState("");
+  // const [message, setMessage] = React.useState("");
   const [nameValidate, setNameValidate] = React.useState("");
   const [emailValidate, setEmailValidate] = React.useState("");
   const [phoneValidate, setPhoneValidate] = React.useState("");
 
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const EducationalLevel = ["Sinh viên", "Cử nhân", "Thạc sĩ", "Tiến sĩ"];
 
@@ -49,23 +52,28 @@ const RegisterTutor = () => {
   };
 
   const handleSubmit = () => {
-    if (name.length == 0) {
+    if (!name.length) {
       setNameValidate("Nhập tên của bạn!");
-    } else {
-      setNameValidate("");
-      if (phone.length == 0) {
-        setPhoneValidate("Nhập số điện thoại!");
-      } else {
-        setPhoneValidate("");
-        if (email.length == 0) {
-          setEmailValidate("Nhập Email đăng ký!");
-        } else {
-          setEmailValidate("");
-          navigate("/")
-        }
-      }
+      return;
     }
+    setNameValidate("");
+  
+    if (!phone.length) {
+      setPhoneValidate("Nhập số điện thoại!");
+      return;
+    }
+    setPhoneValidate("");
+  
+    if (!email.length) {
+      setEmailValidate("Nhập Email đăng ký!");
+      return;
+    }
+    setEmailValidate("");
+  
+    dispatch(setMessage("Cảm ơn vì đã đăng ký ! Chúng tôi sẽ liên hệ với bạn trong thời gian sớm nhất "));
+    navigate("/");
   };
+  
 
   const handleName = (e: any) => {
     setName(e.target.value);
@@ -73,7 +81,6 @@ const RegisterTutor = () => {
 
   const handlePhone = (e: any) => {
     setPhoneValidate("");
-    console.log(phoneExpression.test(e.target.value))
     if (phoneExpression.test(e.target.value) && e.target.value.length >= 10) {
       setPhone(e.target.value);
     } else {
@@ -210,16 +217,16 @@ const RegisterTutor = () => {
 
             <div className="text-area">
               <label>Tin nhắn</label>
-              <textarea rows={5} cols={33}>
-                asdfasdfasdf
-              </textarea>
+              <textarea rows={5} cols={33} placeholder="Nhập nội dung bạn muốn gửi"/>
+              
             </div>
           </div>
 
           <CustomButton
             theme="light"
             btnText="Gửi thông tin"
-            color={"#6B48F2"}
+            color={"#fff"}
+            btnColor={"#6B48F2"}
             onClick={() => handleSubmit()}
           />
         </div>
