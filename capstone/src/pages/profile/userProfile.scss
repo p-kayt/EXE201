@@ -1,0 +1,249 @@
+@import "../../assets/constants.scss";
+
+.profile-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin: 0 auto;
+  min-height: 750px;
+  background-color: $neutral-2;
+
+  .profile-nav {
+    display: flex;
+    flex-direction: column;
+    width: 280px;
+    background-color: $neutral-0;
+
+    .profile-nav-container {
+      height: 100%;
+      .profile-info {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        margin: 0px 20px;
+        height: 72px;
+        gap: 10px;
+        cursor: default;
+        img {
+          height: 48px;
+          width: 48px;
+          border-radius: 50%;
+          border: solid 2px $neutral-4;
+        }
+        p {
+          margin: 0;
+          text-align: left;
+          font-weight: 600;
+          &:last-child {
+            font-weight: 400;
+            color: $neutral-3;
+          }
+        }
+      }
+
+      .nav-list {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin: 10px 0px;
+        .nav-item {
+          display: flex;
+          flex-direction: row;
+          gap: 15px;
+          height: 48px;
+          align-items: center;
+          position: relative;
+          width: calc(100% - 20px);
+          padding: 0px 0px 0px 20px;
+          cursor: pointer;
+          p {
+            margin: 0;
+            text-align: left;
+            font-weight: 600;
+            font-size: 16px;
+          }
+          span {
+            position: absolute;
+            background-color: transparent;
+            left: 0;
+            height: 80%;
+            width: 6px;
+            border-radius: 0px 15px 15px 0px;
+          }
+          &.selected {
+            color: $accent-blue;
+            background-color: #e2eafd;
+
+            img {
+              filter: invert(47%) sepia(76%) saturate(5715%) hue-rotate(231deg)
+                brightness(105%) contrast(102%);
+            }
+            span {
+              background-color: $accent-blue;
+            }
+          }
+        }
+      }
+      .logout-btn {
+        border-style: dashed;
+        border-width: 2px 0px 0px 0px;
+        border-color: $neutral-3;
+        margin: 20px;
+        padding: 30px 0;
+      }
+    }
+  }
+  .profile-content {
+    margin: 25px 20px;
+    // border: solid 0.1px red;
+    width: calc(100% - 280px);
+    background-color: $neutral-0;
+    border-radius: 12px;
+  }
+}
+
+.content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  margin: 24px 48px;
+  .avatar-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 40px;
+
+    .profile-pic {
+      height: 140px;
+      width: 140px;
+      border-radius: 50%;
+      border: solid 2px $neutral-4;
+    }
+    .upload-btn {
+      width: 240px;
+      height: 48px;
+      font-weight: 500;
+      font-family: "Be Vietnam Pro", sans-serif;
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+  .info-item {
+    margin: 10px 0 0 0;
+    width: 560px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    label {
+      font-family: "Be Vietnam Pro", sans-serif;
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 28px;
+      letter-spacing: 0em;
+      text-align: left;
+    }
+    .input {
+      display: flex;
+      flex-direction: row;
+      justify-content: start;
+      align-items: center;
+      gap: 8px;
+      // padding: 0 20px;
+      height: 48px;
+      width: 100%;
+      border: solid 1px $neutral-4;
+      border-radius: 8px;
+      color: $neutral-4;
+      input {
+        font-size: 18px;
+        width: 100%;
+        margin: 0 20px;
+        border-color: transparent;
+        &:focus {
+          outline: none;
+          background-color: transparent;
+        }
+        &:placeholder {
+          color: $neutral-4;
+        }
+      }
+      input:-webkit-autofill {
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: $neutral-4;
+      }
+    }
+  }
+  .update-btn {
+    margin: 40px 0;
+    width: 200px;
+  }
+
+  //
+
+  .wallet-card {
+    border: solid 2px $neutral-4;
+    width: 600px;
+    height: 260px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .wallet-value {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      p {
+        margin: 0;
+        font-size: 24px;
+        font-weight: 600;
+        color: #3f9672;
+        &:last-child {
+          font-size: 16px;
+          font-weight: 400;
+          color: $neutral-3;
+        }
+      }
+    }
+
+    .left-card {
+      width: 250px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-around;
+      margin: auto 40px;
+      .btn-group {
+        margin: 35px 0 0 0;
+        width: 220px;
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+      }
+    }
+
+    .right-card {
+      width: 250px;
+      background-color: $accent-blue;
+      border-radius: 155px 20px 20px 155px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .wallet-value {
+        p {
+          color: $neutral-0;
+          font-size: 32px;
+          &:last-child {
+            font-size: 16px;
+            font-weight: 400;
+            color: $neutral-2;
+          }
+        }
+      }
+    }
+  }
+}

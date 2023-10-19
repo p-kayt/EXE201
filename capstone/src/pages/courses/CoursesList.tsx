@@ -64,7 +64,16 @@ const CoursesList = (props: Props) => {
                 <input placeholder="Tìm kiếm bằng từ khoá hoặc mã môn"></input>
               </div>
               <div className="sort-box">
-                <Dropdown dropdownText="Sắp xếp" selectedItem={""} />
+                <Dropdown
+                  dropdownText="Sắp xếp"
+                  // valueList={[
+                  //   "Dropdown item 1",
+                  //   "Dropdown item 2",
+                  //   "Dropdown item 3",
+                  //   "Dropdown item 4",
+                  // ]}
+                  selectedItem={""}
+                />
               </div>
             </div>
             <div className="category">

@@ -1,4 +1,4 @@
-import { useLocation, Outlet, Navigate, useNavigate } from "react-router-dom";
+import { useLocation, Outlet, Navigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { authSelector } from "../../store/selector";
 import { setAuthUser } from "../../store/features/auth.Slice";
@@ -11,12 +11,11 @@ const AuthRoutes = () => {
 
   const localUserData: any = localStorage.getItem("user");
   const localUser: any = JSON.parse(localUserData);
-  console.log(localUser);
 
   if (localUser?.accessToken) {
-    if (!auth) {
-      const auth: any = jwtDecode(localUser.accessToken);
-      dispatch(setAuthUser(auth));
+    if (!auth.user) {
+      const newAuth: any = jwtDecode(localUser.accessToken);
+      dispatch(setAuthUser(newAuth));
     } else return <Outlet />;
   } else {
     localStorage.clear();

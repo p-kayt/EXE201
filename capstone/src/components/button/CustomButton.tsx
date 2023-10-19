@@ -6,8 +6,8 @@ type BtnProps = {
   theme: "light" | "dark" | "stripe";
   style?: object;
   enabled?: boolean;
+  btnColor?: any;
   color?: any;
-
   iconSrc?: string;
   imgSrc?: string;
   imgOptions?: "rounded" | "squared";
@@ -21,6 +21,7 @@ const CustomButton = (props: BtnProps) => {
     theme,
     style,
     enabled = true,
+    btnColor,
     color,
     iconSrc,
     imgSrc,
@@ -81,8 +82,8 @@ const CustomButton = (props: BtnProps) => {
         style={style}
         className={btnClass}
         onClick={enabled ? onClick : () => {}}
-      > 
-        <span style={{ backgroundColor: color }}>
+      >
+        <span style={{ backgroundColor: btnColor, color: color }}>
           {iconSrc || imgSrc ? mediaContent : ""}
           {btnText}
         </span>

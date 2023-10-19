@@ -17,3 +17,4 @@ export { default as AboutUsQuality1 } from "./images/AboutUsQuality1.png";
 export { default as AboutUsQuality2 } from "./images/AboutUsQuality2.png";
 export { default as AboutUsQuality3 } from "./images/AboutUsQuality3.png";
 
+export { default as BlankAva } from "./images/Blank-Avatar.png";
