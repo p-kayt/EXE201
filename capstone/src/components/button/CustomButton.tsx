@@ -7,7 +7,6 @@ type BtnProps = {
   style?: object;
   enabled?: boolean;
   color?: any;
-
   iconSrc?: string;
   imgSrc?: string;
   imgOptions?: "rounded" | "squared";

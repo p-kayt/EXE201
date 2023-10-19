@@ -20,7 +20,6 @@ import ArrowLeft from "./icons/arrow-left.svg";
 import PurpleBackgroundCheck from "./icons/purple-background-check.svg";
 import HorizontalLine from "./icons/Horizontal-line.svg";
 import Polygon from "./icons/polygon-(matic).svg";
-
 import Calculator from "./icons/Calculator.svg";
 import Brain from "./icons/Brain.svg";
 import Business from "./icons/Business.svg";
@@ -38,6 +37,10 @@ import MultipleArrow from "./icons/Multiple-arrows.svg";
 import HeartLinear from "./icons/heart-linear.svg";
 import StarFilled from "./icons/Star-filled.svg";
 import Category from "./icons/category.svg";
+import Call from "./icons/call.svg";
+import Location from "./icons/location.svg";
+import SmsSolid from "./icons/sms-solid.svg";
+
 export {
   Logo,
   Flame,
@@ -78,4 +81,7 @@ export {
   Choose,
   MultipleArrow,
   Category,
+  Location,
+  Call,
+  SmsSolid,
 };

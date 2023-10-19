@@ -5,6 +5,7 @@ import "./homepage.scss";
 import DropdownSearchBar from "../../components/dropdown/DropdownSearchBar";
 import Button from "../../components/button/CustomButton";
 import CustomButton from "../../components/button/CustomButton";
+import { ToastContainer, toast } from "react-toastify";
 import {
   PurpleBackgroundCheck,
   HorizontalLine,
@@ -39,9 +40,36 @@ import {
   ManImage,
 } from "../../assets/Images";
 
-const Homepage = () => {
+type HomepageProps = {
+  message?: string;
+};
+
+const Homepage = (props: HomepageProps) => {
   return (
     <>
+      {toast.info(props.message, {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+      })}
+
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+      />
       <div className="homepage-content">
         <div className="homepage-introduction">
           <div className="homepage-introduction-left-content">
