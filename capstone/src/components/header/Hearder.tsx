@@ -1,8 +1,11 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Logo, Share, Notification, Messenger } from "../../assets/Icons";
 import "./header.scss";
 import CustomButton from "../button/CustomButton";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { authSelector } from "../../store/selector";
+import { BlankAva } from "../../assets/Images";
 
 type HeaderProps = {};
 
@@ -10,6 +13,15 @@ const Header = (props: HeaderProps) => {
   const [checkLogIn, setCheckLogIn] = useState(true);
   const navigate = useNavigate();
   const location = useLocation();
+  const auth = useSelector(authSelector);
+
+  useEffect(() => {
+    if (auth.user) {
+      setCheckLogIn(true);
+    } else {
+      setCheckLogIn(false);
+    }
+  }, [auth]);
 
   const endOfURL = location.pathname.split("/").pop();
 
@@ -81,10 +93,11 @@ const Header = (props: HeaderProps) => {
               theme="light"
               style={{ width: "200px" }}
               enabled={true}
-              imgSrc="https://www.arsenal.com/sites/default/files/shorthand/stories/R7nKRzpKMp/2023-05-15T13%3A02%3A04.201Z/assets/x0FLXAhH2V/gettyimages-1488192786_enhanced-750x500.jpg"
+              imgSrc={auth?.user?.img ? auth?.user?.img : BlankAva}
               imgOptions="rounded"
               imgSize={32}
-              btnText="Bukayo Saka"
+              btnText={auth?.user?.email}
+              onClick={() => handleNavigation("./profile/" + auth?.user?.Id)}
             />
           </>
         ) : (
@@ -94,6 +107,7 @@ const Header = (props: HeaderProps) => {
             iconSrc={Share}
             enabled={true}
             btnText="Đăng nhập"
+            onClick={() => handleNavigation("./login")}
           />
         )}
       </div>

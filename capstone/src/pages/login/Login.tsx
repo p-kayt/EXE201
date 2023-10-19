@@ -11,7 +11,7 @@ import { authSelector } from "../../store/selector";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 type Props = {};
-type TooltipProps = { value: string };
+// type TooltipProps = { value: string };
 
 const Login = (props: Props) => {
   const expression: RegExp = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
@@ -89,8 +89,13 @@ const Login = (props: Props) => {
     }
   };
 
+  const handleEnter = (e: any) => {
+    if (e.key === "Enter") {
+      handleSubmit();
+    }
+  };
   // mini component
-  const TooltipIcon = (props: TooltipProps) => {
+  const TooltipIcon = (props: any) => {
     const { value } = props;
     const [hover, setHover] = React.useState(false);
     const handleMouseIn = () => {
@@ -155,6 +160,7 @@ const Login = (props: Props) => {
                 type="text"
                 placeholder="Email"
                 required
+                onKeyDown={(e) => handleEnter(e)}
                 onChange={(e) => handleEmail(e)}
               />
               {emailValidate === "" ? (
@@ -169,6 +175,7 @@ const Login = (props: Props) => {
               <input
                 type={passwordShown ? "text" : "password"}
                 placeholder="Nhập mật khẩu"
+                onKeyDown={(e) => handleEnter(e)}
                 onChange={(e) => handlePassword(e)}
               />
               <img
