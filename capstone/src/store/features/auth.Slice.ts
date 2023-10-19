@@ -1,15 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { loginUser } from "../api-thunk/userThunk";
 import jwtDecode from "jwt-decode";
-const initialState = {
-  role: null,
-  permissions: {},
-};
+const initialState = {};
 const authSlice = createSlice({
   name: "auth",
   initialState: initialState,
   reducers: {
-    setAuthUser: (state: any, action: any) => {
+    setAuthUser: (state: any, action) => {
       state.user = action.payload;
     },
   },
@@ -19,7 +16,7 @@ const authSlice = createSlice({
         state.loading = "loading";
         state.error = null;
       })
-      .addCase(loginUser.fulfilled, (state: any, action: any) => {
+      .addCase(loginUser.fulfilled, (state: any, action) => {
         state.loading = "succeeded";
         state.error = null;
         if (action.payload.message === "Success") {
@@ -36,7 +33,7 @@ const authSlice = createSlice({
           state.error = action.payload.message;
         }
       })
-      .addCase(loginUser.rejected, (state: any, action: any) => {
+      .addCase(loginUser.rejected, (state: any, action) => {
         state.loading = "failed";
         state.error = action.payload;
       });

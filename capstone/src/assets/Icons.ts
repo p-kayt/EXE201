@@ -20,6 +20,7 @@ import ArrowLeft from "./icons/arrow-left.svg";
 import PurpleBackgroundCheck from "./icons/purple-background-check.svg";
 import HorizontalLine from "./icons/Horizontal-line.svg";
 import Polygon from "./icons/polygon-(matic).svg";
+//
 import Calculator from "./icons/Calculator.svg";
 import Brain from "./icons/Brain.svg";
 import Business from "./icons/Business.svg";
@@ -41,6 +42,14 @@ import Call from "./icons/call.svg";
 import Location from "./icons/location.svg";
 import SmsSolid from "./icons/sms-solid.svg";
 
+//
+import ProfileCircle from "./icons/profile-circle.svg";
+import WalletMoney from "./icons/wallet-money.svg";
+import BookStack from "./icons/book.svg";
+import BookOpen from "./icons/book1.svg";
+import HeartCircle from "./icons/heart-circle.svg";
+import Chart from "./icons/chart.svg";
+import Camera from "./icons/camera.svg";
 export {
   Logo,
   Flame,
@@ -84,4 +93,12 @@ export {
   Location,
   Call,
   SmsSolid,
+  //
+  ProfileCircle,
+  WalletMoney,
+  BookStack,
+  BookOpen,
+  HeartCircle,
+  Chart,
+  Camera,
 };
