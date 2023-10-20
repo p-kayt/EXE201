@@ -1,6 +1,6 @@
 export { default as GirlPicture } from "./images/Frame-48097841.png";
 export { default as CourseCard1 } from "./images/HomePage-Card1.png";
-export { default as CourseCard2 } from "./images/HomePage-Card2.png";
+export { default as CourseCard2 } from "./images/Homepage-Card2.png";
 export { default as Hutech } from "./images/hutechlogo.png";
 export { default as BK } from "./images/bklogo.png";
 export { default as NgoaiThuong } from "./images/ngoaithuonglogo.png";
