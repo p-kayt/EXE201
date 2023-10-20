@@ -38,7 +38,9 @@ import MultipleArrow from "./icons/Multiple-arrows.svg";
 import HeartLinear from "./icons/heart-linear.svg";
 import StarFilled from "./icons/Star-filled.svg";
 import Category from "./icons/category.svg";
-//
+import Call from "./icons/call.svg";
+import Location from "./icons/location.svg";
+import SmsSolid from "./icons/sms-solid.svg";
 import ProfileCircle from "./icons/profile-circle.svg";
 import WalletMoney from "./icons/wallet-money.svg";
 import BookStack from "./icons/book.svg";
@@ -46,6 +48,7 @@ import BookOpen from "./icons/book1.svg";
 import HeartCircle from "./icons/heart-circle.svg";
 import Chart from "./icons/chart.svg";
 import Camera from "./icons/camera.svg";
+import Verify from "./icons/verify.svg";
 export {
   Logo,
   Flame,
@@ -86,6 +89,9 @@ export {
   Choose,
   MultipleArrow,
   Category,
+  Location,
+  Call,
+  SmsSolid,
   //
   ProfileCircle,
   WalletMoney,
@@ -94,4 +100,5 @@ export {
   HeartCircle,
   Chart,
   Camera,
+  Verify,
 };

@@ -26,6 +26,8 @@ import CreatedCourses from "./pages/profile/tutor/CreatedCourses.tsx";
 import Statistics from "./pages/profile/tutor/Statistics.tsx";
 import TopUp from "./pages/topup/TopUp.tsx";
 
+import TutorDetail from "./pages/TutorDetail/TutorDetail.tsx";
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -71,6 +73,10 @@ const router = createBrowserRouter([
           {
             path: "/course-list",
             element: <CoursesList />,
+          },
+          {
+            path: "/course-list/:courseId",
+            element: <TutorDetail />,
           },
           {
             path: "/example",
@@ -121,9 +127,7 @@ const router = createBrowserRouter([
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
-  <React.StrictMode>
-    <Provider store={store}>
-      <RouterProvider router={router} />
-    </Provider>
-  </React.StrictMode>
+  <Provider store={store}>
+    <RouterProvider router={router} />
+  </Provider>
 );

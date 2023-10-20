@@ -35,7 +35,8 @@ const AboutUs = () => {
           <CustomButton
             theme="light"
             btnText="Khám phá ngay"
-            color={"#F0631C"}
+            color={"#fff"}
+            btnColor={"#F0631C"}
             style={{ margin: "0px auto", width: "10%" }}
             onClick={() => handleNavigation("/register-tutor")}
           />

@@ -1,0 +1,112 @@
+.register-tutor-content {
+  display: flex;
+  justify-content: space-between;
+  font-family: "Be Vietnam Pro", sans-serif;
+  padding: 42px 24px 42px 64px;
+  background-color: #e2eafd;
+  border-radius: 32px;
+  margin: 40px 60px;
+
+  .register-tutor-content-left {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    text-align: left;
+    width: 45%;
+
+    .title {
+      font-size: 48px;
+      font-weight: 700;
+      line-height: 140%;
+
+      span {
+        color: #6b48f2;
+      }
+    }
+
+    .description {
+      font-size: 24px;
+      font-weight: 400;
+    }
+
+    .contact-information {
+      display: flex;
+      gap: 12px;
+      padding-left: 12px;
+      font-weight: 400;
+
+      span {
+        font-weight: 600;
+      }
+    }
+  }
+
+  .register-tutor-content-right {
+    display: flex;
+    flex-direction: column;
+    padding: 32px;
+    background-color: #fff;
+    border-radius: 24px;
+    border: 2px solid #000;
+    box-shadow: 6px 8px 0px 0px #000;
+    width: 30%;
+
+    .title {
+      font-size: 32px;
+      font-weight: 600;
+    }
+
+    .form {
+      display: flex;
+      flex-direction: column;
+      margin: 24px 0px;
+      text-align: left;
+      font-size: 16px;
+      font-weight: 600;
+      gap: 12px;
+
+      input {
+        width: 90%;
+        padding: 12px 16px;
+        border-radius: 8px;
+        border: 2px solid #000;
+        margin-top: 4px;
+      }
+
+      input::placeholder {
+        font-size: 16px;
+        font-weight: 400;
+        color: #aab8c2;
+      }
+
+      .validate {
+        display: flex;
+        justify-content: space-between;
+        align-content: center;
+      }
+
+      .input-message {
+        height: "100%";
+      }
+
+      .input-message::placeholder {
+        display: flex;
+      }
+
+      .text-area {
+        display: flex;
+        flex-direction: column;
+
+        textarea {
+          font-family: "Be Vietnam Pro", sans-serif;
+          border-radius: 8px;
+          font-size: 16px;
+          border: 2px solid #000;
+          padding: 12px 16px;
+          resize: none;
+        }
+      }
+    }
+  }
+}

@@ -51,12 +51,12 @@ const Header = (props: HeaderProps) => {
         >
           <p>Học với gia sư</p>
         </div>
-        <div
+        {/* <div
           className={"header-tabs"}
           onClick={() => handleNavigation("./course-list")}
         >
           <p>Khóa học online</p>
-        </div>
+        </div> */}
         <div
           className={
             endOfURL == "about-us" ? "header-tabs-active" : "header-tabs"
