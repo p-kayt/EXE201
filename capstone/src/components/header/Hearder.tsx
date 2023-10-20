@@ -76,6 +76,7 @@ const Header = (props: HeaderProps) => {
               iconSrc=""
               enabled={true}
               btnText="0đ"
+              onClick={() => handleNavigation("./profile/" + auth?.user?.Id + "/wallet")}
             />
             {/* <CustomButton
               theme="light"
