@@ -1,6 +1,6 @@
 export { default as GirlPicture } from "./images/Frame-48097841.png";
 export { default as CourseCard1 } from "./images/HomePage-Card1.png";
-export { default as CourseCard2 } from "./images/HomePage-Card2.png";
+export { default as CourseCard2 } from "./images/Homepage-Card2.png";
 export { default as Hutech } from "./images/hutechlogo.png";
 export { default as BK } from "./images/bklogo.png";
 export { default as NgoaiThuong } from "./images/ngoaithuonglogo.png";
@@ -17,4 +17,8 @@ export { default as AboutUsQuality1 } from "./images/AboutUsQuality1.png";
 export { default as AboutUsQuality2 } from "./images/AboutUsQuality2.png";
 export { default as AboutUsQuality3 } from "./images/AboutUsQuality3.png";
 export { default as BlankAva } from "./images/Blank-Avatar.png";
+
+export { default as QR } from "./images/qrimg.jpg";
+export { default as Napas } from "./images/Napas247.b58ff17b.png";
+export { default as VietQR } from "./images/VietQR.46a78cbb.png";
 export { default as CourseImg } from "./images/CourseImg.png";

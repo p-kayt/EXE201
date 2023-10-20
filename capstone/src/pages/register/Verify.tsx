@@ -28,6 +28,7 @@ const Verify = (props: Props) => {
   const Countdown = (props: CountdownProps) => {
     const { isRunning, setIsRunning } = props;
     const [timeCounter, setTimeCounter] = React.useState(59);
+
     useEffect(() => {
       timeCounter > 0 &&
         setTimeout(() => setTimeCounter(timeCounter - 1), 1000);

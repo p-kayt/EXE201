@@ -1,9 +1,14 @@
 import React from "react";
 import CustomButton from "../../components/button/CustomButton";
+import { useNavigate } from "react-router-dom";
 
 type Props = {};
 
 const Wallet = (props: Props) => {
+  const navigate = useNavigate();
+  const handleTopUp = () => {
+    navigate("/top-up");
+  };
   return (
     <>
       <div className="content-container">
@@ -22,8 +27,9 @@ const Wallet = (props: Props) => {
                 btnColor={"#F0631C"}
                 btnText="Nạp tiền"
                 color={"white"}
+                onClick={() => handleTopUp()}
               />
-              <CustomButton theme="light" btnText="Rút tiền" />
+              <CustomButton theme="light" btnText="Rút tiền" enabled={false} />
             </div>
           </div>
           <div className="right-card">
