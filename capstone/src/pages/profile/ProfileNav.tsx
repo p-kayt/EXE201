@@ -111,12 +111,12 @@ const USER_NAV = [
     path: "/my-courses",
     title: "Khóa học đã mua",
   },
-  {
-    id: 4,
-    icon: BookOpen,
-    path: "/learned-course",
-    title: "Khóa học đã học",
-  },
+  // {
+  //   id: 4,
+  //   icon: BookOpen,
+  //   path: "/learned-course",
+  //   title: "Khóa học đã học",
+  // },
   {
     id: 5,
     icon: HeartCircle,

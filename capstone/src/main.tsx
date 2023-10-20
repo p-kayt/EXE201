@@ -24,6 +24,8 @@ import FavCourses from "./pages/profile/user/FavCourses.tsx";
 import LearnedCourses from "./pages/profile/user/LearnedCourses.tsx";
 import CreatedCourses from "./pages/profile/tutor/CreatedCourses.tsx";
 import Statistics from "./pages/profile/tutor/Statistics.tsx";
+import TopUp from "./pages/topup/TopUp.tsx";
+
 import TutorDetail from "./pages/TutorDetail/TutorDetail.tsx";
 
 const router = createBrowserRouter([
@@ -87,6 +89,10 @@ const router = createBrowserRouter([
           {
             path: "/register-tutor",
             element: <RegisterTutor />,
+          },
+          {
+            path: "/top-up",
+            element: <TopUp />,
           },
           {
             path: "/profile/:ID/",
