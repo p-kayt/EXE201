@@ -77,7 +77,7 @@ const Header = (props: HeaderProps) => {
               enabled={true}
               btnText="0đ"
             />
-            <CustomButton
+            {/* <CustomButton
               theme="light"
               style={{ width: "50px" }}
               enabled={true}
@@ -88,7 +88,7 @@ const Header = (props: HeaderProps) => {
               style={{ width: "50px" }}
               enabled={true}
               iconSrc={Messenger}
-            />
+            /> */}
             <CustomButton
               theme="light"
               style={{ width: "200px" }}

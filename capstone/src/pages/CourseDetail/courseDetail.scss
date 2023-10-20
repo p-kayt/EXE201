@@ -1,0 +1,326 @@
+.tutor-detail-content {
+  display: flex;
+  justify-content: space-between;
+  font-family: "Be Vietnam Pro", sans-serif;
+  padding: 32px 64px;
+
+  .left {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    gap: 32px;
+    width: 70%;
+
+    .tutor-detail-header {
+      display: flex;
+      gap: 32px;
+
+      .course-image {
+        border-radius: 8px;
+        width: 180px;
+        height: 180px;
+        object-fit: cover;
+      }
+
+      .information {
+        display: flex;
+        flex-direction: column;
+        gap: 5%;
+
+        .title {
+          font-size: 24px;
+          font-weight: 600;
+          line-height: 32px;
+          height: 40%;
+        }
+
+        .user {
+          display: flex;
+          align-items: center;
+          gap: 2%;
+          font-size: 16px;
+          font-weight: 600;
+        }
+
+        .student {
+          display: flex;
+          padding: 8px 24px;
+          flex-direction: column;
+          gap: 4px;
+          border-radius: 8px;
+          border: 2px solid #000;
+          width: fit-content;
+          font-size: 14px;
+          font-weight: 400;
+
+          span {
+            font-weight: 500;
+          }
+        }
+      }
+    }
+
+    .tabs {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 8px;
+      border: 2px solid #000;
+      width: fit-content;
+
+      .tab {
+        cursor: pointer;
+        padding: 10px 20px;
+        color: #000;
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: 500;
+
+        &:hover {
+          background-color: #fece00;
+        }
+      }
+    }
+
+    .description {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      font-size: 16px;
+      font-weight: 400;
+
+      span {
+        font-size: 24px;
+        font-weight: 600;
+      }
+    }
+
+    .sample-video {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+
+      span {
+        font-size: 24px;
+        font-weight: 600;
+      }
+
+      .aspect-ratio-container {
+        position: relative;
+        width: 100%;
+        padding-top: 56.25%; /* 100% / 1.77778, for a 16:9 aspect ratio */
+        overflow: hidden; /* to make sure nothing spills out of the container */
+      }
+
+      .aspect-ratio-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none; /* remove any default border */
+      }
+    }
+
+    .teaching-style {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+
+      span {
+        font-size: 24px;
+        font-weight: 600;
+      }
+    }
+
+    .syllabus {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+
+      span {
+        font-size: 24px;
+        font-weight: 600;
+      }
+
+      .syllabus-detail {
+        border-radius: 8px;
+        border: 2px solid #000;
+
+        .css-ahj2mt-MuiTypography-root {
+          font-family: "Be Vietnam Pro", sans-serif;
+          font-size: 18px;
+        }
+
+        .css-1elwnq4-MuiPaper-root-MuiAccordion-root:before {
+          background-color: #fff;
+          border-bottom: 2px solid #000;
+          font-weight: 400;
+        }
+
+        .css-1elwnq4-MuiPaper-root-MuiAccordion-root:before {
+          opacity: 100;
+        }
+
+        .css-1elwnq4-MuiPaper-root-MuiAccordion-root.Mui-expanded
+          + .css-1elwnq4-MuiPaper-root-MuiAccordion-root.Mui-expanded {
+          border-top: 2px solid #000;
+        }
+
+        .Mui-expanded {
+          margin: 0px;
+          box-shadow: none;
+        }
+      }
+    }
+  }
+
+  .right {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    height: fit-content;
+    padding: 16px;
+    gap: 24px;
+    border-radius: 12px;
+    border: 2px solid #000;
+
+    .price-information {
+      display: flex;
+      justify-content: space-between;
+      font-size: 20px;
+      font-weight: 600;
+      text-align: right;
+
+      .old-price {
+        text-decoration: line-through;
+      }
+
+      .new-price {
+        font-size: 32px;
+        font-weight: 600;
+        color: #f0631c;
+      }
+    }
+
+    .line {
+      width: 100%;
+      border: 1px solid #000;
+    }
+
+    .buy-select {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+
+      .title {
+        text-align: left;
+        font-size: 20px;
+        font-weight: 600;
+      }
+
+      .tabs {
+        display: flex;
+
+        align-items: center;
+        border-radius: 8px;
+        border: 2px solid #000;
+        width: 100%;
+
+        .tab {
+          display: flex;
+          justify-content: center;
+          width: 100%;
+          padding: 10px 20px;
+          color: #000;
+          text-decoration: none;
+          font-size: 16px;
+          font-weight: 500;
+          cursor: pointer;
+
+          &:hover {
+            background-color: #fece00;
+          }
+        }
+
+        .active {
+          background-color: #fece00;
+        }
+      }
+    }
+
+    .class-duration {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      font-size: 16px;
+      font-weight: 500;
+
+      div {
+        display: flex;
+        gap: 12px;
+      }
+    }
+
+    .teaching-type {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+
+      .title {
+        font-size: 20px;
+        font-weight: 600;
+        text-align: left;
+      }
+
+      .detail {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 12px;
+        border-radius: 60px;
+        background-color: #e2eafd;
+        width: fit-content;
+        font-size: 16px;
+        font-weight: 500;
+      }
+    }
+
+    .class-date-time {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+
+      .title {
+        font-size: 20px;
+        font-weight: 600;
+        text-align: left;
+      }
+
+      .class-infomation {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 16px;
+        font-weight: 500;
+
+        .class-name {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+
+          img {
+            width: 24px;
+            height: 24px;
+          }
+        }
+      }
+
+      .class-schedule{
+        text-align: right;
+        font-size: 14px;
+        font-weight: 400;
+      }
+    }
+  }
+}

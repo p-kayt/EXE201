@@ -11,9 +11,11 @@ export const data = [
       "Học các khái niệm thiết yếu của thiết kế đồ họa, nguyên lý thị giác, luật thiết kế, chuẩn thi công - sản xuất ứng dụng (từ ấn phẩm truyền thông quảng cáo, xuất bản phẩm, bao bì hàng hóa ... đến thiết kế hỗ trợ thương mại điện tử như banner, led poster, landing page ...) Thiết kế hình ảnh thương hiệu (logo, hình ảnh bổ trợ, ấn phẩm giao dịch văn phòng)",
     CourseSampleVideo: " ",
     TeachingType: "Online",
+    TeachingStyle:
+      "80% Thời gian học là thực hành, sinh viên có kinh nghiệm thực chiến ngay khi còn ngồi trên ghế nhà trường",
     Duration: 2,
     TotalWeek: 8,
-    unit: [
+    units: [
       {
         Unit_name: "1.Giới thiệu",
         Content:
@@ -43,7 +45,19 @@ export const data = [
     WeeklyTime: [
       {
         ClassName: "Lớp A3 ",
-        DayOfWeek: "Thứ 5, 19 giờ (tối) - 21 giờ (tối)",
+        DayOfWeek: [
+          "Thứ 5, 19 giờ (tối) - 21 giờ (tối)",
+          "Thứ 7, 19 giờ (tối) - 21 giờ (tối)",
+        ],
+        StartTime: "7/5",
+        EndTime: "23/6",
+      },
+      {
+        ClassName: "Lớp B1 ",
+        DayOfWeek: [
+          "Thứ 3, 19 giờ (tối) - 21 giờ (tối)",
+          "Thứ 4, 19 giờ (tối) - 21 giờ (tối)",
+        ],
         StartTime: "7/5",
         EndTime: "23/6",
       },
@@ -64,7 +78,7 @@ export const data = [
     TeachingType: "Offline",
     Duration: 3,
     TotalWeek: 9,
-    unit: [
+    units: [
       {
         Unit_name: "1.Giới thiệu",
         Content:
@@ -94,12 +108,26 @@ export const data = [
     WeeklyTime: [
       {
         ClassName: "Lớp A3 ",
-        DayOfWeek: "Thứ 5, 19 giờ (tối) - 21 giờ (tối)",
+        DayOfWeek: [
+          "Thứ 5, 19 giờ (tối) - 21 giờ (tối)",
+          "Thứ 7, 19 giờ (tối) - 21 giờ (tối)",
+        ],
+        StartTime: "7/5",
+        EndTime: "23/6",
+      },
+      {
+        ClassName: "Lớp B1 ",
+        DayOfWeek: [
+          "Thứ 3, 19 giờ (tối) - 21 giờ (tối)",
+          "Thứ 4, 19 giờ (tối) - 21 giờ (tối)",
+        ],
         StartTime: "7/5",
         EndTime: "23/6",
       },
     ],
     CoursePrice: 500000,
+    TeachingStyle:
+      "80% Thời gian học là thực hành, sinh viên có kinh nghiệm thực chiến ngay khi còn ngồi trên ghế nhà trường",
   },
   // Khóa học 3: Lập trình Python cơ bản
   {
@@ -115,7 +143,7 @@ export const data = [
     TeachingType: "Online",
     Duration: 4,
     TotalWeek: 10,
-    unit: [
+    units: [
       {
         Unit_name: "1.Giới thiệu",
         Content:
@@ -145,12 +173,26 @@ export const data = [
     WeeklyTime: [
       {
         ClassName: "Lớp A3 ",
-        DayOfWeek: "Thứ 5, 19 giờ (tối) - 21 giờ (tối)",
+        DayOfWeek: [
+          "Thứ 5, 19 giờ (tối) - 21 giờ (tối)",
+          "Thứ 7, 19 giờ (tối) - 21 giờ (tối)",
+        ],
+        StartTime: "7/5",
+        EndTime: "23/6",
+      },
+      {
+        ClassName: "Lớp B1 ",
+        DayOfWeek: [
+          "Thứ 3, 19 giờ (tối) - 21 giờ (tối)",
+          "Thứ 4, 19 giờ (tối) - 21 giờ (tối)",
+        ],
         StartTime: "7/5",
         EndTime: "23/6",
       },
     ],
     CoursePrice: 600000,
+    TeachingStyle:
+      "80% Thời gian học là thực hành, sinh viên có kinh nghiệm thực chiến ngay khi còn ngồi trên ghế nhà trường",
   },
   // Khóa học 4: Machine Learning cơ bản
   {
@@ -166,7 +208,7 @@ export const data = [
     TeachingType: "Online",
     Duration: 5,
     TotalWeek: 12,
-    unit: [
+    units: [
       {
         Unit_name: "1.Giới thiệu",
         Content:
@@ -196,12 +238,26 @@ export const data = [
     WeeklyTime: [
       {
         ClassName: "Lớp A3 ",
-        DayOfWeek: "Thứ 5, 19 giờ (tối) - 21 giờ (tối)",
+        DayOfWeek: [
+          "Thứ 5, 19 giờ (tối) - 21 giờ (tối)",
+          "Thứ 7, 19 giờ (tối) - 21 giờ (tối)",
+        ],
+        StartTime: "7/5",
+        EndTime: "23/6",
+      },
+      {
+        ClassName: "Lớp B1 ",
+        DayOfWeek: [
+          "Thứ 3, 19 giờ (tối) - 21 giờ (tối)",
+          "Thứ 4, 19 giờ (tối) - 21 giờ (tối)",
+        ],
         StartTime: "7/5",
         EndTime: "23/6",
       },
     ],
     CoursePrice: 1000000,
+    TeachingStyle:
+      "80% Thời gian học là thực hành, sinh viên có kinh nghiệm thực chiến ngay khi còn ngồi trên ghế nhà trường",
   },
 
   // Khóa học 5: Phát triển ứng dụng mobile với React Native
@@ -217,7 +273,7 @@ export const data = [
     TeachingType: "Offline",
     Duration: 4,
     TotalWeek: 8,
-    unit: [
+    units: [
       {
         Unit_name: "1.Giới thiệu",
         Content:
@@ -247,12 +303,26 @@ export const data = [
     WeeklyTime: [
       {
         ClassName: "Lớp A3 ",
-        DayOfWeek: "Thứ 5, 19 giờ (tối) - 21 giờ (tối)",
+        DayOfWeek: [
+          "Thứ 5, 19 giờ (tối) - 21 giờ (tối)",
+          "Thứ 7, 19 giờ (tối) - 21 giờ (tối)",
+        ],
+        StartTime: "7/5",
+        EndTime: "23/6",
+      },
+      {
+        ClassName: "Lớp B1 ",
+        DayOfWeek: [
+          "Thứ 3, 19 giờ (tối) - 21 giờ (tối)",
+          "Thứ 4, 19 giờ (tối) - 21 giờ (tối)",
+        ],
         StartTime: "7/5",
         EndTime: "23/6",
       },
     ],
     CoursePrice: 850000,
+    TeachingStyle:
+      "80% Thời gian học là thực hành, sinh viên có kinh nghiệm thực chiến ngay khi còn ngồi trên ghế nhà trường",
   },
 
   // Khóa học 6: Thiết kế đồ họa với Adobe Illustrator
@@ -269,7 +339,7 @@ export const data = [
     TeachingType: "Online",
     Duration: 3,
     TotalWeek: 7,
-    unit: [
+    units: [
       {
         Unit_name: "1.Giới thiệu",
         Content:
@@ -299,12 +369,26 @@ export const data = [
     WeeklyTime: [
       {
         ClassName: "Lớp A3 ",
-        DayOfWeek: "Thứ 5, 19 giờ (tối) - 21 giờ (tối)",
+        DayOfWeek: [
+          "Thứ 5, 19 giờ (tối) - 21 giờ (tối)",
+          "Thứ 7, 19 giờ (tối) - 21 giờ (tối)",
+        ],
+        StartTime: "7/5",
+        EndTime: "23/6",
+      },
+      {
+        ClassName: "Lớp B1 ",
+        DayOfWeek: [
+          "Thứ 3, 19 giờ (tối) - 21 giờ (tối)",
+          "Thứ 4, 19 giờ (tối) - 21 giờ (tối)",
+        ],
         StartTime: "7/5",
         EndTime: "23/6",
       },
     ],
     CoursePrice: 750000,
+    TeachingStyle:
+      "80% Thời gian học là thực hành, sinh viên có kinh nghiệm thực chiến ngay khi còn ngồi trên ghế nhà trường",
   },
 
   // Khóa học 7: Quản lý dự án với Scrum
@@ -321,7 +405,7 @@ export const data = [
     TeachingType: "Offline",
     Duration: 2,
     TotalWeek: 6,
-    unit: [
+    units: [
       {
         Unit_name: "1.Giới thiệu",
         Content:
@@ -351,12 +435,26 @@ export const data = [
     WeeklyTime: [
       {
         ClassName: "Lớp A3 ",
-        DayOfWeek: "Thứ 5, 19 giờ (tối) - 21 giờ (tối)",
+        DayOfWeek: [
+          "Thứ 5, 19 giờ (tối) - 21 giờ (tối)",
+          "Thứ 7, 19 giờ (tối) - 21 giờ (tối)",
+        ],
+        StartTime: "7/5",
+        EndTime: "23/6",
+      },
+      {
+        ClassName: "Lớp B1 ",
+        DayOfWeek: [
+          "Thứ 3, 19 giờ (tối) - 21 giờ (tối)",
+          "Thứ 4, 19 giờ (tối) - 21 giờ (tối)",
+        ],
         StartTime: "7/5",
         EndTime: "23/6",
       },
     ],
     CoursePrice: 700000,
+    TeachingStyle:
+      "80% Thời gian học là thực hành, sinh viên có kinh nghiệm thực chiến ngay khi còn ngồi trên ghế nhà trường",
   },
 
   // Khóa học 8: Digital Marketing cơ bản
@@ -373,7 +471,7 @@ export const data = [
     TeachingType: "Online",
     Duration: 3,
     TotalWeek: 8,
-    unit: [
+    units: [
       {
         Unit_name: "1.Giới thiệu",
         Content:
@@ -403,12 +501,26 @@ export const data = [
     WeeklyTime: [
       {
         ClassName: "Lớp A3 ",
-        DayOfWeek: "Thứ 5, 19 giờ (tối) - 21 giờ (tối)",
+        DayOfWeek: [
+          "Thứ 5, 19 giờ (tối) - 21 giờ (tối)",
+          "Thứ 7, 19 giờ (tối) - 21 giờ (tối)",
+        ],
+        StartTime: "7/5",
+        EndTime: "23/6",
+      },
+      {
+        ClassName: "Lớp B1 ",
+        DayOfWeek: [
+          "Thứ 3, 19 giờ (tối) - 21 giờ (tối)",
+          "Thứ 4, 19 giờ (tối) - 21 giờ (tối)",
+        ],
         StartTime: "7/5",
         EndTime: "23/6",
       },
     ],
     CoursePrice: 650000,
+    TeachingStyle:
+      "80% Thời gian học là thực hành, sinh viên có kinh nghiệm thực chiến ngay khi còn ngồi trên ghế nhà trường",
   },
 
   // Khóa học 9: Ảnh nghệ thuật và kỹ thuật chụp ảnh
@@ -425,7 +537,7 @@ export const data = [
     TeachingType: "Offline",
     Duration: 4,
     TotalWeek: 10,
-    unit: [
+    units: [
       {
         Unit_name: "1.Giới thiệu",
         Content:
@@ -455,11 +567,221 @@ export const data = [
     WeeklyTime: [
       {
         ClassName: "Lớp A3 ",
-        DayOfWeek: "Thứ 5, 19 giờ (tối) - 21 giờ (tối)",
+        DayOfWeek: [
+          "Thứ 5, 19 giờ (tối) - 21 giờ (tối)",
+          "Thứ 7, 19 giờ (tối) - 21 giờ (tối)",
+        ],
+        StartTime: "7/5",
+        EndTime: "23/6",
+      },
+      {
+        ClassName: "Lớp B1 ",
+        DayOfWeek: [
+          "Thứ 3, 19 giờ (tối) - 21 giờ (tối)",
+          "Thứ 4, 19 giờ (tối) - 21 giờ (tối)",
+        ],
         StartTime: "7/5",
         EndTime: "23/6",
       },
     ],
     CoursePrice: 800000,
+    TeachingStyle:
+      "80% Thời gian học là thực hành, sinh viên có kinh nghiệm thực chiến ngay khi còn ngồi trên ghế nhà trường",
+  },
+  {
+    id: 10,
+    CourseName: "Nhập môn quản lý dự án Agile với Scrum",
+    CourseImage: "base64_7",
+    Fullname: "Phạm Thu Hằng",
+    TotalStudent: 580,
+    RatingStar: 4.7,
+    Description:
+      "Hiểu rõ về phương pháp Scrum và cách áp dụng nó vào quản lý dự án thực tế.",
+    CourseSampleVideo: " ",
+    TeachingType: "Offline",
+    Duration: 2,
+    TotalWeek: 6,
+    units: [
+      {
+        Unit_name: "1.Giới thiệu",
+        Content:
+          "VẼ PHÁC HỌA (SKETCH) VÀ NHIẾP ẢNH Định hình ý tưởng với kỹ thuật vẽ phác họa",
+      },
+      {
+        Unit_name: "2.Thực hành vẽ trang trí",
+        Content:
+          "VẼ PHÁC HỌA (SKETCH) VÀ NHIẾP ẢNH Định hình ý tưởng với kỹ thuật vẽ phác họa",
+      },
+      {
+        Unit_name: "3.Làm quen với vẽ digital",
+        Content:
+          "VẼ PHÁC HỌA (SKETCH) VÀ NHIẾP ẢNH Định hình ý tưởng với kỹ thuật vẽ phác họa",
+      },
+      {
+        Unit_name: "4.Tham gia dự án",
+        Content:
+          "VẼ PHÁC HỌA (SKETCH) VÀ NHIẾP ẢNH Định hình ý tưởng với kỹ thuật vẽ phác họa",
+      },
+      {
+        Unit_name: "5.Tổng kết khóa học",
+        Content:
+          "VẼ PHÁC HỌA (SKETCH) VÀ NHIẾP ẢNH Định hình ý tưởng với kỹ thuật vẽ phác họa",
+      },
+    ],
+    WeeklyTime: [
+      {
+        ClassName: "Lớp A3 ",
+        DayOfWeek: [
+          "Thứ 5, 19 giờ (tối) - 21 giờ (tối)",
+          "Thứ 7, 19 giờ (tối) - 21 giờ (tối)",
+        ],
+        StartTime: "7/5",
+        EndTime: "23/6",
+      },
+      {
+        ClassName: "Lớp B1 ",
+        DayOfWeek: [
+          "Thứ 3, 19 giờ (tối) - 21 giờ (tối)",
+          "Thứ 4, 19 giờ (tối) - 21 giờ (tối)",
+        ],
+        StartTime: "7/5",
+        EndTime: "23/6",
+      },
+    ],
+    CoursePrice: 700000,
+    TeachingStyle:
+      "80% Thời gian học là thực hành, sinh viên có kinh nghiệm thực chiến ngay khi còn ngồi trên ghế nhà trường",
+  },
+
+  // Khóa học 8: Digital Marketing cơ bản
+  {
+    id: 11,
+    CourseName: "Nhập môn Digital Marketing",
+    CourseImage: "base64_8",
+    Fullname: "Trần Ngọc Mai",
+    TotalStudent: 1000,
+    RatingStar: 4.8,
+    Description:
+      "Tìm hiểu về cách tiếp cận và thu hút khách hàng trực tuyến thông qua các kênh Digital Marketing.",
+    CourseSampleVideo: " ",
+    TeachingType: "Online",
+    Duration: 3,
+    TotalWeek: 8,
+    units: [
+      {
+        Unit_name: "1.Giới thiệu",
+        Content:
+          "VẼ PHÁC HỌA (SKETCH) VÀ NHIẾP ẢNH Định hình ý tưởng với kỹ thuật vẽ phác họa",
+      },
+      {
+        Unit_name: "2.Thực hành vẽ trang trí",
+        Content:
+          "VẼ PHÁC HỌA (SKETCH) VÀ NHIẾP ẢNH Định hình ý tưởng với kỹ thuật vẽ phác họa",
+      },
+      {
+        Unit_name: "3.Làm quen với vẽ digital",
+        Content:
+          "VẼ PHÁC HỌA (SKETCH) VÀ NHIẾP ẢNH Định hình ý tưởng với kỹ thuật vẽ phác họa",
+      },
+      {
+        Unit_name: "4.Tham gia dự án",
+        Content:
+          "VẼ PHÁC HỌA (SKETCH) VÀ NHIẾP ẢNH Định hình ý tưởng với kỹ thuật vẽ phác họa",
+      },
+      {
+        Unit_name: "5.Tổng kết khóa học",
+        Content:
+          "VẼ PHÁC HỌA (SKETCH) VÀ NHIẾP ẢNH Định hình ý tưởng với kỹ thuật vẽ phác họa",
+      },
+    ],
+    WeeklyTime: [
+      {
+        ClassName: "Lớp A3 ",
+        DayOfWeek: [
+          "Thứ 5, 19 giờ (tối) - 21 giờ (tối)",
+          "Thứ 7, 19 giờ (tối) - 21 giờ (tối)",
+        ],
+        StartTime: "7/5",
+        EndTime: "23/6",
+      },
+      {
+        ClassName: "Lớp B1 ",
+        DayOfWeek: [
+          "Thứ 3, 19 giờ (tối) - 21 giờ (tối)",
+          "Thứ 4, 19 giờ (tối) - 21 giờ (tối)",
+        ],
+        StartTime: "7/5",
+        EndTime: "23/6",
+      },
+    ],
+    CoursePrice: 650000,
+    TeachingStyle:
+      "80% Thời gian học là thực hành, sinh viên có kinh nghiệm thực chiến ngay khi còn ngồi trên ghế nhà trường",
+  },
+
+  // Khóa học 9: Ảnh nghệ thuật và kỹ thuật chụp ảnh
+  {
+    id: 12,
+    CourseName: "Nghệ thuật nhiếp ảnh và kỹ thuật chụp ảnh cơ bản",
+    CourseImage: "base64_9",
+    Fullname: "Lê Thị Dung",
+    TotalStudent: 720,
+    RatingStar: 4.6,
+    Description:
+      "Phát triển kỹ năng nhiếp ảnh của bạn và học cách chụp ảnh như một chuyên gia.",
+    CourseSampleVideo: " ",
+    TeachingType: "Offline",
+    Duration: 4,
+    TotalWeek: 10,
+    units: [
+      {
+        Unit_name: "1.Giới thiệu",
+        Content:
+          "VẼ PHÁC HỌA (SKETCH) VÀ NHIẾP ẢNH Định hình ý tưởng với kỹ thuật vẽ phác họa",
+      },
+      {
+        Unit_name: "2.Thực hành vẽ trang trí",
+        Content:
+          "VẼ PHÁC HỌA (SKETCH) VÀ NHIẾP ẢNH Định hình ý tưởng với kỹ thuật vẽ phác họa",
+      },
+      {
+        Unit_name: "3.Làm quen với vẽ digital",
+        Content:
+          "VẼ PHÁC HỌA (SKETCH) VÀ NHIẾP ẢNH Định hình ý tưởng với kỹ thuật vẽ phác họa",
+      },
+      {
+        Unit_name: "4.Tham gia dự án",
+        Content:
+          "VẼ PHÁC HỌA (SKETCH) VÀ NHIẾP ẢNH Định hình ý tưởng với kỹ thuật vẽ phác họa",
+      },
+      {
+        Unit_name: "5.Tổng kết khóa học",
+        Content:
+          "VẼ PHÁC HỌA (SKETCH) VÀ NHIẾP ẢNH Định hình ý tưởng với kỹ thuật vẽ phác họa",
+      },
+    ],
+    WeeklyTime: [
+      {
+        ClassName: "Lớp A3 ",
+        DayOfWeek: [
+          "Thứ 5, 19 giờ (tối) - 21 giờ (tối)",
+          "Thứ 7, 19 giờ (tối) - 21 giờ (tối)",
+        ],
+        StartTime: "7/5",
+        EndTime: "23/6",
+      },
+      {
+        ClassName: "Lớp B1 ",
+        DayOfWeek: [
+          "Thứ 3, 19 giờ (tối) - 21 giờ (tối)",
+          "Thứ 4, 19 giờ (tối) - 21 giờ (tối)",
+        ],
+        StartTime: "7/5",
+        EndTime: "23/6",
+      },
+    ],
+    CoursePrice: 800000,
+    TeachingStyle:
+      "80% Thời gian học là thực hành, sinh viên có kinh nghiệm thực chiến ngay khi còn ngồi trên ghế nhà trường",
   },
 ];

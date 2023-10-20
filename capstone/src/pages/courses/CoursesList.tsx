@@ -9,14 +9,22 @@ import {
 } from "../../assets/Icons";
 import Dropdown from "../../components/dropdown/Dropdown";
 import { categories, items } from "./data";
+import { useNavigate } from "react-router-dom";
 
 type Props = {};
 
 const CoursesList = (props: Props) => {
+  const navigate = useNavigate();
+
   const [isOpen, setIsOpen] = React.useState([]);
 
   const handleClickCard = (id: any) => {
-    console.log(id);
+    navigate(`./${id}`);
+    window.scrollTo(0, 0);
+  };
+
+  const handleNavigation = (route: string) => {
+    
   };
 
   // price

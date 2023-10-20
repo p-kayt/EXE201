@@ -49,6 +49,10 @@ import HeartCircle from "./icons/heart-circle.svg";
 import Chart from "./icons/chart.svg";
 import Camera from "./icons/camera.svg";
 import Verify from "./icons/verify.svg";
+import Calendar from "./icons/calendar.svg";
+import Clock from "./icons/clock.svg";
+import Refresh from "./icons/refresh.svg";
+
 export {
   Logo,
   Flame,
@@ -101,4 +105,7 @@ export {
   Chart,
   Camera,
   Verify,
+  Calendar,
+  Clock,
+  Refresh,
 };

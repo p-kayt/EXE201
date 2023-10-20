@@ -24,7 +24,7 @@ import FavCourses from "./pages/profile/user/FavCourses.tsx";
 import LearnedCourses from "./pages/profile/user/LearnedCourses.tsx";
 import CreatedCourses from "./pages/profile/tutor/CreatedCourses.tsx";
 import Statistics from "./pages/profile/tutor/Statistics.tsx";
-import TutorDetail from "./pages/TutorDetail/TutorDetail.tsx";
+import CourseDetail from "./pages/CourseDetail/CourseDetail.tsx";
 
 const router = createBrowserRouter([
   {
@@ -74,7 +74,7 @@ const router = createBrowserRouter([
           },
           {
             path: "/course-list/:courseId",
-            element: <TutorDetail />,
+            element: <CourseDetail />,
           },
           {
             path: "/example",
