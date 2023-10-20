@@ -18,3 +18,7 @@ export { default as AboutUsQuality2 } from "./images/AboutUsQuality2.png";
 export { default as AboutUsQuality3 } from "./images/AboutUsQuality3.png";
 
 export { default as BlankAva } from "./images/Blank-Avatar.png";
+
+export { default as QR } from "./images/qrimg.jpg";
+export { default as Napas } from "./images/Napas247.b58ff17b.png";
+export { default as VietQR } from "./images/VietQR.46a78cbb.png";
