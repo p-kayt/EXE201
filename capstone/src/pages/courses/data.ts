@@ -14,103 +14,103 @@ import {
 export const items = [
   {
     id: 1,
-    CourseName: "Luyện tiếng Nhật ngữ pháp N2 (Phần 1)",
+    CourseName: "Lập trình digital và hoạt ảnh cho hoạt hình 2D, kèm tài liệu chất lượng",
     RatingStar: 5.0,
-    Fullname: "Đinh Thùy Linh", //TutorName
-    CoursePrice: 99000,
+    Fullname: "Lê Ngọc Sơn", //TutorName
+    CoursePrice: 700000,
     CourseImage:
       "https://images.idgesg.net/images/article/2019/05/cso_best_security_software_best_ideas_best_technology_lightbulb_on_horizon_of_circuit_board_landscape_with_abstract_digital_connective_technology_atmosphere_ideas_innovation_creativity_by_peshkov_gettyimages-965785212_3x2_2400x1600-100797318-large.jpg?auto=webp&quality=85,70", //MISSING
-    CourseMajorName: "Ngôn ngữ nhưng dài hơn",
+    CourseMajorName: "Lập trình",
   },
   {
     id: 2,
-    CourseName: "Luyện tiếng Nhật ngữ pháp N2 (Phần 1)",
+    CourseName: "Thiết kế web cơ bản với HTML & CSS",
     RatingStar: 5.0,
-    Fullname: "Đinh Thùy Linh", //TutorName
+    Fullname: "Nguyễn Minh Châu", //TutorName
     CoursePrice: 99000,
     CourseImage:
       "https://images.idgesg.net/images/article/2019/05/cso_best_security_software_best_ideas_best_technology_lightbulb_on_horizon_of_circuit_board_landscape_with_abstract_digital_connective_technology_atmosphere_ideas_innovation_creativity_by_peshkov_gettyimages-965785212_3x2_2400x1600-100797318-large.jpg?auto=webp&quality=85,70", //MISSING
-    CourseMajorName: "Ngôn ngữ",
+    CourseMajorName: "Lập trình",
   },
   {
     id: 3,
-    CourseName: "Luyện tiếng Nhật ngữ pháp N2 (Phần 1)",
+    CourseName: "Lập trình Python cho người mới bắt đầu",
     RatingStar: 5.0,
-    Fullname: "Đinh Thùy Linh", //TutorName
+    Fullname: "Phạm Bảo Ngọc", //TutorName
     CoursePrice: 99000,
     CourseImage:
       "https://images.idgesg.net/images/article/2019/05/cso_best_security_software_best_ideas_best_technology_lightbulb_on_horizon_of_circuit_board_landscape_with_abstract_digital_connective_technology_atmosphere_ideas_innovation_creativity_by_peshkov_gettyimages-965785212_3x2_2400x1600-100797318-large.jpg?auto=webp&quality=85,70", //MISSING
-    CourseMajorName: "Ngôn ngữ",
+    CourseMajorName: "Lập trình",
   },
   {
     id: 4,
-    CourseName: "Luyện tiếng Nhật ngữ pháp N2 (Phần 1)",
+    CourseName: "Khám phá Machine Learning cho người mới bắt đầu",
     RatingStar: 5.0,
-    Fullname: "Đinh Thùy Linh", //TutorName
+    Fullname: "Đỗ Thị Lan", //TutorName
     CoursePrice: 99000,
     CourseImage:
       "https://images.idgesg.net/images/article/2019/05/cso_best_security_software_best_ideas_best_technology_lightbulb_on_horizon_of_circuit_board_landscape_with_abstract_digital_connective_technology_atmosphere_ideas_innovation_creativity_by_peshkov_gettyimages-965785212_3x2_2400x1600-100797318-large.jpg?auto=webp&quality=85,70", //MISSING
-    CourseMajorName: "Ngôn ngữ",
+    CourseMajorName: "Khoa học máy tính",
   },
   {
     id: 5,
-    CourseName: "Luyện tiếng Nhật ngữ pháp N2 (Phần 1)",
+    CourseName: "Phát triển ứng dụng mobile với React Native",
     RatingStar: 5.0,
-    Fullname: "Đinh Thùy Linh", //TutorName
+    Fullname: "Lý Văn B", //TutorName
     CoursePrice: 99000,
     CourseImage:
       "https://images.idgesg.net/images/article/2019/05/cso_best_security_software_best_ideas_best_technology_lightbulb_on_horizon_of_circuit_board_landscape_with_abstract_digital_connective_technology_atmosphere_ideas_innovation_creativity_by_peshkov_gettyimages-965785212_3x2_2400x1600-100797318-large.jpg?auto=webp&quality=85,70", //MISSING
-    CourseMajorName: "Ngôn ngữ",
+    CourseMajorName: "Lập trình",
   },
   {
     id: 6,
-    CourseName: "Luyện tiếng Nhật ngữ pháp N2 (Phần 1)",
+    CourseName: "Thiết kế đồ họa cơ bản với Adobe Illustrator",
     RatingStar: 5.0,
-    Fullname: "Đinh Thùy Linh", //TutorName
+    Fullname: "Nguyễn Thanh Tùng", //TutorName
     CoursePrice: 99000,
     CourseImage:
       "https://images.idgesg.net/images/article/2019/05/cso_best_security_software_best_ideas_best_technology_lightbulb_on_horizon_of_circuit_board_landscape_with_abstract_digital_connective_technology_atmosphere_ideas_innovation_creativity_by_peshkov_gettyimages-965785212_3x2_2400x1600-100797318-large.jpg?auto=webp&quality=85,70", //MISSING
-    CourseMajorName: "Ngôn ngữ",
+    CourseMajorName: "Thiết kế",
   },
   {
     id: 7,
-    CourseName: "Luyện tiếng Nhật ngữ pháp N2 (Phần 1)",
+    CourseName: "Nhập môn quản lý dự án Agile với Scrum",
     RatingStar: 5.0,
-    Fullname: "Đinh Thùy Linh", //TutorName
+    Fullname: "Phạm Thu Hằng", //TutorName
     CoursePrice: 99000,
     CourseImage:
       "https://images.idgesg.net/images/article/2019/05/cso_best_security_software_best_ideas_best_technology_lightbulb_on_horizon_of_circuit_board_landscape_with_abstract_digital_connective_technology_atmosphere_ideas_innovation_creativity_by_peshkov_gettyimages-965785212_3x2_2400x1600-100797318-large.jpg?auto=webp&quality=85,70", //MISSING
-    CourseMajorName: "Ngôn ngữ nhưng dài hơn",
+    CourseMajorName: "Quản lý sản phẩm",
   },
   {
     id: 8,
-    CourseName: "Luyện tiếng Nhật ngữ pháp N2 (Phần 1)",
+    CourseName: "Nhập môn Digital Marketing",
     RatingStar: 5.0,
-    Fullname: "Đinh Thùy Linh", //TutorName
+    Fullname: "Trần Ngọc Mai", //TutorName
     CoursePrice: 99000,
     CourseImage:
       "https://images.idgesg.net/images/article/2019/05/cso_best_security_software_best_ideas_best_technology_lightbulb_on_horizon_of_circuit_board_landscape_with_abstract_digital_connective_technology_atmosphere_ideas_innovation_creativity_by_peshkov_gettyimages-965785212_3x2_2400x1600-100797318-large.jpg?auto=webp&quality=85,70", //MISSING
-    CourseMajorName: "Ngôn ngữ nhưng dài hơn",
+    CourseMajorName: "Thiết kế",
   },
   {
     id: 9,
-    CourseName: "Luyện tiếng Nhật ngữ pháp N2 (Phần 1)",
+    CourseName: "Nghệ thuật nhiếp ảnh và kỹ thuật chụp ảnh cơ bản",
     RatingStar: 5.0,
-    Fullname: "Đinh Thùy Linh", //TutorName
+    Fullname: "Lê Thị Dung", //TutorName
     CoursePrice: 99000,
     CourseImage:
       "https://images.idgesg.net/images/article/2019/05/cso_best_security_software_best_ideas_best_technology_lightbulb_on_horizon_of_circuit_board_landscape_with_abstract_digital_connective_technology_atmosphere_ideas_innovation_creativity_by_peshkov_gettyimages-965785212_3x2_2400x1600-100797318-large.jpg?auto=webp&quality=85,70", //MISSING
-    CourseMajorName: "Ngôn ngữ nhưng dài hơn",
+    CourseMajorName: "Nghệ thuật",
   },
   {
     id: 10,
-    CourseName: "Luyện tiếng Nhật ngữ pháp N2 (Phần 1)",
+    CourseName: "Nhập môn quản lý dự án Agile với Scrum",
     RatingStar: 5.0,
-    Fullname: "Đinh Thùy Linh", //TutorName
+    Fullname: "Phạm Thu Hằng", //TutorName
     CoursePrice: 99000,
     CourseImage:
       "https://images.idgesg.net/images/article/2019/05/cso_best_security_software_best_ideas_best_technology_lightbulb_on_horizon_of_circuit_board_landscape_with_abstract_digital_connective_technology_atmosphere_ideas_innovation_creativity_by_peshkov_gettyimages-965785212_3x2_2400x1600-100797318-large.jpg?auto=webp&quality=85,70", //MISSING
-    CourseMajorName: "Ngôn ngữ nhưng dài hơn",
+    CourseMajorName: "Quản lý sản phẩm",
   },
 ];
 
