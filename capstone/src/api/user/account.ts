@@ -1,7 +1,7 @@
 import { instance, VERSION } from "../api";
 
 export const login = async (data: any) => {
-  console.log(data);
+  // console.log(data);
   //   console.log("api" + "/v" + VERSION + "/User/Login");
 
   const response = await instance.post(
@@ -12,11 +12,13 @@ export const login = async (data: any) => {
 };
 
 export const register = async (data: any) => {
-  console.log(data);
+  // console.log(data);
   const response = await instance.post(
     "api" + "/v" + VERSION + "/User/Register",
     data
   );
+  // console.log(response);
+
   return response.data;
 };
 
