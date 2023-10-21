@@ -1,16 +1,22 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../login/login.scss";
 import { Link, useNavigate } from "react-router-dom";
 import loginBanner from "../../assets/images/loginbanner.png";
 
 import { Logo, Eye, EyeSlash, InfoCircle } from "../../assets/Icons";
 import CustomButton from "../../components/button/CustomButton";
+import { registerUser } from "../../store/api-thunk/userThunk";
+import { useDispatch, useSelector } from "react-redux";
+import { ThunkDispatch } from "@reduxjs/toolkit";
+import { accountSelector } from "../../store/selector";
+import { ToastContainer, toast } from "react-toastify";
 type Props = {};
 type TooltipProps = { value: string };
 
 const Register = (props: Props) => {
   const expression: RegExp = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
   const navigate = useNavigate();
+  const dispatch = useDispatch<ThunkDispatch<any, any, any>>();
   // local state
   const [passwordShown, setPasswordShown] = React.useState(false);
   const [name, setName] = React.useState("");
@@ -19,6 +25,38 @@ const Register = (props: Props) => {
   const [nameValidate, setNameValidate] = React.useState("");
   const [emailValidate, setEmailValidate] = React.useState("");
   const [passwordValidate, setPasswordValidate] = React.useState("");
+  const account = useSelector(accountSelector);
+  useEffect(() => {
+    if (account?.loading === "succeeded" && account.message != null) {
+      navigate("/login");
+    }
+    if (account?.loading === "failed") {
+      console.log("failed");
+      toast.error("Có lỗi xảy ra, vui lòng thử lại sau!", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+    }
+    if (account?.error != null) {
+      console.log(account.error);
+      toast.error("Có lỗi xảy ra, vui lòng thử lại sau!", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+    }
+  }, [account]);
 
   // handler
   const handleSubmit = () => {
@@ -31,7 +69,14 @@ const Register = (props: Props) => {
     if (name.length == 0) {
       setNameValidate("Nhập tên của bạn!");
     }
-    navigate("./verify");
+    // navigate("./verify");
+
+    if (name.length != 0 && email.length != 0 && password.length != 0) {
+      dispatch(
+        registerUser({ fullName: name, email: email, password: password })
+      );
+    }
+
     console.log({ name, email, password });
   };
 
@@ -82,6 +127,20 @@ const Register = (props: Props) => {
   };
   return (
     <>
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
+
+      <ToastContainer />
       <div className="login-container">
         <div className="login-card">
           <div className="login-form">

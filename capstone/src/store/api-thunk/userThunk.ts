@@ -5,6 +5,7 @@ import {
   register,
   updateUserById,
 } from "../../api/user/account";
+import { toast } from "react-toastify";
 
 export const loginUser = createAsyncThunk(
   "user/login",
@@ -25,10 +26,21 @@ export const registerUser = createAsyncThunk(
   async (props: any, thunkAPI) => {
     const { email, password } = props;
     try {
-      const response = await register(JSON.stringify({ email, password }));
-      // console.log(response);
+      const response = await register(JSON.stringify(props));
+
       return response;
     } catch (error: any) {
+      // temp
+      toast.error("Có lỗi xảy ra, vui lòng thử lại sau!", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
       return thunkAPI.rejectWithValue(error.response.data);
     }
   }
