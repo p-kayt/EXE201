@@ -56,7 +56,14 @@ const router = createBrowserRouter([
       },
     ],
   },
-
+  {
+    path: "/about-us",
+    element: <AboutUs />,
+  },
+  {
+    path: "/course-list",
+    element: <CoursesList />,
+  },
   {
     element: <AuthRoutes />,
     children: [
