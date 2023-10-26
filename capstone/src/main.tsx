@@ -57,13 +57,25 @@ const router = createBrowserRouter([
     ],
   },
   {
-    path: "/about-us",
-    element: <AboutUs />,
+    path: "/",
+    element: <App />,
+    errorElement: <ErrorPage />,
+    children: [
+      {
+        index: true,
+        element: <Homepage />,
+      },
+      {
+        path: "/about-us",
+        element: <AboutUs />,
+      },
+      {
+        path: "/course-list",
+        element: <CoursesList />,
+      },
+    ],
   },
-  {
-    path: "/course-list",
-    element: <CoursesList />,
-  },
+
   {
     element: <AuthRoutes />,
     children: [
