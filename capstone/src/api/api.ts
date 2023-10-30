@@ -1,5 +1,5 @@
 import axios from "axios";
-const URL = "https://www.zunitutor.somee.com/";
+const URL = "https://zunitutor.azurewebsites.net";
 const VERSION = 1;
 
 const instance = axios.create({
