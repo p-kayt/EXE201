@@ -2,10 +2,10 @@ import { instance, VERSION } from "../api";
 
 export const login = async (data: any) => {
   // console.log(data);
-  //   console.log("api" + "/v" + VERSION + "/User/Login");
+  //   console.log("api" + "/v/User/Login");
 
   const response = await instance.post(
-    "api" + "/v" + VERSION + "/User/Login",
+    "api/User/Login",
     data
   );
   return response.data;
@@ -14,7 +14,7 @@ export const login = async (data: any) => {
 export const register = async (data: any) => {
   // console.log(data);
   const response = await instance.post(
-    "api" + "/v" + VERSION + "/User/Register",
+    "api/User/Register",
     data
   );
   // console.log(response);
@@ -24,7 +24,7 @@ export const register = async (data: any) => {
 
 export const getUserById = async (ID: any) => {
   const response = await instance.get(
-    "api" + "/v" + VERSION + "/User/Info" + "?id=" + ID
+    "api/User/Info" + "?id=" + ID
   );
   return response.data;
 };
@@ -34,7 +34,7 @@ export const updateUserById = async (props: any) => {
   console.log(ID, data);
 
   const response = await instance.put(
-    "api" + "/v" + VERSION + "/User/Update" + "?id=" + ID,
+    "api/User/Update" + "?id=" + ID,
     data
   );
   return response.data;
