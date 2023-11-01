@@ -11,7 +11,8 @@ const LearnedCourses = (props: Props) => {
         <div style={{ margin: "10px" }}>
           <TabBar
             valueList={["Môn học", "Khóa học online"]}
-            selectedItem={"Môn học"}
+            selectedIndex={0}
+            setSelectedIndex={() => {}}
           />
         </div>
       </div>

@@ -34,7 +34,7 @@ const CoursesList = (props: Props) => {
   // price filter
   const [value, setValue] = React.useState<number[]>([50, 2000]);
   const [minValue, setMinValue] = React.useState(value[0]);
-  const [maxValue, setMaxValue] = React.useState(value[0]);
+  const [maxValue, setMaxValue] = React.useState(value[1]);
   // rating filter
   const [rating, setRating] = React.useState<number[]>([0, 1, 2, 3, 4, 5]);
   // course type
