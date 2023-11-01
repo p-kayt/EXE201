@@ -22,11 +22,111 @@
       .filter-item {
         width: 100%;
         display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: start;
+        .filter-label {
+          width: 100%;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+        }
         h3 {
           margin: 10px;
+        }
+        // ============
+        .input-group {
+          display: flex;
+          flex-direction: row;
+          gap: 5px;
+          justify-content: center;
+          align-items: center;
+          .input {
+            display: flex;
+            flex-direction: row;
+            justify-content: start;
+            align-items: center;
+
+            padding: 0 10px;
+            height: 44px;
+            width: 135px;
+            border: solid 1px $neutral-4;
+            border-radius: 8px;
+            color: $neutral-4;
+            span {
+              margin: 2px 0px 0px 0px;
+              padding: 0;
+              font-size: 16px;
+              color: $neutral-2;
+            }
+            input {
+              font-size: 16px;
+              width: 100%;
+              margin: 0;
+              padding: 0;
+              border: none;
+              text-align: end;
+              &:focus {
+                outline: none;
+                background-color: transparent;
+              }
+
+              &:placeholder {
+                color: $neutral-4;
+              }
+            }
+            input:-webkit-autofill {
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: $neutral-4;
+            }
+            input::-webkit-outer-spin-button,
+            input::-webkit-inner-spin-button {
+              -webkit-appearance: none;
+              margin: 0;
+            }
+          }
+        }
+        // ============
+        .rating-container {
+          display: flex;
+          flex-direction: column;
+          gap: 5px;
+          width: 100%;
+          justify-content: center;
+          align-items: center;
+          .rating-item {
+            width: 95%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            img {
+              width: 81px;
+              height: 16px;
+            }
+            input {
+              height: 20px;
+            }
+          }
+        }
+        .start-time-container {
+          display: flex;
+          flex-direction: column;
+          gap: 5px;
+          width: 100%;
+          justify-content: center;
+          align-items: center;
+          .start-time-item {
+            width: 95%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            p {
+              margin: 0;
+            }
+            input {
+              height: 20px;
+            }
+          }
         }
       }
     }
@@ -49,22 +149,43 @@
         }
       }
       .category::-webkit-scrollbar {
+        margin-top: 2px;
+        height: 8px;
+      }
+
+      .category::-webkit-scrollbar-thumb {
         display: none;
+        background-color: #888;
+        border-radius: 6px;
+      }
+      .category:hover::-webkit-scrollbar-thumb {
+        display: block;
+        height: 8px;
+        background-color: #555;
+        bottom: 1px;
+      }
+      .category:hover::-webkit-scrollbar {
+        height: 8px;
+        display: block;
       }
       .category {
-        height: 44px;
-        margin: 20px 0px;
+        position: relative;
+        height: 50px;
+        margin: 20px 0px 10px 0px;
+        width: 100%;
+
         display: flex;
         flex-wrap: wrap;
         flex-direction: column;
-        overflow-x: hidden;
         gap: 5px;
-
+        overflow: hidden;
+        overflow-x: scroll;
         .category-item {
           display: flex;
           flex-direction: row;
           gap: 1px;
           height: 100%;
+
           text-align: center;
           border-radius: 10px;
           border: solid 2px $neutral-4;
@@ -225,6 +346,15 @@
             }
           }
         }
+      }
+      .pagination {
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 44px;
       }
     }
   }

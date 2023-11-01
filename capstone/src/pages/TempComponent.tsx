@@ -126,7 +126,8 @@ const TempComponent = () => {
       <div style={{ margin: "10px" }}>
         <TabBar
           valueList={["Tab 1", "Tab 2", "Tab 3", "Tab 4"]}
-          selectedItem={"Tab 1"}
+          selectedIndex={1}
+          setSelectedIndex={() => {}}
         />
       </div>
       {/* ----------------------------------------------------------- */}

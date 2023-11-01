@@ -24,23 +24,23 @@ export const loginUser = createAsyncThunk(
 export const registerUser = createAsyncThunk(
   "user/register",
   async (props: any, thunkAPI) => {
-    const { email, password } = props;
     try {
-      const response = await register(JSON.stringify(props));
+      console.log(props);
 
+      const response = await register(JSON.stringify(props));
       return response;
     } catch (error: any) {
       // temp
-      toast.error("Có lỗi xảy ra, vui lòng thử lại sau!", {
-        position: "top-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "light",
-      });
+      // toast.error("Có lỗi xảy ra, vui lòng thử lại sau!", {
+      //   position: "top-right",
+      //   autoClose: 5000,
+      //   hideProgressBar: false,
+      //   closeOnClick: true,
+      //   pauseOnHover: true,
+      //   draggable: true,
+      //   progress: undefined,
+      //   theme: "light",
+      // });
       return thunkAPI.rejectWithValue(error.response.data);
     }
   }

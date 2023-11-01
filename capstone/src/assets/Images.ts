@@ -22,3 +22,10 @@ export { default as QR } from "./images/qrimg.jpg";
 export { default as Napas } from "./images/Napas247.b58ff17b.png";
 export { default as VietQR } from "./images/VietQR.46a78cbb.png";
 export { default as CourseImg } from "./images/CourseImg.png";
+
+export { default as rating0 } from "./images/rate0.png";
+export { default as rating1 } from "./images/rate1.png";
+export { default as rating2 } from "./images/rate2.png";
+export { default as rating3 } from "./images/rate3.png";
+export { default as rating4 } from "./images/rate4.png";
+export { default as rating5 } from "./images/rate5.png";

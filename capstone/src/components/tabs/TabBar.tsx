@@ -1,45 +1,73 @@
 import React from "react";
 
 type Props = {
-  valueList?: string[];
-  selectedItem: string;
+  valueList: string[];
+  selectedIndex: number;
+  setSelectedIndex: (params: any) => any;
+  style?: object;
 };
 
-class TabBar extends React.Component<Props> {
-  constructor(props: Props) {
-    super(props);
+const TabBar = (props: Props) => {
+  const { valueList, selectedIndex, setSelectedIndex } = props;
 
-    this.state = {
-      selected: this.props.selectedItem,
-    };
+  const onClickItem = (value: string) => {
+    setSelectedIndex(valueList.indexOf(value));
+  };
 
-    this.onClickItem = this.onClickItem.bind(this);
-  }
-
-  onClickItem(value: String) {
-    console.log(value);
-
-    this.setState({ selected: value });
-  }
-
-  render() {
-    return (
-      <div className="tab-conatainer">
-        {this.props.valueList?.map((value, index) => (
+  return (
+    <div>
+      <div className="tab-container">
+        {props.valueList?.map((value, index) => (
           <div
             key={index}
             className={
-              "tab-item" +
-              (this.props.selectedItem === value ? " selected" : "")
+              "tab-item" + (selectedIndex === index ? " selected" : "")
             }
-            onClick={() => this.onClickItem(value)}
+            onClick={() => onClickItem(value)}
           >
             <span>{value}</span>
           </div>
         ))}
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
+
+// class TabBar extends React.Component<Props> {
+//   constructor(props: Props) {
+//     super(props);
+
+//     this.state = {
+//       selected: this.props.selectedItem,
+//     };
+
+//     this.onClickItem = this.onClickItem.bind(this);
+//   }
+
+//   onClickItem(value: String) {
+//     console.log(value);
+
+//     this.setState({ selected: value });
+//   }
+
+//   render() {
+//     return (
+// <div className="tab-conatainer">
+//   {this.props.valueList?.map((value, index) => (
+//     <div
+//       key={index}
+//       className={
+//         "tab-item" +
+//         (this.props.selectedItem === value ? " selected" : "")
+//       }
+//       onClick={() => this.onClickItem(value)}
+//     >
+//       <span>{value}</span>
+//     </div>
+//   ))}
+// </div>
+//     );
+//   }
+// }
 
 export default TabBar;

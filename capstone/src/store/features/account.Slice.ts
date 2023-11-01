@@ -1,10 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
-import {
-  loginUser,
-  registerUser,
-  verifyUserEmail,
-} from "../api-thunk/userThunk";
-import jwtDecode from "jwt-decode";
+import { registerUser, verifyUserEmail } from "../api-thunk/userThunk";
+
 const initialState = {};
 const accountSlice = createSlice({
   name: "account",
@@ -16,10 +12,13 @@ const accountSlice = createSlice({
       .addCase(registerUser.pending, (state: any) => {
         state.loading = "loading";
         state.error = null;
+        console.log("loading");
       })
       .addCase(registerUser.fulfilled, (state: any, action: any) => {
         state.loading = "succeeded";
         state.error = null;
+        console.log(action.payload);
+
         if (action.payload.message === "Create success") {
           state.message = action.payload.message;
         } else {

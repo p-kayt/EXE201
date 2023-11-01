@@ -320,7 +320,7 @@
   border: 2px solid #000;
 }
 
-.tab-conatainer {
+.tab-container {
   display: flex;
   flex-direction: row;
   height: 44px;
@@ -328,6 +328,7 @@
   align-items: center;
   font-family: "Be Vietnam Pro", sans-serif;
   font-weight: 500;
+  cursor: pointer;
 
   .tab-item {
     border-style: solid;
