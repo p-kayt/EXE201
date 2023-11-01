@@ -26,6 +26,7 @@ import CreatedCourses from "./pages/profile/tutor/CreatedCourses.tsx";
 import Statistics from "./pages/profile/tutor/Statistics.tsx";
 import TopUp from "./pages/topup/TopUp.tsx";
 import CourseDetail from "./pages/CourseDetail/CourseDetail.tsx";
+import AdminPage from "./pages/Admin/AdminPage.tsx";
 
 const router = createBrowserRouter([
   {
@@ -72,6 +73,10 @@ const router = createBrowserRouter([
       {
         path: "/course-list",
         element: <CoursesList />,
+      },
+      {
+        path: "/admin",
+        element: <AdminPage />,
       },
     ],
   },
