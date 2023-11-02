@@ -5,7 +5,7 @@ export const login = async (data: any) => {
   //   console.log("api" + "/v/User/Login");
 
   const response = await instance.post(
-    "api/User/Login",
+    "api/User/Login/Login",
     data
   );
   return response.data;
@@ -14,7 +14,7 @@ export const login = async (data: any) => {
 export const register = async (data: any) => {
   // console.log(data);
   const response = await instance.post(
-    "api/User/Register",
+    "api/User/Register/Register",
     data
   );
   // console.log(response);
