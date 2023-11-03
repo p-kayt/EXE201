@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import "./adminProfile.scss";
+import "./adminPage.scss";
 import { Outlet, useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
