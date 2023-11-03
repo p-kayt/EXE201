@@ -27,6 +27,8 @@ import Statistics from "./pages/profile/tutor/Statistics.tsx";
 import TopUp from "./pages/topup/TopUp.tsx";
 import CourseDetail from "./pages/CourseDetail/CourseDetail.tsx";
 import AdminPage from "./pages/Admin/AdminPage.tsx";
+import PrivateRoutes from "./components/route/PrivateRoute.tsx";
+import BuyPage from "./pages/buypage/BuyPage.tsx";
 
 const router = createBrowserRouter([
   {
@@ -57,6 +59,7 @@ const router = createBrowserRouter([
       },
     ],
   },
+
   {
     path: "/",
     element: <App />,
@@ -86,14 +89,20 @@ const router = createBrowserRouter([
         errorElement: <ErrorPage />,
         children: [
           {
-            path: "/admin",
-            element: <AdminPage />,
+            element: <PrivateRoutes />,
             children: [
-              // { index: true, element: <UserInfo /> },
-              // { path: "/profile/:ID/wallet", element: <Wallet /> },
-              // { path: "/profile/:ID/my-courses", element: <UserCourses /> },
+              {
+                path: "/admin",
+                element: <AdminPage />,
+                children: [
+                  // { index: true, element: <UserInfo /> },
+                  // { path: "/profile/:ID/wallet", element: <Wallet /> },
+                  // { path: "/profile/:ID/my-courses", element: <UserCourses /> },
+                ],
+              },
             ],
           },
+
           {
             index: true,
             element: <Homepage />,
@@ -103,9 +112,10 @@ const router = createBrowserRouter([
             element: <CoursesList />,
           },
           {
-            path: "/course-list/:courseId",
+            path: "/course-list/:courseId/",
             element: <CourseDetail />,
           },
+          { path: "/course-list/:courseId/buy", element: <BuyPage /> },
           {
             path: "/example",
             element: <TempComponent />,

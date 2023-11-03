@@ -1,11 +1,13 @@
 import React from "react";
-import { useRouteError } from "react-router-dom";
+import { useNavigate, useRouteError } from "react-router-dom";
+import CustomButton from "../../components/button/CustomButton";
 
 type Props = {};
 
 const ErrorPage = (props: Props) => {
   const error: any = useRouteError();
-  console.log(typeof error);
+  const navigate = useNavigate();
+  // console.log(typeof error);
 
   return (
     <>
@@ -15,6 +17,12 @@ const ErrorPage = (props: Props) => {
         <p>
           <i>{error.statusText || error.message}</i>
         </p>
+        <CustomButton
+          style={{ width: "150px", margin: "0 auto" }}
+          btnText="Về trang chủ."
+          theme="light"
+          onClick={() => navigate("./")}
+        />
       </div>
     </>
   );

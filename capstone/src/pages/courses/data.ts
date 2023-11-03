@@ -117,16 +117,16 @@ export const items = [
 ];
 
 export const categories = [
-  { id: 1, icon: Category, courseMajorName: "Tất cả" },
-  { id: 2, icon: Calculator, courseMajorName: "Toán học & Logic" },
-  { id: 3, icon: Business, courseMajorName: "Kinh doanh" },
-  { id: 4, icon: IT, courseMajorName: "Công nghệ thông tin" },
-  { id: 5, icon: Computer, courseMajorName: "Khoa học máy tính" },
-  { id: 6, icon: Paint, courseMajorName: "Nghệ thuật & Nhân văn" },
-  { id: 7, icon: Graph, courseMajorName: "Khoa học dữ liệu" },
-  { id: 8, icon: Community, courseMajorName: "Khoa học xã hội" },
-  { id: 9, icon: Physics, courseMajorName: "Vật lý & Kĩ thuật" },
-  { id: 10, icon: Brain, courseMajorName: "Phát triển cá nhân" },
-  { id: 11, icon: Heart, courseMajorName: "Sức khỏe" },
-  { id: 12, icon: Language, courseMajorName: "ngôn ngữ" },
+  { id: 0, icon: Category, courseMajorName: "Tất cả" },
+  { id: 1, icon: Calculator, courseMajorName: "Toán học & Logic" },
+  { id: 2, icon: Business, courseMajorName: "Kinh doanh" },
+  { id: 3, icon: IT, courseMajorName: "Công nghệ thông tin" },
+  { id: 4, icon: Computer, courseMajorName: "Khoa học máy tính" },
+  { id: 5, icon: Paint, courseMajorName: "Nghệ thuật & Nhân văn" },
+  { id: 6, icon: Graph, courseMajorName: "Khoa học dữ liệu" },
+  { id: 7, icon: Community, courseMajorName: "Khoa học xã hội" },
+  { id: 8, icon: Physics, courseMajorName: "Vật lý & Kĩ thuật" },
+  { id: 9, icon: Brain, courseMajorName: "Phát triển cá nhân" },
+  { id: 10, icon: Heart, courseMajorName: "Sức khỏe" },
+  { id: 11, icon: Language, courseMajorName: "ngôn ngữ" },
 ];

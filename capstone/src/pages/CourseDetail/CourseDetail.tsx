@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { BlankAva, CourseImg } from "../../assets/Images";
 import { Arrow, Calendar, Clock, Hat, Verify } from "../../assets/Icons";
 // import { data } from "./data";
@@ -18,47 +18,48 @@ import { format } from "date-fns";
 
 const CourseDetail = () => {
   let { courseId } = useParams();
+  const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState("description");
   const [classType, setClassType] = useState("5-15");
   const [course, setCourse] = useState({
-    "courseName": "string",
-    "duration": 0,
-    "totalWeek": 0,
-    "teachingType": "Online",
-    "startDate": "2023-11-03T02:11:03.000Z",
-    "endDate": "2023-11-03T02:11:03.000Z",
-    "coursePrice": 0,
-    "description": "string",
-    "syllabusFile": "string",
-    "courseSampleVideo": "string",
-    "totalStudent": 0,
-    "avgRating": 0,
-    "allowJoiningClass": "Yes",
-    "courseType": "Lecture",
-    "courseFile": "string",
-    "courseStatus": "Draft",
-    "classLocation": "string",
-    "creationDate": "2023-11-03T02:11:03.000Z",
-    "createdBy": 0,
-    "tutorId": 0,
-    "universityId": 0,
-    "courseMajorId": 0,
-    "units": [
+    courseName: "string",
+    duration: 0,
+    totalWeek: 0,
+    teachingType: "Online",
+    startDate: "2023-11-03T02:11:03.000Z",
+    endDate: "2023-11-03T02:11:03.000Z",
+    coursePrice: 0,
+    description: "string",
+    syllabusFile: "string",
+    courseSampleVideo: "string",
+    totalStudent: 0,
+    avgRating: 0,
+    allowJoiningClass: "Yes",
+    courseType: "Lecture",
+    courseFile: "string",
+    courseStatus: "Draft",
+    classLocation: "string",
+    creationDate: "2023-11-03T02:11:03.000Z",
+    createdBy: 0,
+    tutorId: 0,
+    universityId: 0,
+    courseMajorId: 0,
+    units: [
       {
-        "unitName": "string",
-        "minuteTime": 0,
-        "content": "string",
-        "homeWorkFile": "string",
-        "teachingMaterialFile": "string"
-      }
+        unitName: "string",
+        minuteTime: 0,
+        content: "string",
+        homeWorkFile: "string",
+        teachingMaterialFile: "string",
+      },
     ],
-    "universities": {
-      "universityName": "string",
-      "universityArea": "Urban"
+    universities: {
+      universityName: "string",
+      universityArea: "Urban",
     },
-    "courseMajor": {
-      "courseMajorName": "string"
-    }
+    courseMajor: {
+      courseMajorName: "string",
+    },
   });
 
   useEffect(() => {
@@ -86,16 +87,17 @@ const CourseDetail = () => {
   };
 
   const handleBuy = () => {
-    toast.error("Số dư không đủ để thanh toán !", {
-      position: "top-right",
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "dark",
-    });
+    navigate("/course-list/" + courseId + "/buy");
+    // toast.error("Số dư không đủ để thanh toán !", {
+    //   position: "top-right",
+    //   autoClose: 5000,
+    //   hideProgressBar: false,
+    //   closeOnClick: true,
+    //   pauseOnHover: true,
+    //   draggable: true,
+    //   progress: undefined,
+    //   theme: "dark",
+    // });
   };
 
   return (

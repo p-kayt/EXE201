@@ -10,7 +10,7 @@ import {
 import Dropdown from "../../components/dropdown/Dropdown";
 import { categories, items } from "./data";
 import { useNavigate } from "react-router-dom";
-import { Slider, Pagination } from "@mui/material";
+import { Slider, Pagination, CircularProgress } from "@mui/material";
 // import Pagination from "@mui/material/Pagination";
 import {
   rating0,
@@ -21,13 +21,18 @@ import {
   rating5,
 } from "../../assets/Images";
 import TabBar from "../../components/tabs/TabBar";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { getCoursesList } from "../../store/api-thunk/coursesThunk";
+import { ThunkDispatch } from "@reduxjs/toolkit";
+import { coursesSelector } from "../../store/selector";
 
 type Props = {};
 
 const CoursesList = (props: Props) => {
   const navigate = useNavigate();
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<ThunkDispatch<any, any, any>>();
+  const courses = useSelector(coursesSelector);
+  let items = courses.data;
   const [isExpand, setExpand] = React.useState(Array<string>);
   // search
   const [keyword, setkeyword] = React.useState("");
@@ -44,7 +49,7 @@ const CoursesList = (props: Props) => {
   // duration
   const [duration, setDuration] = React.useState<number[]>([1, 2, 3]);
   // cate
-  const [cateList, setCatelist] = React.useState<number[]>([1]);
+  const [cateList, setCatelist] = React.useState<number[]>([0]);
 
   //pagination
   const [page, setPage] = React.useState(1);
@@ -57,17 +62,37 @@ const CoursesList = (props: Props) => {
 
   useEffect(() => {
     let pageSize = 12;
-    console.log({
-      keyword,
-      value,
-      rating,
-      courseType,
-      startTime,
-      duration,
-      cateList,
-      page,
-      pageSize,
-    });
+    let newCateList: number[] = [];
+    if (cateList[0] == 0) {
+      for (let cate of categories) {
+        newCateList.push(cate.id);
+        newCateList = newCateList.filter((element) => element !== 0);
+      }
+    }
+    dispatch(
+      getCoursesList({
+        keyword,
+        value,
+        rating,
+        courseType,
+        startTime,
+        duration,
+        cateList: newCateList,
+        pageIndex: page,
+        pageSize,
+      })
+    );
+    // console.log({
+    //   keyword,
+    //   value,
+    //   rating,
+    //   courseType,
+    //   startTime,
+    //   duration,
+    //   cateList,
+    //   page,
+    //   pageSize,
+    // });
   }, [keyword, value, rating, courseType, startTime, duration, cateList, page]);
 
   const handleSearch = (e: any) => {
@@ -131,14 +156,14 @@ const CoursesList = (props: Props) => {
   };
   // categories
   const handleCheckCate = (item: any) => {
-    if (item === 1) {
+    if (item === 0) {
       // If the item clicked is the one with id=1, uncheck all others and check id=1.
       setCatelist([item]);
     } else {
       // If the item clicked is not id=1, uncheck id=1 and toggle the selected item.
       let newArray = [...cateList];
-      if (newArray.includes(1)) {
-        newArray = newArray.filter((element) => element !== 1);
+      if (newArray.includes(0)) {
+        newArray = newArray.filter((element) => element !== 0);
       }
       const isItemInList = newArray.some((element) => element === item);
 
@@ -146,7 +171,7 @@ const CoursesList = (props: Props) => {
         // If the item is already in the list, remove it.
         newArray = newArray.filter((element) => element !== item);
         if (newArray.length === 0) {
-          setCatelist([1]);
+          setCatelist([0]);
         } else {
           setCatelist(newArray);
         }
@@ -452,53 +477,72 @@ const CoursesList = (props: Props) => {
             </div>
 
             {/* =========== */}
-            <div className="item-group">
-              {items?.map((item, index) => (
-                <div
-                  className="card"
-                  key={index}
-                  onClick={() => handleClickCard(item.id)}
-                >
-                  <span className="span">
-                    <div className="card-content-container">
-                      <div className="media">
-                        <img src={item.CourseImage} alt={item.CourseName} />
-                        <div className="major">
-                          <p>{item.CourseMajorName} </p>
-                        </div>
-                      </div>
-                      <div className="detail">
-                        <div className="favorite-icon">
-                          <img src={HeartLinear} />
-                        </div>
-                        <div className="tutor">
-                          <div className="name">{item.Fullname}</div>
-                        </div>
-                        <div className="coursename">{item.CourseName}</div>
-                        <div className="bottom">
-                          <div className="rating">
-                            <img src={StarFilled} />
-                            <p>{item.RatingStar}</p>
+            {courses.loading === "loading" ? (
+              <CircularProgress color="secondary" />
+            ) : items ? (
+              <>
+                {" "}
+                <div className="item-group">
+                  {items?.map((item: any, index: number) => (
+                    <div
+                      className="card"
+                      key={index}
+                      onClick={() => handleClickCard(item.id)}
+                    >
+                      <span className="span">
+                        <div className="card-content-container">
+                          <div className="media">
+                            <img src={item.CourseImage} alt={item.CourseName} />
+                            <div className="major">
+                              <p>{item.CourseMajorName} </p>
+                            </div>
                           </div>
-                          <div className="price">
-                            <p>{item.CoursePrice} đ </p>
+                          <div className="detail">
+                            <div className="favorite-icon">
+                              <img src={HeartLinear} />
+                            </div>
+                            <div className="tutor">
+                              <div className="name">{item.Fullname}</div>
+                            </div>
+                            <div className="coursename">{item.CourseName}</div>
+                            <div className="bottom">
+                              <div className="rating">
+                                <img src={StarFilled} />
+                                <p>{item.RatingStar}</p>
+                              </div>
+                              <div className="price">
+                                <p>{item.CoursePrice} đ </p>
+                              </div>
+                            </div>
                           </div>
                         </div>
-                      </div>
+                      </span>
                     </div>
-                  </span>
+                  ))}
                 </div>
-              ))}
-            </div>
-            <div className="pagination">
-              <Pagination
-                count={totalPage}
-                page={page}
-                onChange={handleChangePage}
-                color="secondary"
-                shape="rounded"
-              />
-            </div>
+                <div className="pagination">
+                  <Pagination
+                    count={totalPage}
+                    page={page}
+                    onChange={handleChangePage}
+                    color="secondary"
+                    shape="rounded"
+                  />
+                </div>
+              </>
+            ) : (
+              <div
+                style={{
+                  margin: "10px auto",
+                  fontSize: "18px",
+                  width: "300px",
+                }}
+                className="tab-container"
+              >
+                {/* {courses.message} */}
+                Không có khóa học phù hợp.
+              </div>
+            )}
           </div>
         </div>
       </div>
