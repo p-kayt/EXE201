@@ -1,0 +1,49 @@
+.dashboard-content {
+  display: flex;
+  font-family: 'Be Vietnam Pro', sans-serif;
+  padding: 3%;
+  gap: 1%;
+
+  .dashboard-tab {
+    border: 2px solid #000;
+    width: 24%;
+    border-radius: 10px;
+
+    .dashboard-tab-top-content {
+      margin: 15px;
+      display: flex;
+      justify-content: space-between;
+
+      .dashboard-icon {
+        padding: 7px;
+        border-radius: 10px;
+      }
+
+      img {
+        filter: brightness(0) invert(1);
+      }
+
+      .dashboard-total {
+        text-align: right;
+        align-self: flex-end;
+
+        span {
+          font-weight: 600;
+          font-size: 18px;
+        }
+      }
+    }
+
+    .dashboard-tab-bottom-content {
+      text-align: left;
+      padding: 2px;
+      border-top: 2px solid #000;
+
+      span {
+        margin-left: 15px;
+        color: rgb(129 205 16);
+        font-weight: 700;
+      }
+    }
+  }
+}

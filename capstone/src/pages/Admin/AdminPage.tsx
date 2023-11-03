@@ -9,12 +9,7 @@ import AdminNav from "./AdminNav";
 type Props = {};
 
 const AdminPage = (props: Props) => {
-  const dispatch = useDispatch<ThunkDispatch<any, any, any>>();
-  let { ID } = useParams();
 
-  useEffect(() => {
-    dispatch(getUser({ ID }));
-  }, [ID]);
   return (
     <>
       <div className="profile-container">

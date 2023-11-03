@@ -29,6 +29,9 @@ import CourseDetail from "./pages/CourseDetail/CourseDetail.tsx";
 import AdminPage from "./pages/Admin/AdminPage.tsx";
 import PrivateRoutes from "./components/route/PrivateRoute.tsx";
 import BuyPage from "./pages/buypage/BuyPage.tsx";
+import Dashboard from "./pages/Admin/Dashboard/Dashboard.tsx";
+import UserManagement from "./pages/Admin/UserManagement.tsx";
+import TransactionManagement from "./pages/Admin/Transaction management/TransactionManagement.tsx";
 
 const router = createBrowserRouter([
   {
@@ -89,15 +92,15 @@ const router = createBrowserRouter([
         errorElement: <ErrorPage />,
         children: [
           {
-            element: <PrivateRoutes />,
+            // element: <PrivateRoutes />,
             children: [
               {
                 path: "/admin",
                 element: <AdminPage />,
                 children: [
-                  // { index: true, element: <UserInfo /> },
-                  // { path: "/profile/:ID/wallet", element: <Wallet /> },
-                  // { path: "/profile/:ID/my-courses", element: <UserCourses /> },
+                  { index: true, element: <Dashboard /> },
+                  { path: "/admin/userManagement", element: <UserManagement /> },
+                  { path: "/admin/transactionManagement", element: <TransactionManagement /> },
                 ],
               },
             ],

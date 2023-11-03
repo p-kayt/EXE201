@@ -20,7 +20,7 @@ import ArrowLeft from "./icons/arrow-left.svg";
 import PurpleBackgroundCheck from "./icons/purple-background-check.svg";
 import HorizontalLine from "./icons/Horizontal-line.svg";
 import Polygon from "./icons/polygon-(matic).svg";
-//
+import GroupDashboard from "./icons/group-dashboard.svg";
 import Calculator from "./icons/Calculator.svg";
 import Brain from "./icons/Brain.svg";
 import Business from "./icons/Business.svg";
@@ -57,6 +57,7 @@ import Group from "./icons/group.svg";
 import Transaction from "./icons/transaction.svg";
 
 export {
+  GroupDashboard,
   Transaction,
   Group,
   Logo,

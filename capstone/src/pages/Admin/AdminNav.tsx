@@ -34,7 +34,7 @@ const AdminNav = (props: Props) => {
   //
   const handleNavigate = (item: any) => {
     setSelected(item.id);
-    navigate("/admin/" + item.path);
+    navigate("/admin" + item.path);
   };
 
   const handleLogout = () => {
@@ -92,12 +92,6 @@ const BASE_NAV = [
     path: "/transactionManagement",
     title: "Transaction Management",
   },
-  // {
-  //   id: 2,
-  //   icon: WalletMoney,
-  //   path: "/userManagement",
-  //   title: "User Management",
-  // },
 ];
 
 export default AdminNav;

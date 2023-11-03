@@ -72,7 +72,6 @@ const CourseDetail = () => {
         console.error("Error fetching data:", error);
       });
   }, []);
-  console.log(course);
 
   const convertToVNTime = (timestamp: string): string => {
     const timeZone = "Asia/Ho_Chi_Minh";

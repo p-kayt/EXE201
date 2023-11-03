@@ -21,7 +21,7 @@ const ErrorPage = (props: Props) => {
           style={{ width: "150px", margin: "0 auto" }}
           btnText="Về trang chủ."
           theme="light"
-          onClick={() => navigate("./")}
+          onClick={() => navigate("/")}
         />
       </div>
     </>
