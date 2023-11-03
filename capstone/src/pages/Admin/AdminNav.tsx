@@ -1,19 +1,14 @@
 import React, { useEffect } from "react";
-import { BlankAva } from "../../assets/Images";
 import { useDispatch, useSelector } from "react-redux";
 import { authSelector, userSelector } from "../../store/selector";
 import {
-  BookOpen,
-  BookStack,
-  Chart,
-  HeartCircle,
-  ProfileCircle,
-  WalletMoney,
+  Dashboard,
+  Group,
+  Transaction,
 } from "../../assets/Icons";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import CustomButton from "../../components/button/CustomButton";
 import { setAuthUser } from "../../store/features/auth.Slice";
-import { items } from "../courses/data";
 
 type Props = {};
 
@@ -39,7 +34,7 @@ const AdminNav = (props: Props) => {
   //
   const handleNavigate = (item: any) => {
     setSelected(item.id);
-    navigate("/profile/" + ID + item.path);
+    navigate("/admin/" + item.path);
   };
 
   const handleLogout = () => {
@@ -50,13 +45,6 @@ const AdminNav = (props: Props) => {
   return (
     <>
       <div className="profile-nav-container">
-        <div className="profile-info">
-          <img src={user?.image ? user?.image : BlankAva} />
-          <div>
-            <p>{user?.fullName}</p>
-            <p>{auth?.user?.role}</p>
-          </div>
-        </div>
         <div className="nav-list">
           {navList.map((item, index) => (
             <div
@@ -88,28 +76,28 @@ const AdminNav = (props: Props) => {
 const BASE_NAV = [
   {
     id: 1,
-    icon: ProfileCircle,
+    icon: Dashboard,
     path: "",
     title: "Dashboard",
   },
   {
     id: 2,
-    icon: WalletMoney,
-    path: "/wallet",
+    icon: Group,
+    path: "/userManagement",
     title: "User Management",
   },
   {
     id: 3,
-    icon: WalletMoney,
-    path: "/transaction",
+    icon: Transaction,
+    path: "/transactionManagement",
     title: "Transaction Management",
   },
-  {
-    id: 2,
-    icon: WalletMoney,
-    path: "/wallet",
-    title: "User Management",
-  },
+  // {
+  //   id: 2,
+  //   icon: WalletMoney,
+  //   path: "/userManagement",
+  //   title: "User Management",
+  // },
 ];
 
 export default AdminNav;

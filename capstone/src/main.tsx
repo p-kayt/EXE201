@@ -74,10 +74,6 @@ const router = createBrowserRouter([
         path: "/course-list",
         element: <CoursesList />,
       },
-      {
-        path: "/admin",
-        element: <AdminPage />,
-      },
     ],
   },
 
@@ -89,6 +85,15 @@ const router = createBrowserRouter([
         element: <App />,
         errorElement: <ErrorPage />,
         children: [
+          {
+            path: "/admin",
+            element: <AdminPage />,
+            children: [
+              // { index: true, element: <UserInfo /> },
+              // { path: "/profile/:ID/wallet", element: <Wallet /> },
+              // { path: "/profile/:ID/my-courses", element: <UserCourses /> },
+            ],
+          },
           {
             index: true,
             element: <Homepage />,
