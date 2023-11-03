@@ -78,7 +78,7 @@ const CoursesList = (props: Props) => {
         startTime,
         duration,
         cateList: newCateList,
-        pageIndex: page,
+        pageIndex: page - 1,
         pageSize,
       })
     );
@@ -481,7 +481,6 @@ const CoursesList = (props: Props) => {
               <CircularProgress color="secondary" />
             ) : items ? (
               <>
-                {" "}
                 <div className="item-group">
                   {items?.map((item: any, index: number) => (
                     <div
