@@ -46,13 +46,19 @@
       font-weight: 600;
     }
   }
+
+  .homepage-introduction-right-content {
+    width: 50vw;
+    height: auto;
+  }
 }
 
 .homepage-association {
   margin: 64px 64px;
-  box-shadow: 8px 8px #e2eafd, /* The original shadow */ 9px 7px 0 1px #000,
-    /* Top-right border */ 7px 9px 0 1px #000,
-    /* Bottom-left border */ 9px 9px 0 1px #000; /* Bottom-right border */
+  box-shadow: 8px 8px #e2eafd,
+    9px 7px 0 0.5px #000,
+    7px 9px 0 0.5px #000,
+    9px 9px 0 0.5px #000;
   border-radius: 8px;
 
   .homepage-association-heading {
@@ -206,12 +212,12 @@
         background-color: #fff;
         box-shadow: 4px 4px #000;
 
-        .homepage-experience-content-grid-item-title{
+        .homepage-experience-content-grid-item-title {
           font-size: 20px;
           font-weight: 600;
         }
 
-        .homepage-experience-content-grid-item-content{
+        .homepage-experience-content-grid-item-content {
           margin-top: 12px;
           font-size: 16px;
           font-weight: 400;

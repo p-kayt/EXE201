@@ -52,8 +52,13 @@ import Verify from "./icons/verify.svg";
 import Calendar from "./icons/calendar.svg";
 import Clock from "./icons/clock.svg";
 import Refresh from "./icons/refresh.svg";
+import Dashboard from "./icons/dashboard.svg";
+import Group from "./icons/group.svg";
+import Transaction from "./icons/transaction.svg";
 
 export {
+  Transaction,
+  Group,
   Logo,
   Flame,
   Arrow,
@@ -108,4 +113,5 @@ export {
   Calendar,
   Clock,
   Refresh,
+  Dashboard,
 };

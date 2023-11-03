@@ -1,6 +1,6 @@
 export const data = [
   {
-    id: 1,
+    id: 13,
     CourseName:
       "Lập trình digital và hoạt ảnh cho hoạt hình 2D, kèm tài liệu chất lượng",
     CourseImage: "base64", //MISSING
@@ -17,28 +17,28 @@ export const data = [
     TotalWeek: 8,
     units: [
       {
-        Unit_name: "1.Giới thiệu",
-        Content:
+        unitName: "1.Giới thiệu",
+        content:
           "VẼ PHÁC HỌA (SKETCH) VÀ NHIẾP ẢNH Định hình ý tưởng với kỹ thuật vẽ phác họa",
       },
       {
-        Unit_name: "2.Thực hành vẽ trang trí",
-        Content:
+        unitName: "2.Thực hành vẽ trang trí",
+        content:
           "VẼ PHÁC HỌA (SKETCH) VÀ NHIẾP ẢNH Định hình ý tưởng với kỹ thuật vẽ phác họa",
       },
       {
-        Unit_name: "3.Làm quen với vẽ digital",
-        Content:
+        unitName: "3.Làm quen với vẽ digital",
+        content:
           "VẼ PHÁC HỌA (SKETCH) VÀ NHIẾP ẢNH Định hình ý tưởng với kỹ thuật vẽ phác họa",
       },
       {
-        Unit_name: "4.Tham gia dự án",
-        Content:
+        unitName: "4.Tham gia dự án",
+        content:
           "VẼ PHÁC HỌA (SKETCH) VÀ NHIẾP ẢNH Định hình ý tưởng với kỹ thuật vẽ phác họa",
       },
       {
-        Unit_name: "5.Tổng kết khóa học",
-        Content:
+        unitName: "5.Tổng kết khóa học",
+        content:
           "VẼ PHÁC HỌA (SKETCH) VÀ NHIẾP ẢNH Định hình ý tưởng với kỹ thuật vẽ phác họa",
       },
     ],
@@ -80,28 +80,28 @@ export const data = [
     TotalWeek: 9,
     units: [
       {
-        Unit_name: "1.Giới thiệu",
-        Content:
+        unitName: "1.Giới thiệu",
+        content:
           "VẼ PHÁC HỌA (SKETCH) VÀ NHIẾP ẢNH Định hình ý tưởng với kỹ thuật vẽ phác họa",
       },
       {
-        Unit_name: "2.Thực hành vẽ trang trí",
-        Content:
+        unitName: "2.Thực hành vẽ trang trí",
+        content:
           "VẼ PHÁC HỌA (SKETCH) VÀ NHIẾP ẢNH Định hình ý tưởng với kỹ thuật vẽ phác họa",
       },
       {
-        Unit_name: "3.Làm quen với vẽ digital",
-        Content:
+        unitName: "3.Làm quen với vẽ digital",
+        content:
           "VẼ PHÁC HỌA (SKETCH) VÀ NHIẾP ẢNH Định hình ý tưởng với kỹ thuật vẽ phác họa",
       },
       {
-        Unit_name: "4.Tham gia dự án",
-        Content:
+        unitName: "4.Tham gia dự án",
+        content:
           "VẼ PHÁC HỌA (SKETCH) VÀ NHIẾP ẢNH Định hình ý tưởng với kỹ thuật vẽ phác họa",
       },
       {
-        Unit_name: "5.Tổng kết khóa học",
-        Content:
+        unitName: "5.Tổng kết khóa học",
+        content:
           "VẼ PHÁC HỌA (SKETCH) VÀ NHIẾP ẢNH Định hình ý tưởng với kỹ thuật vẽ phác họa",
       },
     ],
@@ -145,28 +145,28 @@ export const data = [
     TotalWeek: 10,
     units: [
       {
-        Unit_name: "1.Giới thiệu",
-        Content:
+        unitName: "1.Giới thiệu",
+        content:
           "VẼ PHÁC HỌA (SKETCH) VÀ NHIẾP ẢNH Định hình ý tưởng với kỹ thuật vẽ phác họa",
       },
       {
-        Unit_name: "2.Thực hành vẽ trang trí",
-        Content:
+        unitName: "2.Thực hành vẽ trang trí",
+        content:
           "VẼ PHÁC HỌA (SKETCH) VÀ NHIẾP ẢNH Định hình ý tưởng với kỹ thuật vẽ phác họa",
       },
       {
-        Unit_name: "3.Làm quen với vẽ digital",
-        Content:
+        unitName: "3.Làm quen với vẽ digital",
+        content:
           "VẼ PHÁC HỌA (SKETCH) VÀ NHIẾP ẢNH Định hình ý tưởng với kỹ thuật vẽ phác họa",
       },
       {
-        Unit_name: "4.Tham gia dự án",
-        Content:
+        unitName: "4.Tham gia dự án",
+        content:
           "VẼ PHÁC HỌA (SKETCH) VÀ NHIẾP ẢNH Định hình ý tưởng với kỹ thuật vẽ phác họa",
       },
       {
-        Unit_name: "5.Tổng kết khóa học",
-        Content:
+        unitName: "5.Tổng kết khóa học",
+        content:
           "VẼ PHÁC HỌA (SKETCH) VÀ NHIẾP ẢNH Định hình ý tưởng với kỹ thuật vẽ phác họa",
       },
     ],
@@ -210,28 +210,28 @@ export const data = [
     TotalWeek: 12,
     units: [
       {
-        Unit_name: "1.Giới thiệu",
-        Content:
+        unitName: "1.Giới thiệu",
+        content:
           "VẼ PHÁC HỌA (SKETCH) VÀ NHIẾP ẢNH Định hình ý tưởng với kỹ thuật vẽ phác họa",
       },
       {
-        Unit_name: "2.Thực hành vẽ trang trí",
-        Content:
+        unitName: "2.Thực hành vẽ trang trí",
+        content:
           "VẼ PHÁC HỌA (SKETCH) VÀ NHIẾP ẢNH Định hình ý tưởng với kỹ thuật vẽ phác họa",
       },
       {
-        Unit_name: "3.Làm quen với vẽ digital",
-        Content:
+        unitName: "3.Làm quen với vẽ digital",
+        content:
           "VẼ PHÁC HỌA (SKETCH) VÀ NHIẾP ẢNH Định hình ý tưởng với kỹ thuật vẽ phác họa",
       },
       {
-        Unit_name: "4.Tham gia dự án",
-        Content:
+        unitName: "4.Tham gia dự án",
+        content:
           "VẼ PHÁC HỌA (SKETCH) VÀ NHIẾP ẢNH Định hình ý tưởng với kỹ thuật vẽ phác họa",
       },
       {
-        Unit_name: "5.Tổng kết khóa học",
-        Content:
+        unitName: "5.Tổng kết khóa học",
+        content:
           "VẼ PHÁC HỌA (SKETCH) VÀ NHIẾP ẢNH Định hình ý tưởng với kỹ thuật vẽ phác họa",
       },
     ],
@@ -275,28 +275,28 @@ export const data = [
     TotalWeek: 8,
     units: [
       {
-        Unit_name: "1.Giới thiệu",
-        Content:
+        unitName: "1.Giới thiệu",
+        content:
           "VẼ PHÁC HỌA (SKETCH) VÀ NHIẾP ẢNH Định hình ý tưởng với kỹ thuật vẽ phác họa",
       },
       {
-        Unit_name: "2.Thực hành vẽ trang trí",
-        Content:
+        unitName: "2.Thực hành vẽ trang trí",
+        content:
           "VẼ PHÁC HỌA (SKETCH) VÀ NHIẾP ẢNH Định hình ý tưởng với kỹ thuật vẽ phác họa",
       },
       {
-        Unit_name: "3.Làm quen với vẽ digital",
-        Content:
+        unitName: "3.Làm quen với vẽ digital",
+        content:
           "VẼ PHÁC HỌA (SKETCH) VÀ NHIẾP ẢNH Định hình ý tưởng với kỹ thuật vẽ phác họa",
       },
       {
-        Unit_name: "4.Tham gia dự án",
-        Content:
+        unitName: "4.Tham gia dự án",
+        content:
           "VẼ PHÁC HỌA (SKETCH) VÀ NHIẾP ẢNH Định hình ý tưởng với kỹ thuật vẽ phác họa",
       },
       {
-        Unit_name: "5.Tổng kết khóa học",
-        Content:
+        unitName: "5.Tổng kết khóa học",
+        content:
           "VẼ PHÁC HỌA (SKETCH) VÀ NHIẾP ẢNH Định hình ý tưởng với kỹ thuật vẽ phác họa",
       },
     ],
@@ -341,28 +341,28 @@ export const data = [
     TotalWeek: 7,
     units: [
       {
-        Unit_name: "1.Giới thiệu",
-        Content:
+        unitName: "1.Giới thiệu",
+        content:
           "VẼ PHÁC HỌA (SKETCH) VÀ NHIẾP ẢNH Định hình ý tưởng với kỹ thuật vẽ phác họa",
       },
       {
-        Unit_name: "2.Thực hành vẽ trang trí",
-        Content:
+        unitName: "2.Thực hành vẽ trang trí",
+        content:
           "VẼ PHÁC HỌA (SKETCH) VÀ NHIẾP ẢNH Định hình ý tưởng với kỹ thuật vẽ phác họa",
       },
       {
-        Unit_name: "3.Làm quen với vẽ digital",
-        Content:
+        unitName: "3.Làm quen với vẽ digital",
+        content:
           "VẼ PHÁC HỌA (SKETCH) VÀ NHIẾP ẢNH Định hình ý tưởng với kỹ thuật vẽ phác họa",
       },
       {
-        Unit_name: "4.Tham gia dự án",
-        Content:
+        unitName: "4.Tham gia dự án",
+        content:
           "VẼ PHÁC HỌA (SKETCH) VÀ NHIẾP ẢNH Định hình ý tưởng với kỹ thuật vẽ phác họa",
       },
       {
-        Unit_name: "5.Tổng kết khóa học",
-        Content:
+        unitName: "5.Tổng kết khóa học",
+        content:
           "VẼ PHÁC HỌA (SKETCH) VÀ NHIẾP ẢNH Định hình ý tưởng với kỹ thuật vẽ phác họa",
       },
     ],
@@ -407,28 +407,28 @@ export const data = [
     TotalWeek: 6,
     units: [
       {
-        Unit_name: "1.Giới thiệu",
-        Content:
+        unitName: "1.Giới thiệu",
+        content:
           "VẼ PHÁC HỌA (SKETCH) VÀ NHIẾP ẢNH Định hình ý tưởng với kỹ thuật vẽ phác họa",
       },
       {
-        Unit_name: "2.Thực hành vẽ trang trí",
-        Content:
+        unitName: "2.Thực hành vẽ trang trí",
+        content:
           "VẼ PHÁC HỌA (SKETCH) VÀ NHIẾP ẢNH Định hình ý tưởng với kỹ thuật vẽ phác họa",
       },
       {
-        Unit_name: "3.Làm quen với vẽ digital",
-        Content:
+        unitName: "3.Làm quen với vẽ digital",
+        content:
           "VẼ PHÁC HỌA (SKETCH) VÀ NHIẾP ẢNH Định hình ý tưởng với kỹ thuật vẽ phác họa",
       },
       {
-        Unit_name: "4.Tham gia dự án",
-        Content:
+        unitName: "4.Tham gia dự án",
+        content:
           "VẼ PHÁC HỌA (SKETCH) VÀ NHIẾP ẢNH Định hình ý tưởng với kỹ thuật vẽ phác họa",
       },
       {
-        Unit_name: "5.Tổng kết khóa học",
-        Content:
+        unitName: "5.Tổng kết khóa học",
+        content:
           "VẼ PHÁC HỌA (SKETCH) VÀ NHIẾP ẢNH Định hình ý tưởng với kỹ thuật vẽ phác họa",
       },
     ],
@@ -473,28 +473,28 @@ export const data = [
     TotalWeek: 8,
     units: [
       {
-        Unit_name: "1.Giới thiệu",
-        Content:
+        unitName: "1.Giới thiệu",
+        content:
           "VẼ PHÁC HỌA (SKETCH) VÀ NHIẾP ẢNH Định hình ý tưởng với kỹ thuật vẽ phác họa",
       },
       {
-        Unit_name: "2.Thực hành vẽ trang trí",
-        Content:
+        unitName: "2.Thực hành vẽ trang trí",
+        content:
           "VẼ PHÁC HỌA (SKETCH) VÀ NHIẾP ẢNH Định hình ý tưởng với kỹ thuật vẽ phác họa",
       },
       {
-        Unit_name: "3.Làm quen với vẽ digital",
-        Content:
+        unitName: "3.Làm quen với vẽ digital",
+        content:
           "VẼ PHÁC HỌA (SKETCH) VÀ NHIẾP ẢNH Định hình ý tưởng với kỹ thuật vẽ phác họa",
       },
       {
-        Unit_name: "4.Tham gia dự án",
-        Content:
+        unitName: "4.Tham gia dự án",
+        content:
           "VẼ PHÁC HỌA (SKETCH) VÀ NHIẾP ẢNH Định hình ý tưởng với kỹ thuật vẽ phác họa",
       },
       {
-        Unit_name: "5.Tổng kết khóa học",
-        Content:
+        unitName: "5.Tổng kết khóa học",
+        content:
           "VẼ PHÁC HỌA (SKETCH) VÀ NHIẾP ẢNH Định hình ý tưởng với kỹ thuật vẽ phác họa",
       },
     ],
@@ -539,28 +539,28 @@ export const data = [
     TotalWeek: 10,
     units: [
       {
-        Unit_name: "1.Giới thiệu",
-        Content:
+        unitName: "1.Giới thiệu",
+        content:
           "VẼ PHÁC HỌA (SKETCH) VÀ NHIẾP ẢNH Định hình ý tưởng với kỹ thuật vẽ phác họa",
       },
       {
-        Unit_name: "2.Thực hành vẽ trang trí",
-        Content:
+        unitName: "2.Thực hành vẽ trang trí",
+        content:
           "VẼ PHÁC HỌA (SKETCH) VÀ NHIẾP ẢNH Định hình ý tưởng với kỹ thuật vẽ phác họa",
       },
       {
-        Unit_name: "3.Làm quen với vẽ digital",
-        Content:
+        unitName: "3.Làm quen với vẽ digital",
+        content:
           "VẼ PHÁC HỌA (SKETCH) VÀ NHIẾP ẢNH Định hình ý tưởng với kỹ thuật vẽ phác họa",
       },
       {
-        Unit_name: "4.Tham gia dự án",
-        Content:
+        unitName: "4.Tham gia dự án",
+        content:
           "VẼ PHÁC HỌA (SKETCH) VÀ NHIẾP ẢNH Định hình ý tưởng với kỹ thuật vẽ phác họa",
       },
       {
-        Unit_name: "5.Tổng kết khóa học",
-        Content:
+        unitName: "5.Tổng kết khóa học",
+        content:
           "VẼ PHÁC HỌA (SKETCH) VÀ NHIẾP ẢNH Định hình ý tưởng với kỹ thuật vẽ phác họa",
       },
     ],
@@ -603,28 +603,28 @@ export const data = [
     TotalWeek: 6,
     units: [
       {
-        Unit_name: "1.Giới thiệu",
-        Content:
+        unitName: "1.Giới thiệu",
+        content:
           "VẼ PHÁC HỌA (SKETCH) VÀ NHIẾP ẢNH Định hình ý tưởng với kỹ thuật vẽ phác họa",
       },
       {
-        Unit_name: "2.Thực hành vẽ trang trí",
-        Content:
+        unitName: "2.Thực hành vẽ trang trí",
+        content:
           "VẼ PHÁC HỌA (SKETCH) VÀ NHIẾP ẢNH Định hình ý tưởng với kỹ thuật vẽ phác họa",
       },
       {
-        Unit_name: "3.Làm quen với vẽ digital",
-        Content:
+        unitName: "3.Làm quen với vẽ digital",
+        content:
           "VẼ PHÁC HỌA (SKETCH) VÀ NHIẾP ẢNH Định hình ý tưởng với kỹ thuật vẽ phác họa",
       },
       {
-        Unit_name: "4.Tham gia dự án",
-        Content:
+        unitName: "4.Tham gia dự án",
+        content:
           "VẼ PHÁC HỌA (SKETCH) VÀ NHIẾP ẢNH Định hình ý tưởng với kỹ thuật vẽ phác họa",
       },
       {
-        Unit_name: "5.Tổng kết khóa học",
-        Content:
+        unitName: "5.Tổng kết khóa học",
+        content:
           "VẼ PHÁC HỌA (SKETCH) VÀ NHIẾP ẢNH Định hình ý tưởng với kỹ thuật vẽ phác họa",
       },
     ],
@@ -669,28 +669,28 @@ export const data = [
     TotalWeek: 8,
     units: [
       {
-        Unit_name: "1.Giới thiệu",
-        Content:
+        unitName: "1.Giới thiệu",
+        content:
           "VẼ PHÁC HỌA (SKETCH) VÀ NHIẾP ẢNH Định hình ý tưởng với kỹ thuật vẽ phác họa",
       },
       {
-        Unit_name: "2.Thực hành vẽ trang trí",
-        Content:
+        unitName: "2.Thực hành vẽ trang trí",
+        content:
           "VẼ PHÁC HỌA (SKETCH) VÀ NHIẾP ẢNH Định hình ý tưởng với kỹ thuật vẽ phác họa",
       },
       {
-        Unit_name: "3.Làm quen với vẽ digital",
-        Content:
+        unitName: "3.Làm quen với vẽ digital",
+        content:
           "VẼ PHÁC HỌA (SKETCH) VÀ NHIẾP ẢNH Định hình ý tưởng với kỹ thuật vẽ phác họa",
       },
       {
-        Unit_name: "4.Tham gia dự án",
-        Content:
+        unitName: "4.Tham gia dự án",
+        content:
           "VẼ PHÁC HỌA (SKETCH) VÀ NHIẾP ẢNH Định hình ý tưởng với kỹ thuật vẽ phác họa",
       },
       {
-        Unit_name: "5.Tổng kết khóa học",
-        Content:
+        unitName: "5.Tổng kết khóa học",
+        content:
           "VẼ PHÁC HỌA (SKETCH) VÀ NHIẾP ẢNH Định hình ý tưởng với kỹ thuật vẽ phác họa",
       },
     ],
@@ -735,29 +735,44 @@ export const data = [
     TotalWeek: 10,
     units: [
       {
-        Unit_name: "1.Giới thiệu",
-        Content:
+        unitName: "1.Giới thiệu",
+        content:
           "VẼ PHÁC HỌA (SKETCH) VÀ NHIẾP ẢNH Định hình ý tưởng với kỹ thuật vẽ phác họa",
+        minuteTime: 0,
+        homeWorkFile: "string",
+        teachingMaterialFile: "string",
       },
       {
-        Unit_name: "2.Thực hành vẽ trang trí",
-        Content:
+        unitName: "2.Thực hành vẽ trang trí",
+        content:
           "VẼ PHÁC HỌA (SKETCH) VÀ NHIẾP ẢNH Định hình ý tưởng với kỹ thuật vẽ phác họa",
+        minuteTime: 0,
+        homeWorkFile: "string",
+        teachingMaterialFile: "string",
       },
       {
-        Unit_name: "3.Làm quen với vẽ digital",
-        Content:
+        unitName: "3.Làm quen với vẽ digital",
+        content:
           "VẼ PHÁC HỌA (SKETCH) VÀ NHIẾP ẢNH Định hình ý tưởng với kỹ thuật vẽ phác họa",
+        minuteTime: 0,
+        homeWorkFile: "string",
+        teachingMaterialFile: "string",
       },
       {
-        Unit_name: "4.Tham gia dự án",
-        Content:
+        unitName: "4.Tham gia dự án",
+        content:
           "VẼ PHÁC HỌA (SKETCH) VÀ NHIẾP ẢNH Định hình ý tưởng với kỹ thuật vẽ phác họa",
+        minuteTime: 0,
+        homeWorkFile: "string",
+        teachingMaterialFile: "string",
       },
       {
-        Unit_name: "5.Tổng kết khóa học",
-        Content:
+        unitName: "5.Tổng kết khóa học",
+        content:
           "VẼ PHÁC HỌA (SKETCH) VÀ NHIẾP ẢNH Định hình ý tưởng với kỹ thuật vẽ phác họa",
+        minuteTime: 0,
+        homeWorkFile: "string",
+        teachingMaterialFile: "string",
       },
     ],
     WeeklyTime: [
@@ -783,5 +798,62 @@ export const data = [
     CoursePrice: 800000,
     TeachingStyle:
       "80% Thời gian học là thực hành, sinh viên có kinh nghiệm thực chiến ngay khi còn ngồi trên ghế nhà trường",
+  },
+
+  {
+    id: 1,
+    courseName: "Tasty Cotton Tuna",
+    duration: 4,
+    totalWeek: 5,
+    teachingType: "Offline",
+    startDate: "2023-11-02T00:07:39.2946395",
+    endDate: "2024-03-02T00:07:39.2946395",
+    coursePrice: 164.2858,
+    description:
+      "Sed dolorem nisi porro reiciendis explicabo. Possimus officia eum. Aut et molestiae fugiat nam consequatur voluptatem consequatur.",
+    syllabusFile: "assets/files/example.txt",
+    courseSampleVideo:
+      "https://youtu.be/ctxTfF1E8B4?list=PLRhlTlpDUWsyK1TIsewrQ7WwC7QkCSCPD",
+    totalStudent: 87,
+    avgRating: 4,
+    allowJoiningClass: "PendingApproval",
+    courseType: "Lecture",
+    courseFile: "assets/files/example.txt",
+    courseStatus: "Archived",
+    classLocation: "New Dorthahaven",
+    creationDate: "2023-06-27T20:42:17.7783348",
+    createdBy: null,
+    tutorId: 3,
+    universityId: 4,
+    courseMajorId: 1,
+    units: [
+      {
+        unitName: "1.Giới thiệu",
+        content:
+          "VẼ PHÁC HỌA (SKETCH) VÀ NHIẾP ẢNH Định hình ý tưởng với kỹ thuật vẽ phác họa",
+      },
+      {
+        unitName: "2.Thực hành vẽ trang trí",
+        content:
+          "VẼ PHÁC HỌA (SKETCH) VÀ NHIẾP ẢNH Định hình ý tưởng với kỹ thuật vẽ phác họa",
+      },
+      {
+        unitName: "3.Làm quen với vẽ digital",
+        content:
+          "VẼ PHÁC HỌA (SKETCH) VÀ NHIẾP ẢNH Định hình ý tưởng với kỹ thuật vẽ phác họa",
+      },
+      {
+        unitName: "4.Tham gia dự án",
+        content:
+          "VẼ PHÁC HỌA (SKETCH) VÀ NHIẾP ẢNH Định hình ý tưởng với kỹ thuật vẽ phác họa",
+      },
+      {
+        unitName: "5.Tổng kết khóa học",
+        content:
+          "VẼ PHÁC HỌA (SKETCH) VÀ NHIẾP ẢNH Định hình ý tưởng với kỹ thuật vẽ phác họa",
+      },
+    ],
+    universities: null,
+    courseMajor: null,
   },
 ];
