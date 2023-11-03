@@ -1,7 +1,7 @@
 import { instance, VERSION } from "../api";
 
 export const getList = async (data: any) => {
-  const {
+  let {
     keyword,
     value,
     rating,
@@ -14,37 +14,52 @@ export const getList = async (data: any) => {
   } = data;
 
   let keywordQuery = "";
-  if (keyword) {
-    keywordQuery += `CourseName=${keyword}`;
-  }
-  if (value) {
-    const { min, max } = value;
-    keywordQuery += `CourseName=${keyword}`;
-  }
-  if (rating) {
-    keywordQuery += `CourseName=${keyword}`;
+
+  keywordQuery += `CourseName=${keyword}`;
+
+  if (duration) {
+    for (let keyword of duration) {
+      keywordQuery += `&DurationType=${keyword}`;
+    }
   }
   if (courseType) {
     if (courseType == 1) {
-      keywordQuery += `CourseName=${keyword}`;
+      keywordQuery += `&TeachingType=Online`;
     } else if (courseType == 2) {
-      keywordQuery += `CourseName=${keyword}`;
-    }
-  }
-  if (startTime) {
-    keywordQuery += `CourseName=${keyword}`;
-  }
-  if (duration) {
-    keywordQuery += `CourseName=${keyword}`;
-  }
-  if (cateList) {
-    for (let keyword of cateList) {
-      keywordQuery += `&CourseMajorId=${encodeURIComponent(keyword)}`;
+      keywordQuery += `&TeachingType=Offline`;
     }
   }
 
-  const response = await instance.post(
-    "api/TeachingCourse/Filter?" + keywordQuery
+  if (startTime) {
+    for (let keyword of startTime) {
+      keywordQuery += `&StartDateType=${keyword}`;
+    }
+  }
+  if (value) {
+    // const { min, max } = value;
+    keywordQuery += `&StartPrice=${value[0]}000&EndPrice=${value[1]}000`;
+  }
+  if (cateList) {
+    for (let keyword of cateList) {
+      keywordQuery += `&CourseMajorId=${keyword}`;
+    }
+  }
+  if (rating) {
+    for (let keyword of rating) {
+      keywordQuery += `&AvgRating=${keyword}`;
+    }
+  }
+
+  // console.log(
+  //   "api/TeachingCourse/Filter?" +
+  //     keywordQuery +
+  //     `&pageIndex=${pageIndex}&pageSize=${pageSize}`
+  // );
+
+  const response = await instance.get(
+    "api/TeachingCourse/Filter?" +
+      keywordQuery +
+      `&pageIndex=${pageIndex}&pageSize=${pageSize}`
   );
   return response.data;
 };
