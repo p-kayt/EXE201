@@ -20,7 +20,46 @@ const CourseDetail = () => {
   let { courseId } = useParams();
   const [activeTab, setActiveTab] = useState("description");
   const [classType, setClassType] = useState("5-15");
-  const [course, setCourse] = useState([]);
+  const [course, setCourse] = useState({
+    "courseName": "string",
+    "duration": 0,
+    "totalWeek": 0,
+    "teachingType": "Online",
+    "startDate": "2023-11-03T02:11:03.000Z",
+    "endDate": "2023-11-03T02:11:03.000Z",
+    "coursePrice": 0,
+    "description": "string",
+    "syllabusFile": "string",
+    "courseSampleVideo": "string",
+    "totalStudent": 0,
+    "avgRating": 0,
+    "allowJoiningClass": "Yes",
+    "courseType": "Lecture",
+    "courseFile": "string",
+    "courseStatus": "Draft",
+    "classLocation": "string",
+    "creationDate": "2023-11-03T02:11:03.000Z",
+    "createdBy": 0,
+    "tutorId": 0,
+    "universityId": 0,
+    "courseMajorId": 0,
+    "units": [
+      {
+        "unitName": "string",
+        "minuteTime": 0,
+        "content": "string",
+        "homeWorkFile": "string",
+        "teachingMaterialFile": "string"
+      }
+    ],
+    "universities": {
+      "universityName": "string",
+      "universityArea": "Urban"
+    },
+    "courseMajor": {
+      "courseMajorName": "string"
+    }
+  });
 
   useEffect(() => {
     fetch("https://zunitutor.azurewebsites.net/api/TeachingCourse/" + courseId)
@@ -58,8 +97,6 @@ const CourseDetail = () => {
       theme: "dark",
     });
   };
-
-  console.log(course?.units == [])
 
   return (
     <>
