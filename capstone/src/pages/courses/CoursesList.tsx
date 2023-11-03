@@ -13,6 +13,7 @@ import { useNavigate } from "react-router-dom";
 import { Slider, Pagination, CircularProgress } from "@mui/material";
 // import Pagination from "@mui/material/Pagination";
 import {
+  CourseThumbnail,
   rating0,
   rating1,
   rating2,
@@ -33,6 +34,7 @@ const CoursesList = (props: Props) => {
   const dispatch = useDispatch<ThunkDispatch<any, any, any>>();
   const courses = useSelector(coursesSelector);
   let items = courses.data;
+
   const [isExpand, setExpand] = React.useState(Array<string>);
   // search
   const [keyword, setkeyword] = React.useState("");
@@ -68,17 +70,36 @@ const CoursesList = (props: Props) => {
         newCateList.push(cate.id);
         newCateList = newCateList.filter((element) => element !== 0);
       }
+    } else {
+      for (let cate of cateList) {
+        newCateList.push(cate);
+      }
     }
+
+    // limit
+    let newDurList: number[] = [];
+    let newStartList: number[] = [];
+    if (duration.length <= 0) {
+      newDurList = [1, 2, 3];
+    } else {
+      newDurList = [...duration];
+    }
+    if (startTime.length <= 0) {
+      newStartList = [1, 2, 3];
+    } else {
+      newStartList = [...startTime];
+    }
+
     dispatch(
       getCoursesList({
         keyword,
         value,
         rating,
         courseType,
-        startTime,
-        duration,
+        startTime: newStartList,
+        duration: newDurList,
         cateList: newCateList,
-        pageIndex: page,
+        pageIndex: page - 1,
         pageSize,
       })
     );
@@ -481,7 +502,6 @@ const CoursesList = (props: Props) => {
               <CircularProgress color="secondary" />
             ) : items ? (
               <>
-                {" "}
                 <div className="item-group">
                   {items?.map((item: any, index: number) => (
                     <div
@@ -492,7 +512,14 @@ const CoursesList = (props: Props) => {
                       <span className="span">
                         <div className="card-content-container">
                           <div className="media">
-                            <img src={item.CourseImage} alt={item.CourseName} />
+                            <img
+                              src={
+                                item.CourseImage
+                                  ? item.CourseImage
+                                  : CourseThumbnail
+                              }
+                              alt={item.CourseName}
+                            />
                             <div className="major">
                               <p>{item.CourseMajorName} </p>
                             </div>
