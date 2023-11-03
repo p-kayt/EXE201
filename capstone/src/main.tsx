@@ -28,6 +28,7 @@ import TopUp from "./pages/topup/TopUp.tsx";
 import CourseDetail from "./pages/CourseDetail/CourseDetail.tsx";
 import AdminPage from "./pages/Admin/AdminPage.tsx";
 import PrivateRoutes from "./components/route/PrivateRoute.tsx";
+import BuyPage from "./pages/buypage/BuyPage.tsx";
 
 const router = createBrowserRouter([
   {
@@ -111,9 +112,10 @@ const router = createBrowserRouter([
             element: <CoursesList />,
           },
           {
-            path: "/course-list/:courseId",
+            path: "/course-list/:courseId/",
             element: <CourseDetail />,
           },
+          { path: "/course-list/:courseId/buy", element: <BuyPage /> },
           {
             path: "/example",
             element: <TempComponent />,
