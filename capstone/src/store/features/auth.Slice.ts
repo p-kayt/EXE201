@@ -35,7 +35,7 @@ const authSlice = createSlice({
       })
       .addCase(loginUser.rejected, (state: any, action) => {
         state.loading = "failed";
-        state.error = action.payload;
+        state.error = action.payload ? action.payload : null;
       });
   },
 
