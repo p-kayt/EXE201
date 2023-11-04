@@ -42,10 +42,17 @@ import {
 import { useDispatch, useSelector } from "react-redux";
 import { messageSelector } from "../../store/selector";
 import { setMessage } from "../../store/features/message.Slice";
+import { useNavigate } from "react-router-dom";
 
 const Homepage = () => {
   const auth = useSelector(messageSelector);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const handleNavigation = (route: string) => {
+    navigate(route);
+    window.scrollTo(0, 0);
+  };
 
   useEffect(() => {
     if (auth.data) {
@@ -102,6 +109,7 @@ const Homepage = () => {
                 btnText="Tìm Kiếm"
                 theme="light"
                 btnColor={"#F0631C"}
+                onClick={() => handleNavigation("./course-list")}
               />
             </div>
 
@@ -176,6 +184,7 @@ const Homepage = () => {
                 btnText="Khám phá ngay"
                 theme="light"
                 enabled={true}
+                onClick={() => handleNavigation("./course-list")}
               />
             </div>
 
@@ -224,6 +233,7 @@ const Homepage = () => {
                 btnText="Khám phá ngay"
                 theme="light"
                 enabled={true}
+                onClick={() => handleNavigation("./course-list")}
               />
             </div>
           </div>

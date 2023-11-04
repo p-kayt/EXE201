@@ -4,13 +4,13 @@ export const login = async (data: any) => {
   // console.log(data);
   //   console.log("api" + "/v/User/Login");
 
-  const response = await instance.post("api/User/Login/Login", data);
+  const response = await instance.post("api/User/Login", data);
   return response.data;
 };
 
 export const register = async (data: any) => {
   // console.log(data);
-  const response = await instance.post("api/User/Register/Register", data);
+  const response = await instance.post("api/User/Register", data);
   // console.log(response);
 
   return response.data;
