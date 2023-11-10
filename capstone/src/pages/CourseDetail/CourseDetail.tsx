@@ -101,19 +101,6 @@ const CourseDetail = () => {
 
   return (
     <>
-      <ToastContainer
-        position="top-right"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="dark"
-      />
-
       <div className="tutor-detail-content">
         <div className="left">
           <div className="tutor-detail-header">

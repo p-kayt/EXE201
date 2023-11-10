@@ -1,6 +1,11 @@
 import React from "react";
 import CustomButton from "../../components/button/CustomButton";
 import { useNavigate } from "react-router-dom";
+import { useQuery } from "@tanstack/react-query";
+import { authSelector } from "../../store/selector";
+import { useSelector } from "react-redux";
+import { instance } from "../../api/api";
+import { formatCurrency } from "../../utils/string.helper";
 
 type Props = {};
 
@@ -9,6 +14,22 @@ const Wallet = (props: Props) => {
   const handleTopUp = () => {
     navigate("/top-up");
   };
+  const auth = useSelector(authSelector);
+
+  const walletQuery = useQuery({
+    queryKey: ["wallet", auth?.user?.Id],
+    queryFn: async () => {
+      const res = await instance.get(
+        "https://namanh-exe.monoinfinity.net/api/Wallet/GetWalletByUserId?id=" +
+          auth?.user?.Id
+      );
+
+      return res.data.result.walletAmount;
+    },
+    initialData: 0,
+    enabled: auth?.user?.Id != null,
+  });
+
   return (
     <>
       <div className="content-container">
@@ -34,7 +55,7 @@ const Wallet = (props: Props) => {
           </div>
           <div className="right-card">
             <div className="wallet-value">
-              <p>2.000.000 đ</p>
+              <p>{formatCurrency(walletQuery.data)}</p>
               <p>Số dư khả dụng</p>
             </div>
           </div>

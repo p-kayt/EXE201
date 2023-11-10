@@ -31,7 +31,9 @@ const Login = (props: Props) => {
   useEffect(() => {
     if (auth.loading === "succeeded" && auth.user != null) {
       navigate("/");
+      return;
     }
+
     if (auth.loading === "failed") {
       console.log("failed");
       toast.error("Sai email hoặc mật khẩu!", {
@@ -46,7 +48,6 @@ const Login = (props: Props) => {
       });
     }
     if (auth.error != null) {
-      console.log(auth.error);
       toast.error("Sai email hoặc mật khẩu!", {
         position: "top-right",
         autoClose: 5000,
@@ -121,20 +122,6 @@ const Login = (props: Props) => {
 
   return (
     <>
-      <ToastContainer
-        position="top-right"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="light"
-      />
-
-      <ToastContainer />
       <div className="login-container">
         <div className="login-card">
           <div className="login-form">

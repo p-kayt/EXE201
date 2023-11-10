@@ -125,20 +125,6 @@ const Register = (props: Props) => {
   };
   return (
     <>
-      <ToastContainer
-        position="top-right"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="light"
-      />
-
-      <ToastContainer />
       <div className="login-container">
         <div className="login-card">
           <div className="login-form">

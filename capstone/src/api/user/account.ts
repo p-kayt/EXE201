@@ -17,7 +17,7 @@ export const register = async (data: any) => {
 };
 
 export const getUserById = async (ID: any) => {
-  const response = await instance.get("api/User/Info" + "/" + ID);
+  const response = await instance.get("api/User/Info?id=" + +ID);
   return response.data;
 };
 

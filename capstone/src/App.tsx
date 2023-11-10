@@ -8,6 +8,7 @@ import "./App.css";
 import Footer from "./components/footer/Footer";
 import Hearder from "./components/header/Hearder";
 import { UserProvider } from "./context/userContext";
+import { ToastContainer } from "react-toastify";
 
 const queryClient = new QueryClient();
 
@@ -26,6 +27,18 @@ function App() {
         <Outlet />
         <Footer />
       </UserProvider>
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
     </QueryClientProvider>
   );
 }

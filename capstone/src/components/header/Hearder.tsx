@@ -6,7 +6,9 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { authSelector } from "../../store/selector";
 import { BlankAva } from "../../assets/Images";
-import { truncate } from "../../utils/string.helper";
+import { formatCurrency, truncate } from "../../utils/string.helper";
+import { useQuery } from "@tanstack/react-query";
+import { instance } from "../../api/api";
 
 type HeaderProps = {};
 
@@ -15,6 +17,20 @@ const Header = (props: HeaderProps) => {
   const navigate = useNavigate();
   const location = useLocation();
   const auth = useSelector(authSelector);
+
+  const walletQuery = useQuery({
+    queryKey: ["wallet", auth?.user?.Id],
+    queryFn: async () => {
+      const res = await instance.get(
+        "https://namanh-exe.monoinfinity.net/api/Wallet/GetWalletByUserId?id=" +
+          auth?.user?.Id
+      );
+
+      return res.data.result.walletAmount;
+    },
+    initialData: 0,
+    enabled: auth?.user?.Id != null,
+  });
 
   useEffect(() => {
     if (auth.user) {
@@ -73,10 +89,10 @@ const Header = (props: HeaderProps) => {
           <>
             <CustomButton
               theme="light"
-              style={{ width: "120px" }}
+              style={{ width: "250px" }}
               iconSrc=""
               enabled={true}
-              btnText="0đ"
+              btnText={formatCurrency(walletQuery.data)}
               onClick={() =>
                 handleNavigation("./profile/" + auth?.user?.Id + "/wallet")
               }
