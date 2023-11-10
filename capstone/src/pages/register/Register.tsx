@@ -144,7 +144,7 @@ const Register = (props: Props) => {
       <div className="login-container">
         <div className="login-card">
           <div className="login-form">
-            <div className="form-header">
+            <div className="form-header flex flex-col justify-center items-center">
               <img src={Logo}></img>
               <p>Tạo tài khoản miễn phí.</p>
             </div>

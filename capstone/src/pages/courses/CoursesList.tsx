@@ -12,6 +12,8 @@ import { categories, items } from "./data";
 import { useNavigate } from "react-router-dom";
 import { Slider, Pagination, CircularProgress } from "@mui/material";
 // import Pagination from "@mui/material/Pagination";
+import { Swiper, SwiperSlide } from "swiper/react";
+
 import {
   CourseThumbnail,
   rating0,
@@ -212,18 +214,18 @@ const CoursesList = (props: Props) => {
   return (
     <>
       <div className="list-container">
-        <h1>Khoá học với gia sư</h1>
+        <h1 className="text-[32px] font-bold">Khoá học với gia sư</h1>
         <div className="content">
           <div className="filter-container">
             <div className="filter-item">
-              <h2>Bộ lọc</h2>
+              <h2 className="text-2xl font-bold">Bộ lọc</h2>
             </div>
             <div className="filter-item">
               <div
                 className="filter-label"
                 onClick={() => handleExpand("price")}
               >
-                <h3>Giá</h3>
+                <h3 className="font-bold text-[19px]">Giá</h3>
                 {isExpand.includes("price") ? (
                   <img
                     style={{
@@ -276,7 +278,7 @@ const CoursesList = (props: Props) => {
                 className="filter-label"
                 onClick={() => handleExpand("rating")}
               >
-                <h3>Đánh giá</h3>
+                <h3 className="font-bold text-[19px]">Đánh giá</h3>
                 {isExpand.includes("rating") ? (
                   <img
                     style={{
@@ -339,7 +341,7 @@ const CoursesList = (props: Props) => {
                 className="filter-label"
                 onClick={() => handleExpand("type")}
               >
-                <h3>Hình thức</h3>
+                <h3 className="font-bold text-[19px]">Hình thức</h3>
                 {isExpand.includes("type") ? (
                   <img
                     style={{
@@ -367,7 +369,7 @@ const CoursesList = (props: Props) => {
                 className="filter-label"
                 onClick={() => handleExpand("start-time")}
               >
-                <h3>Thời gian bắt đầu</h3>
+                <h3 className="font-bold text-[19px]">Thời gian bắt đầu</h3>
                 {isExpand.includes("start-time") ? (
                   <img
                     style={{
@@ -414,7 +416,7 @@ const CoursesList = (props: Props) => {
                 className="filter-label"
                 onClick={() => handleExpand("duration")}
               >
-                <h3>Thời lượng buổi học</h3>
+                <h3 className="font-bold text-[19px]">Thời lượng buổi học</h3>
                 {isExpand.includes("duration") ? (
                   <img
                     style={{
@@ -457,11 +459,12 @@ const CoursesList = (props: Props) => {
               )}
             </div>
           </div>
-          <div className="list-item-container">
+          <div className="list-item-container flex flex-col">
             <div className="search-group">
-              <div className="search-bar">
+              <div className="search-bar !h-auto">
                 <img src={SearchIcon} alt="" />
                 <input
+                  className="!py-2 block"
                   placeholder="Tìm kiếm bằng từ khoá hoặc mã môn"
                   onChange={(e) => handleSearch(e)}
                 ></input>
@@ -480,21 +483,32 @@ const CoursesList = (props: Props) => {
               </div>
             </div>
             {/* ================= */}
-            <div className="category" tabIndex={0}>
-              {categories.map((item, index) => (
-                <div
-                  className={
-                    cateList.includes(item.id)
-                      ? "category-item selected"
-                      : "category-item"
-                  }
-                  key={item.id}
-                  onClick={() => handleCheckCate(item.id)}
-                >
-                  <img src={item.icon} />
-                  <p>{item.courseMajorName}</p>
-                </div>
-              ))}
+            <div className="py-2  max-w-screen-xl ">
+              <Swiper
+                spaceBetween={8}
+                slidesPerView={6.5}
+                className="category "
+                style={{ height: 50, padding: "10px 0" }}
+              >
+                {categories.map((item, index) => (
+                  <SwiperSlide
+                    key={item.id}
+                    style={{}}
+                    onClick={() => handleCheckCate(item.id)}
+                  >
+                    <div
+                      className={
+                        cateList.includes(item.id)
+                          ? "category-item selected"
+                          : "category-item"
+                      }
+                    >
+                      <img src={item.icon} />
+                      <p>{item.courseMajorName}</p>
+                    </div>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
             </div>
 
             {/* =========== */}

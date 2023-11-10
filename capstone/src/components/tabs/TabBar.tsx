@@ -16,7 +16,7 @@ const TabBar = (props: Props) => {
 
   return (
     <div>
-      <div className="tab-container">
+      <div className="tab-container font-semibold">
         {props.valueList?.map((value, index) => (
           <div
             key={index}

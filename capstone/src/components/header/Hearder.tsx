@@ -31,7 +31,7 @@ const Header = (props: HeaderProps) => {
   };
 
   return (
-    <div className="header">
+    <div className="header py-6">
       <div className="header-left-content">
         <div className="header-brand">
           <img className="header-brand-logo" src={Logo} />
@@ -41,7 +41,7 @@ const Header = (props: HeaderProps) => {
           className={endOfURL == "" ? "header-tabs-active" : "header-tabs"}
           onClick={() => handleNavigation("./")}
         >
-          <p>Trang chủ</p>
+          <p className="font-semibold">Trang chủ</p>
         </div>
         <div
           className={
@@ -49,7 +49,7 @@ const Header = (props: HeaderProps) => {
           }
           onClick={() => handleNavigation("./course-list")}
         >
-          <p>Học với gia sư</p>
+          <p className="font-semibold">Học với gia sư</p>
         </div>
         {/* <div
           className={"header-tabs"}
@@ -63,7 +63,7 @@ const Header = (props: HeaderProps) => {
           }
           onClick={() => handleNavigation("./about-us")}
         >
-          <p>Về chúng tôi</p>
+          <p className="font-semibold">Về chúng tôi</p>
         </div>
       </div>
 
@@ -76,7 +76,9 @@ const Header = (props: HeaderProps) => {
               iconSrc=""
               enabled={true}
               btnText="0đ"
-              onClick={() => handleNavigation("./profile/" + auth?.user?.Id + "/wallet")}
+              onClick={() =>
+                handleNavigation("./profile/" + auth?.user?.Id + "/wallet")
+              }
             />
             {/* <CustomButton
               theme="light"

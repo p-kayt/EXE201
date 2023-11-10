@@ -56,7 +56,6 @@ const Homepage = () => {
 
   useEffect(() => {
     if (auth.data) {
-      console.log(1)
       toast.info(auth.data, {
         position: "top-right",
         autoClose: 5000,
@@ -85,9 +84,13 @@ const Homepage = () => {
         pauseOnHover
         theme="dark"
       />
-      <div className="homepage-content">
+      <div className="homepage-content fade-in">
         <div className="homepage-introduction">
-          <div className="homepage-introduction-left-content">
+          <div
+            className="homepage-introduction-left-content"
+            data-aos="fade-right"
+            data-aos-delay="1000"
+          >
             <div className="homepage-introduction-heading">
               Học gì đó với{" "}
               <span className="homepage-introduction-heading-brand">
@@ -103,7 +106,7 @@ const Homepage = () => {
             <div className="homepage-introduction-search-bar">
               <DropdownSearchBar style={{ width: "70%" }} />
               <Button
-                style={{ width: "30%"}}
+                style={{ width: "30%" }}
                 iconSrc=""
                 enabled={true}
                 btnText="Tìm Kiếm"
@@ -128,6 +131,8 @@ const Homepage = () => {
             </div>
           </div>
           <img
+            data-aos="fade-left"
+            data-aos-delay="1000"
             className="homepage-introduction-right-content"
             src={GirlPicture}
           />
@@ -140,19 +145,22 @@ const Homepage = () => {
           </div>
 
           <div className="homepage-association-content">
-            <img src={Hutech} />
-            <img src={BK} />
-            <img src={NgoaiThuong} />
-            <img src={VanLang} />
-            <img src={UAH} />
-            <img src={FPTU} />
-            <img src={NEU} />
+            <img src={Hutech} data-aos="fade-up" />
+            <img src={BK} data-aos="fade-up" />
+            <img src={NgoaiThuong} data-aos="fade-up" />
+            <img src={VanLang} data-aos="fade-up" />
+            <img src={UAH} data-aos="fade-up" />
+            <img src={FPTU} data-aos="fade-up" />
+            <img src={NEU} data-aos="fade-up" />
           </div>
         </div>
 
         <div className="homepage-description">
           <div className="homepage-description-section">
-            <div className="homepage-description-section-content">
+            <div
+              className="homepage-description-section-content"
+              data-aos="fade-right"
+            >
               <p className="homepage-description-section-content-title">
                 Tìm kiếm gia sư <span>nhanh chóng</span>
               </p>
@@ -188,19 +196,26 @@ const Homepage = () => {
               />
             </div>
 
-            <div className="homepage-description-section-image">
+            <div
+              className="homepage-description-section-image"
+              data-aos="fade-left"
+            >
               <img src={CourseCard1} />
             </div>
           </div>
 
           <div className="homepage-description-section">
-            <div className="homepage-description-section-image">
+            <div
+              className="homepage-description-section-image"
+              data-aos="flip-up"
+            >
               <img src={CourseCard2} />
             </div>
 
             <div
               className="homepage-description-section-content"
               style={{ marginRight: "9%" }}
+              data-aos="fade-up"
             >
               <p className="homepage-description-section-content-title">
                 Tìm kiếm khoá học <span>nhanh chóng</span>
@@ -245,50 +260,50 @@ const Homepage = () => {
           </div>
 
           <div className="homepage-majors-rows">
-            <div className="homepage-majors-rows-item">
+            <div className="homepage-majors-rows-item" data-aos="fade-up">
               <img src={Calculator} />
               Toán học & Logic
             </div>
-            <div className="homepage-majors-rows-item">
+            <div className="homepage-majors-rows-item" data-aos="fade-up">
               <img src={Business} />
               Kinh doanh
             </div>
-            <div className="homepage-majors-rows-item">
+            <div className="homepage-majors-rows-item" data-aos="fade-up">
               <img src={IT} />
               Công nghệ thông tin
             </div>
-            <div className="homepage-majors-rows-item">
+            <div className="homepage-majors-rows-item" data-aos="fade-up">
               <img src={Computer} />
               Khoa học máy tính
             </div>
-            <div className="homepage-majors-rows-item">
+            <div className="homepage-majors-rows-item" data-aos="fade-up">
               <img src={Paint} />
               Nghệ thuật & Nhân văn
             </div>
           </div>
 
           <div className="homepage-majors-rows">
-            <div className="homepage-majors-rows-item">
+            <div className="homepage-majors-rows-item" data-aos="fade-up">
               <img src={Graph} />
               Khoa học dữ liệu
             </div>
-            <div className="homepage-majors-rows-item">
+            <div className="homepage-majors-rows-item" data-aos="fade-up">
               <img src={Community} />
               Khoa học xã hội
             </div>
-            <div className="homepage-majors-rows-item">
+            <div className="homepage-majors-rows-item" data-aos="fade-up">
               <img src={Physics} />
               Vật lý & Kỹ thuật
             </div>
-            <div className="homepage-majors-rows-item">
+            <div className="homepage-majors-rows-item" data-aos="fade-up">
               <img src={Brain} />
               Phát triển cá nhân
             </div>
-            <div className="homepage-majors-rows-item">
+            <div className="homepage-majors-rows-item" data-aos="fade-up">
               <img src={Heart} />
               Sức khỏe
             </div>
-            <div className="homepage-majors-rows-item">
+            <div className="homepage-majors-rows-item" data-aos="fade-up">
               <img src={Language} />
               Ngôn ngữ
             </div>
@@ -306,7 +321,10 @@ const Homepage = () => {
               thuê gia sư đại học và tìm kiếm khóa học đa dạng.
             </div>
 
-            <div className="homepage-experience-content-grid">
+            <div
+              className="homepage-experience-content-grid"
+              data-aos="fade-right"
+            >
               <div className="homepage-experience-content-grid-item">
                 <div className="homepage-experience-content-grid-item-title">
                   Đội ngũ gia sư
@@ -361,7 +379,7 @@ const Homepage = () => {
             </div>
           </div>
 
-          <img src={ManImage} />
+          <img src={ManImage} data-aos="fade-left" />
         </div>
       </div>
     </>

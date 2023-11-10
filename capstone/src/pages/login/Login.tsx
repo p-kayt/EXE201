@@ -139,7 +139,9 @@ const Login = (props: Props) => {
         <div className="login-card">
           <div className="login-form">
             <div className="form-header">
-              <img src={Logo}></img>
+              <Link to="/">
+                <img src={Logo}></img>
+              </Link>
               <p>Chào mừng trở lại</p>
             </div>
             <span>

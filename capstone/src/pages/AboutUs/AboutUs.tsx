@@ -17,18 +17,18 @@ const AboutUs = () => {
 
   const handleNavigation = (route: string) => {
     navigate(route);
-    window.scrollTo(0, 0); 
+    window.scrollTo(0, 0);
   };
 
   return (
     <>
-      <div className="aboutUs-content">
+      <div className="aboutUs-content fade-in">
         <div className="aboutUs-tutor-register">
           <div className="aboutUs-tutor-register-title">
             Kết nối bạn và gia sư dễ dàng và học hiệu quả
           </div>
 
-          <div className="aboutUs-tutor-register-description">
+          <div className="aboutUs-tutor-register-description !font-semibold">
             Bạn có thể tìm kiếm vô vàn khoá học phù hợp dễ dàng
           </div>
 

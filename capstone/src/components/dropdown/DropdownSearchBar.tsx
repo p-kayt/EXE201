@@ -10,7 +10,7 @@ const DropdownSearchBar = (props: SearchBarProps) => {
   const { style } = props;
 
   return (
-    <div className="dropdown-search-bar" style={style}>
+    <div className="dropdown-search-bar py-6" style={style}>
       <img src={SearchIcon} alt="" />
       <input placeholder="Search"></input>
       <img src={Arrow} className="search-bar-arrow" />

@@ -171,20 +171,22 @@
       .category {
         position: relative;
         height: 50px;
-        margin: 20px 0px 10px 0px;
-        width: 100%;
 
+        margin: 20px 10px 10px 0px;
+        width: 100%;
+        max-width: 1400px;
         display: flex;
         flex-wrap: wrap;
         flex-direction: column;
         gap: 5px;
         overflow: hidden;
-        overflow-x: scroll;
+
         .category-item {
           display: flex;
           flex-direction: row;
           gap: 1px;
           height: 100%;
+          padding: 0 16px;
 
           text-align: center;
           border-radius: 10px;

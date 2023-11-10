@@ -1,6 +1,7 @@
 import React from "react";
 import "../common.scss";
 import Avatar from "../avatar/Avatar";
+import clsx from "clsx";
 
 type BtnProps = {
   theme: "light" | "dark" | "stripe";
@@ -80,10 +81,13 @@ const CustomButton = (props: BtnProps) => {
     <>
       <div
         style={style}
-        className={btnClass}
+        className={clsx(btnClass)}
         onClick={enabled ? onClick : () => {}}
       >
-        <span style={{ backgroundColor: btnColor, color: color }}>
+        <span
+          className="!font-semibold"
+          style={{ backgroundColor: btnColor, color: color }}
+        >
           {iconSrc || imgSrc ? mediaContent : ""}
           {btnText}
         </span>
