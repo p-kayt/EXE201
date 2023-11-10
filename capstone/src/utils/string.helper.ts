@@ -13,7 +13,7 @@ export const truncate = (str: string, length: number) => {
 // return đ
 export const formatCurrency = (amount: number) => {
   if (!amount) {
-    return "0";
+    return "0 đ";
   }
 
   return amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "đ";

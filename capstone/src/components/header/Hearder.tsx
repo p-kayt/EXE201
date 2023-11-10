@@ -22,8 +22,7 @@ const Header = (props: HeaderProps) => {
     queryKey: ["wallet", auth?.user?.Id],
     queryFn: async () => {
       const res = await instance.get(
-        "https://namanh-exe.monoinfinity.net/api/Wallet/GetWalletByUserId?id=" +
-          auth?.user?.Id
+        "/api/Wallet/GetWalletByUserId?id=" + auth?.user?.Id
       );
 
       return res.data.result.walletAmount;

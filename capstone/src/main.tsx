@@ -170,6 +170,10 @@ const router = createBrowserRouter([
                 path: "/profile/:ID/admin/statistics",
                 element: <AdminStatistics />,
               },
+              {
+                path: "/profile/:ID/admin/transactionManagement",
+                element: <Wallet />,
+              },
             ],
           },
         ],

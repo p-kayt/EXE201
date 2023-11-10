@@ -103,6 +103,18 @@ const ADMIN_NAV = [
     path: "/admin/statistics",
     title: "Thống kê",
   },
+  // {
+  //   id: 6,
+  //   icon: ProfileCircle,
+  //   path: "/admin/users",
+  //   title: "Quản lý người dùng",
+  // },
+  {
+    id: 7,
+    icon: WalletMoney,
+    path: "/admin/transactionManagement",
+    title: "Quản lý giao dịch",
+  },
   {
     id: 4,
     icon: BookOpen,
@@ -132,6 +144,12 @@ const USER_NAV = [
     path: "/my-courses",
     title: "Khóa học đã mua",
   },
+  {
+    id: 2,
+    icon: WalletMoney,
+    path: "/wallet",
+    title: "Quản lí ví",
+  },
   // {
   //   id: 4,
   //   icon: BookOpen,
@@ -151,6 +169,12 @@ const TUTOR_NAV = [
     icon: Chart,
     path: "/statistics",
     title: "Thống kê",
+  },
+  {
+    id: 2,
+    icon: WalletMoney,
+    path: "/wallet",
+    title: "Quản lí ví",
   },
   {
     id: 4,

@@ -9,6 +9,7 @@ import {
   Twitch,
   Youtube,
 } from "../../assets/Icons";
+import { Link } from "react-router-dom";
 import CustomButton from "../button/CustomButton";
 type Props = {};
 
@@ -43,7 +44,9 @@ const Footer = (props: Props) => {
                 sự truyền tải tri thức và thúc đẩy sự nghiệp toàn cầu.
               </div>
               <div className="social">
-                <img src={Facebook} />
+                <Link to="https://www.facebook.com/profile.php?id=61551834059069&mibextid=LQQJ4d">
+                  <img src={Facebook} />
+                </Link>
                 <img src={Instagram} />
                 <img src={Twitch} />
                 <img src={Youtube} />

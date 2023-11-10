@@ -15,6 +15,7 @@ import CustomButton from "../../components/button/CustomButton";
 import { ToastContainer, toast } from "react-toastify";
 import { utcToZonedTime } from "date-fns-tz";
 import { format } from "date-fns";
+import { instance } from "../../api/api";
 
 const CourseDetail = () => {
   let { courseId } = useParams();
@@ -63,7 +64,13 @@ const CourseDetail = () => {
   });
 
   useEffect(() => {
-    fetch("https://zunitutor.azurewebsites.net/api/TeachingCourse/" + courseId)
+    instance.get("/api/TeachingCourse/GetById?id=" + courseId).then((res) => {
+      setCourse(res.data.result);
+    });
+  }, [courseId]);
+
+  useEffect(() => {
+    fetch("/api/TeachingCourse/" + courseId)
       .then((response) => response.json())
       .then((result) => {
         setCourse(result.result[0]);

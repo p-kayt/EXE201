@@ -35,7 +35,7 @@ const CoursesList = (props: Props) => {
   const navigate = useNavigate();
   const dispatch = useDispatch<ThunkDispatch<any, any, any>>();
   const courses = useSelector(coursesSelector);
-  let items = courses.data;
+  let items = courses.data?.items;
 
   const [isExpand, setExpand] = React.useState(Array<string>);
   // search
@@ -211,6 +211,8 @@ const CoursesList = (props: Props) => {
   ) => {
     setPage(value);
   };
+  console.log(items);
+
   return (
     <>
       <div className="list-container">
@@ -459,7 +461,7 @@ const CoursesList = (props: Props) => {
               )}
             </div>
           </div>
-          <div className="flex flex-col list-item-container">
+          <div className=" list-item-container">
             <div className="search-group">
               <div className="search-bar !h-auto">
                 <img src={SearchIcon} alt="" />
@@ -522,49 +524,53 @@ const CoursesList = (props: Props) => {
             ) : items ? (
               <>
                 <div className="item-group">
-                  {items?.map((item: any, index: number) => (
-                    <div
-                      className="card"
-                      key={index}
-                      onClick={() => handleClickCard(item.id)}
-                    >
-                      <span className="span">
-                        <div className="card-content-container">
-                          <div className="media">
-                            <img
-                              src={
-                                item.CourseImage
-                                  ? item.CourseImage
-                                  : CourseThumbnail
-                              }
-                              alt={item.CourseName}
-                            />
-                            <div className="major">
-                              <p>{item.CourseMajorName} </p>
-                            </div>
-                          </div>
-                          <div className="detail">
-                            <div className="favorite-icon">
-                              <img src={HeartLinear} />
-                            </div>
-                            <div className="tutor">
-                              <div className="name">{item.Fullname}</div>
-                            </div>
-                            <div className="coursename">{item.CourseName}</div>
-                            <div className="bottom">
-                              <div className="rating">
-                                <img src={StarFilled} />
-                                <p>{item.RatingStar}</p>
-                              </div>
-                              <div className="price">
-                                <p>{item.CoursePrice} đ </p>
+                  {items?.map((item: any, index: number) => {
+                    return (
+                      <div
+                        className="card"
+                        key={index}
+                        onClick={() => handleClickCard(item.id)}
+                      >
+                        <span className="span">
+                          <div className="card-content-container">
+                            <div className="media">
+                              <img
+                                src={
+                                  item.courseImageURL
+                                    ? item.courseImageURL
+                                    : CourseThumbnail
+                                }
+                                alt={item.courseName}
+                              />
+                              <div className="major">
+                                <p>{item?.courseMajor?.courseMajorName} </p>
                               </div>
                             </div>
+                            <div className="detail">
+                              <div className="favorite-icon">
+                                <img src={HeartLinear} />
+                              </div>
+                              <div className="tutor">
+                                <div className="name">{item.Fullname}</div>
+                              </div>
+                              <div className="coursename">
+                                {item.courseName}
+                              </div>
+                              <div className="bottom">
+                                <div className="rating">
+                                  <img src={StarFilled} />
+                                  <p>{item.ratingStar}</p>
+                                </div>
+                                <div className="price">
+                                  <p>{item.coursePrice} đ </p>
+                                </div>
+                              </div>
+                            </div>
                           </div>
-                        </div>
-                      </span>
-                    </div>
-                  ))}
+                        </span>
+                      </div>
+                    );
+                  })}
                 </div>
                 <div className="pagination">
                   <Pagination
