@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { registerUser, verifyUserEmail } from "../api-thunk/userThunk";
+import { toast } from "react-toastify";
 
 const initialState = {};
 const accountSlice = createSlice({
@@ -17,6 +18,7 @@ const accountSlice = createSlice({
       .addCase(registerUser.fulfilled, (state: any, action: any) => {
         state.loading = "succeeded";
         state.error = null;
+
         console.log(action.payload);
 
         if (action.payload.message === "Create success") {
@@ -24,6 +26,7 @@ const accountSlice = createSlice({
         } else {
           state.error = action.payload.message;
         }
+        toast.success("Đăng ký thành công!");
         state.loading = "succeeded";
         state.error = null;
       })

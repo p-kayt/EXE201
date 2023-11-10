@@ -25,9 +25,19 @@ export const registerUser = createAsyncThunk(
   "user/register",
   async (props: any, thunkAPI) => {
     try {
-      console.log(props);
-
-      const response = await register(JSON.stringify(props));
+      const response = await register(
+        JSON.stringify({
+          ...props,
+          dateOfBirth: new Date(),
+          phoneNumber: "empty",
+          joinDate: new Date(),
+          selfDecription: "empty",
+          student: {
+            selfDescription: "empty",
+            totalCourseLearned: 0,
+          },
+        })
+      );
       return response;
     } catch (error: any) {
       // temp

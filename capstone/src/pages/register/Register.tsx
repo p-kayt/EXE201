@@ -76,8 +76,6 @@ const Register = (props: Props) => {
         registerUser({ fullName: name, email: email, password: password })
       );
     }
-
-    console.log({ name, email, password });
   };
 
   const handleName = (e: any) => {
@@ -144,7 +142,7 @@ const Register = (props: Props) => {
       <div className="login-container">
         <div className="login-card">
           <div className="login-form">
-            <div className="form-header flex flex-col justify-center items-center">
+            <div className="flex flex-col items-center justify-center form-header">
               <img src={Logo}></img>
               <p>Tạo tài khoản miễn phí.</p>
             </div>
