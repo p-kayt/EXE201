@@ -6,6 +6,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { authSelector } from "../../store/selector";
 import { BlankAva } from "../../assets/Images";
+import { truncate } from "../../utils/string.helper";
 
 type HeaderProps = {};
 
@@ -31,7 +32,7 @@ const Header = (props: HeaderProps) => {
   };
 
   return (
-    <div className="header py-6">
+    <div className="py-6 header">
       <div className="header-left-content">
         <div className="header-brand">
           <img className="header-brand-logo" src={Logo} />
@@ -99,7 +100,7 @@ const Header = (props: HeaderProps) => {
               imgSrc={auth?.user?.img ? auth?.user?.img : BlankAva}
               imgOptions="rounded"
               imgSize={32}
-              btnText={auth?.user?.email}
+              btnText={truncate(auth?.user?.email, 12)}
               onClick={() => handleNavigation("./profile/" + auth?.user?.Id)}
             />
           </>

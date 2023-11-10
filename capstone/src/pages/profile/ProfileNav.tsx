@@ -14,12 +14,14 @@ import { useLocation, useNavigate, useParams } from "react-router-dom";
 import CustomButton from "../../components/button/CustomButton";
 import { setAuthUser } from "../../store/features/auth.Slice";
 import { items } from "../courses/data";
+import { useUserContext } from "../../context/userContext";
 
 type Props = {};
 
 const ProfileNav = (props: Props) => {
   const auth = useSelector(authSelector);
   const user = useSelector(userSelector).data;
+  const userContext = useUserContext();
   let navList = [...BASE_NAV];
   //
   const navigate = useNavigate();
@@ -31,6 +33,10 @@ const ProfileNav = (props: Props) => {
   //
   if (auth.user.role === "") {
     navList = [...BASE_NAV, ...USER_NAV];
+  }
+
+  if (userContext.isAdmin) {
+    navList = [...ADMIN_NAV, ...BASE_NAV];
   }
 
   const endOfURL = location.pathname.split("/").pop();
@@ -89,6 +95,21 @@ const ProfileNav = (props: Props) => {
     </>
   );
 };
+
+const ADMIN_NAV = [
+  {
+    id: 3,
+    icon: Chart,
+    path: "/admin/statistics",
+    title: "Thống kê",
+  },
+  {
+    id: 4,
+    icon: BookOpen,
+    path: "/created-courses",
+    title: "Khóa học đã tạo",
+  },
+];
 
 const BASE_NAV = [
   {
