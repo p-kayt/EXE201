@@ -459,7 +459,7 @@ const CoursesList = (props: Props) => {
               )}
             </div>
           </div>
-          <div className="list-item-container flex flex-col">
+          <div className="flex flex-col list-item-container">
             <div className="search-group">
               <div className="search-bar !h-auto">
                 <img src={SearchIcon} alt="" />
@@ -483,7 +483,12 @@ const CoursesList = (props: Props) => {
               </div>
             </div>
             {/* ================= */}
-            <div className="py-2  max-w-screen-xl ">
+            <div
+              className="max-w-screen-xl py-2 "
+              style={{
+                maxWidth: "1400px",
+              }}
+            >
               <Swiper
                 spaceBetween={8}
                 slidesPerView={6.5}
