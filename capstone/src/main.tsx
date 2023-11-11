@@ -122,10 +122,10 @@ const router = createBrowserRouter([
             path: "/course-list",
             element: <CoursesList />,
           },
-          {
-            path: "/tutor-profile/:tutorId/",
-            element: <TutorDetail />,
-          },
+          // {
+          //   path: "/tutor-profile/:tutorId/",
+          //   element: <TutorDetail />,
+          // },
           {
             path: "/course-list/:courseId/",
             element: <CourseDetail />,
