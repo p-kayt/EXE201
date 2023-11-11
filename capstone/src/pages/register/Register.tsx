@@ -10,6 +10,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { ThunkDispatch } from "@reduxjs/toolkit";
 import { accountSelector } from "../../store/selector";
 import { ToastContainer, toast } from "react-toastify";
+import { setMsg } from "../../store/features/account.Slice";
 type Props = {};
 type TooltipProps = { value: string };
 
@@ -28,6 +29,17 @@ const Register = (props: Props) => {
   const account = useSelector(accountSelector);
   useEffect(() => {
     if (account?.loading === "succeeded" && account.message != null) {
+      toast.success("Tạo tài khoản thành công!", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+      dispatch(setMsg(null));
       navigate("/login");
     }
     if (account?.loading === "failed") {
@@ -125,6 +137,18 @@ const Register = (props: Props) => {
   };
   return (
     <>
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
       <div className="login-container">
         <div className="login-card">
           <div className="login-form">

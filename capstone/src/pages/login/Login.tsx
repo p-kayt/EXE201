@@ -7,7 +7,7 @@ import { Logo, Eye, EyeSlash, InfoCircle } from "../../assets/Icons";
 import { useDispatch, useSelector } from "react-redux";
 import { loginUser } from "../../store/api-thunk/userThunk";
 import { ThunkDispatch } from "@reduxjs/toolkit";
-import { authSelector } from "../../store/selector";
+import { accountSelector, authSelector } from "../../store/selector";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 type Props = {};
@@ -121,6 +121,18 @@ const Login = (props: Props) => {
 
   return (
     <>
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
       <div className="login-container">
         <div className="login-card">
           <div className="login-form">

@@ -6,7 +6,11 @@ const initialState = {};
 const accountSlice = createSlice({
   name: "account",
   initialState: initialState,
-  reducers: {},
+  reducers: {
+    setMsg: (state: any, action) => {
+      state.message = action.payload;
+    },
+  },
   extraReducers: (builder) => {
     builder
       // register request
@@ -46,6 +50,6 @@ const accountSlice = createSlice({
       });
   },
 });
-export const {} = accountSlice.actions;
+export const { setMsg } = accountSlice.actions;
 
 export default accountSlice;
