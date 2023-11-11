@@ -44,6 +44,8 @@ const CoursesList = (props: Props) => {
   const [keyword, setkeyword] = React.useState("");
   // price filter
   const [value, setValue] = React.useState<number[]>([50, 2000]);
+  const [tempValue, setTempValue] = React.useState<number[]>([50, 2000]);
+
   const [minValue, setMinValue] = React.useState(value[0]);
   const [maxValue, setMaxValue] = React.useState(value[1]);
   // rating filter
@@ -145,8 +147,13 @@ const CoursesList = (props: Props) => {
   }, [value]);
 
   const handleChange = (event: Event, newValue: number | number[]) => {
-    setValue(newValue as number[]);
+    setTempValue(newValue as number[]);
   };
+
+  const handleMouseUp = () => {
+    setValue(tempValue);
+  };
+
   const handleMin = (e: any) => {
     const min = e.target.value;
     const newValue = [min, value[1]];
@@ -251,8 +258,9 @@ const CoursesList = (props: Props) => {
               {isExpand.includes("price") && (
                 <div style={{ width: "85%", margin: "0 auto" }}>
                   <Slider
-                    value={value}
+                    value={tempValue}
                     onChange={handleChange}
+                    onMouseUp={handleMouseUp}
                     min={50}
                     max={2000}
                   />
