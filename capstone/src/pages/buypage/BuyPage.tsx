@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./buypage.scss";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Avatar from "../../components/avatar/Avatar";
 
 import { BlankAva } from "../../assets/Images";
@@ -25,6 +25,7 @@ type Props = {};
 const BuyPage = (props: Props) => {
   let { courseId } = useParams();
   const dispatch = useDispatch<ThunkDispatch<any, any, any>>();
+  const navigate = useNavigate();
   const auth = useSelector(authSelector);
   const user = useSelector(userSelector);
   const [open, setOpen] = React.useState(false);
@@ -132,13 +133,17 @@ const BuyPage = (props: Props) => {
               tutorId: course?.tutorId,
               orderDetails: [
                 {
-                  teachingCourseId: courseId,
+                  teachingCourseId: Number(courseId),
                 },
               ],
             };
             instance.post("/api/Order/Create", data).then((res1) => {
               if (res1.data.status === "Created") {
-                instance.put("/api/Order/PayBooking?id=" + res1.data.id);
+                instance
+                  .put("/api/Order/PayBooking?id=" + res1.data.result.id)
+                  .then(() => {
+                    navigate("../course-list/" + courseId);
+                  });
                 // .then((res) => {
                 //   console.log(res.data.result);
                 // });
