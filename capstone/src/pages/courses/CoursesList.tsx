@@ -36,7 +36,7 @@ const CoursesList = (props: Props) => {
   const dispatch = useDispatch<ThunkDispatch<any, any, any>>();
   const courses = useSelector(coursesSelector);
   let items = courses.data?.items;
-
+  let totalPageCount = courses.data?.totalPagesCount;
   const [isExpand, setExpand] = React.useState(Array<string>);
   // search
   const [keyword, setkeyword] = React.useState("");
@@ -57,7 +57,7 @@ const CoursesList = (props: Props) => {
 
   //pagination
   const [page, setPage] = React.useState(1);
-  const [totalPage, setTotalPage] = React.useState(10);
+  const [totalPage, setTotalPage] = React.useState(totalPageCount);
 
   const handleClickCard = (id: any) => {
     navigate(`./${id}`);
@@ -101,7 +101,7 @@ const CoursesList = (props: Props) => {
         startTime: newStartList,
         duration: newDurList,
         cateList: newCateList,
-        pageIndex: page - 1,
+        pageIndex: page,
         pageSize,
       })
     );
@@ -211,7 +211,7 @@ const CoursesList = (props: Props) => {
   ) => {
     setPage(value);
   };
-  console.log(items);
+  // console.log(items);
 
   return (
     <>
