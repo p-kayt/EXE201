@@ -71,8 +71,6 @@ const CoursesList = (props: Props) => {
     cateList.forEach((item) => {
       filterCat.push(categories.find((i) => i.id === item));
     });
-    console.log(filterCat);
-
     items = courses.data?.items.filter((item: any) =>
       filterCat.some(
         (a) => a.courseMajorName === item.courseMajor.courseMajorName

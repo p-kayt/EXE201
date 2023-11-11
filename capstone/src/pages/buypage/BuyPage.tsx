@@ -9,8 +9,8 @@ import CustomButton from "../../components/button/CustomButton";
 import { ToastContainer, toast } from "react-toastify";
 import { instance } from "../../api/api";
 import { useQuery } from "@tanstack/react-query";
-import { useSelector } from "react-redux";
-import { authSelector } from "../../store/selector";
+import { useDispatch, useSelector } from "react-redux";
+import { authSelector, userSelector } from "../../store/selector";
 import {
   Button,
   Dialog,
@@ -18,11 +18,15 @@ import {
   DialogContent,
   DialogTitle,
 } from "@mui/material";
+import { ThunkDispatch } from "@reduxjs/toolkit";
+import { getUser } from "../../store/api-thunk/userThunk";
 type Props = {};
 
 const BuyPage = (props: Props) => {
   let { courseId } = useParams();
+  const dispatch = useDispatch<ThunkDispatch<any, any, any>>();
   const auth = useSelector(authSelector);
+  const user = useSelector(userSelector);
   const [open, setOpen] = React.useState(false);
   const [course, setCourse] = useState({
     courseName: "string",
@@ -105,18 +109,6 @@ const BuyPage = (props: Props) => {
   });
 
   const handleBuy = () => {
-    console.log(walletQuery.data);
-    const data = {
-      orderDate: new Date().toJSON(),
-      orderStatus: "Pending",
-      studentId: Number(auth?.user?.Id),
-      tutorId: course?.tutorId,
-      orderDetails: [
-        {
-          teachingCourseId: courseId,
-        },
-      ],
-    };
     if (walletQuery.data < course?.coursePrice) {
       toast.error("Số dư không đủ để thanh toán !", {
         position: "top-right",
@@ -129,13 +121,31 @@ const BuyPage = (props: Props) => {
         theme: "dark",
       });
     } else {
-      instance.post("/api/Order/Create", data).then((res) => {
-        if (res.data.status === "Created") {
-          instance.put("/api/Order/PayBooking?id=" + courseId).then((res) => {
-            console.log(res.data.result);
-          });
-        }
-      });
+      instance
+        .get("/api/Student/GetById?id=" + Number(auth?.user?.Id))
+        .then((res) => {
+          if (res.data.result) {
+            const data = {
+              orderDate: new Date().toJSON(),
+              orderStatus: "Pending",
+              studentId: res.data.result.id,
+              tutorId: course?.tutorId,
+              orderDetails: [
+                {
+                  teachingCourseId: courseId,
+                },
+              ],
+            };
+            instance.post("/api/Order/Create", data).then((res1) => {
+              if (res1.data.status === "Created") {
+                instance.put("/api/Order/PayBooking?id=" + res1.data.orderId);
+                // .then((res) => {
+                //   console.log(res.data.result);
+                // });
+              }
+            });
+          }
+        });
     }
     handleToggle();
   };
