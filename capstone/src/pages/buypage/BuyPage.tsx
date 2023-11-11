@@ -138,7 +138,7 @@ const BuyPage = (props: Props) => {
             };
             instance.post("/api/Order/Create", data).then((res1) => {
               if (res1.data.status === "Created") {
-                instance.put("/api/Order/PayBooking?id=" + res1.data.orderId);
+                instance.put("/api/Order/PayBooking?id=" + res1.data.id);
                 // .then((res) => {
                 //   console.log(res.data.result);
                 // });
