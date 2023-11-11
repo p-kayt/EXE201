@@ -503,7 +503,7 @@ const CoursesList = (props: Props) => {
             <div
               className="max-w-screen-xl py-2 "
               style={{
-                maxWidth: "1400px",
+                maxWidth: "1290px",
               }}
             >
               <Swiper
