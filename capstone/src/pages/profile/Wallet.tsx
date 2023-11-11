@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import CustomButton from "../../components/button/CustomButton";
 import { useNavigate } from "react-router-dom";
 import { useMutation, useQuery } from "@tanstack/react-query";
@@ -52,6 +52,7 @@ const Wallet = (props: Props) => {
   };
   const auth = useSelector(authSelector);
   const [isDeposit, setIsDeposit] = React.useState(false);
+  const [isWithdraw, setIsWithDraw] = React.useState(false);
   const [isUpdate, setIsUpdate] = React.useState(false);
   const formMethods = useForm<IWithdraw>({
     defaultValues,
@@ -61,6 +62,10 @@ const Wallet = (props: Props) => {
       })
     ),
   });
+
+  useEffect(() => {
+    transactionQuery.refetch();
+  }, []);
 
   const formMethodsUpdate = useForm<IUpdateWallet>({
     defaultValues: defaultValuesUpdate,
@@ -113,7 +118,7 @@ const Wallet = (props: Props) => {
       let dto = {
         transactionType: 1,
         createAt: new Date().toISOString(),
-        transactionDescription: `Rút tiền vào ví ${data.amount}`,
+        transactionDescription: `Rút tiền khỏi ví ${data.amount}`,
         walletId: walletQuery.data.id,
         amountTransaction: Number(data.amount),
       };
@@ -130,8 +135,41 @@ const Wallet = (props: Props) => {
       if (data.data?.status === "BadRequest") {
         toast.error(data.data?.message);
       } else {
-        toast.success("Withdraw successfully");
+        toast.success("Withdraw request successfully");
         setIsDeposit(false);
+        transactionQuery.refetch();
+      }
+    },
+    onError: (data: any) => {
+      toast.error("Confirm failed!");
+    },
+  });
+
+  const transactionMutation2 = useMutation({
+    mutationFn: async (data: any) => {
+      let dto = {
+        transactionType: 0,
+        createAt: new Date().toISOString(),
+        transactionDescription: `Nạp tiền vào ví ${data.amount}`,
+        walletId: walletQuery.data.id,
+        amountTransaction: Number(data.amount),
+      };
+
+      const res = await instance.post("/api/Transaction/Create", dto);
+
+      return {
+        ...res,
+        amount: dto.amountTransaction,
+        transactionType: dto.transactionType,
+      };
+    },
+    onSuccess: (data: any) => {
+      if (data.data?.status === "BadRequest") {
+        toast.error(data.data?.message);
+      } else {
+        toast.success("Deposit request successfully");
+        setIsDeposit(false);
+        handleTopUp();
         transactionQuery.refetch();
       }
     },
@@ -150,11 +188,11 @@ const Wallet = (props: Props) => {
 
       const res = await instance.put(
         "/api/Wallet/Update?id=" +
-          dto.id +
-          "&stk=" +
-          dto.stk +
-          "&bank=" +
-          dto.bank
+        dto.id +
+        "&stk=" +
+        dto.stk +
+        "&bank=" +
+        dto.bank
       );
 
       return res;
@@ -292,6 +330,78 @@ const Wallet = (props: Props) => {
                 fontSize: "30px",
               }}
             >
+              Nạp Tiền Vào Ví
+            </Dialog.Title>
+            <FormProvider {...formMethods}>
+              <form
+                className="input"
+                onSubmit={formMethods.handleSubmit((data) =>
+                  transactionMutation2.mutate(data)
+                )}
+              >
+                <div className="info-item">
+                  <label htmlFor="fullname">Số Tiền</label>
+                  <div className="input">
+                    <input
+                      type="number"
+                      className="w-full px-4 py-2 border border-gray-300 rounded"
+                      placeholder="Amount"
+                      required
+                      {...formMethods.register("amount")}
+                    />
+                  </div>
+                </div>
+
+                <FormError name="amount" />
+                <button
+                  style={{
+                    marginTop: "20px",
+                    border: "none",
+                    width: "100%",
+                    display: "flex",
+                  }}
+                >
+                  <CustomButton
+                    theme="light"
+                    btnColor="green"
+                    btnText="Nạp tiền"
+                    color="#fff"
+                    onClick={() => setIsDeposit(true)}
+                  />
+                </button>
+              </form>
+            </FormProvider>
+          </Dialog.Panel>
+        </div>
+      </Dialog>
+
+      <Dialog
+        open={isWithdraw}
+        onClose={() => setIsWithDraw(false)}
+        className="relative z-50 content-container "
+      >
+        <div
+          className="fixed inset-0 "
+          aria-hidden="true"
+          style={{
+            backgroundColor: "rgba(0,0,0,0.3)",
+          }}
+        />
+
+        <div className="fixed inset-0 flex items-center justify-center w-screen p-4">
+          <Dialog.Panel
+            className="max-w-sm mx-auto bg-white rounded fade-in"
+            style={{
+              padding: "24px 48px",
+            }}
+          >
+            <Dialog.Title
+              className="text-lg font-bold text-center"
+              style={{
+                color: "#F0631C",
+                fontSize: "30px",
+              }}
+            >
               Rút Tiền Khỏi Ví
             </Dialog.Title>
             <FormProvider {...formMethods}>
@@ -373,10 +483,10 @@ const Wallet = (props: Props) => {
           <div className="wallet-card">
             <div className="left-card">
               <h2>Tổng Khả Dụng</h2>
-              <div className="wallet-value">
+              {/* <div className="wallet-value">
                 <p>+2.000.000 đ</p>
                 <p>Lần giao dịch gần nhất</p>
-              </div>
+              </div> */}
 
               <div className="btn-group">
                 <CustomButton
@@ -384,12 +494,12 @@ const Wallet = (props: Props) => {
                   btnColor={"#F0631C"}
                   btnText="Nạp tiền"
                   color={"white"}
-                  onClick={() => handleTopUp()}
+                  onClick={() => setIsDeposit(true)}
                 />
                 <CustomButton
                   theme="light"
                   btnText="Rút tiền"
-                  onClick={() => setIsDeposit(true)}
+                  onClick={() => setIsWithDraw(true)}
                 />
               </div>
             </div>
@@ -400,7 +510,7 @@ const Wallet = (props: Props) => {
               </div>
             </div>
           </div>
-          <div className="wallet-card">
+          {/* <div className="wallet-card">
             <div className="left-card">
               <h2>{walletQuery.data.bank}</h2>
               <div className="">
@@ -417,7 +527,7 @@ const Wallet = (props: Props) => {
             >
               <div className="wallet-value"></div>
             </div>
-          </div>
+          </div> */}
         </div>
         <div
           className="transaction"
@@ -468,11 +578,9 @@ const Wallet = (props: Props) => {
                   <div
                     style={{
                       fontSize: "30px",
-                      color: item.transactionType
-                        .toLowerCase()
-                        .includes("withdraw")
-                        ? "#e74c3c"
-                        : "#27ae60",
+                      color: item?.transactionType == "withdraw"
+                          ? "#e74c3c"
+                          : "#27ae60",
                     }}
                   >
                     <FaMoneyBillAlt />
@@ -487,9 +595,7 @@ const Wallet = (props: Props) => {
                   >
                     <div
                       style={{
-                        color: item.transactionType
-                          .toLowerCase()
-                          .includes("withdraw")
+                        color: item?.transactionType == "withdraw"
                           ? "#e74c3c"
                           : "#27ae60",
                         fontWeight: "bold",
@@ -502,17 +608,22 @@ const Wallet = (props: Props) => {
                 </div>
                 <div
                   style={{
-                    color: item.transactionType
-                      .toLowerCase()
-                      .includes("withdraw")
-                      ? "#e74c3c"
-                      : "#27ae60",
+                    color: item?.transactionType == "withdraw"
+                          ? "#e74c3c"
+                          : "#27ae60",
                     fontWeight: "bold",
                   }}
                 >
-                  {item.transactionType.toLowerCase().includes("withdraw")
+
+                  {item?.transactionType === "withdraw"
                     ? "Rút tiền"
-                    : "Mua Khóa Học"}
+                    : "Nạp tiền"}
+                  {item.transactionStatus.toLowerCase().includes("complete")
+                    ? ""
+                    : item.transactionStatus.toLowerCase().includes("failed")
+                      ? " (không thành công)"
+                      : " (đang duyệt)"}
+
                 </div>
               </div>
             ))}

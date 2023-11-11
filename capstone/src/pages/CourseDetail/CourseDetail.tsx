@@ -17,11 +17,26 @@ import { utcToZonedTime } from "date-fns-tz";
 import { format } from "date-fns";
 import { instance } from "../../api/api";
 
+
+
 const CourseDetail = () => {
   let { courseId } = useParams();
   const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState("description");
   const [classType, setClassType] = useState("5-15");
+  const [tutor, setTutor] = useState({
+    id: 0,
+    fullName: "string",
+    email: "string",
+    password: "string",
+    dateOfBirth: "string",
+    phoneNumber: "string",
+    accountStatus: "string",
+    image: "string",
+    joinDate: "string",
+    selfDecription: "string",
+    createdAt: "string",
+  });
   const [course, setCourse] = useState({
     courseName: "string",
     duration: 0,
@@ -63,22 +78,26 @@ const CourseDetail = () => {
     },
   });
 
+  const handleNavigation = (route: string) => {
+    navigate(route);
+    window.scrollTo(0, 0);
+  };
+
   useEffect(() => {
     instance.get("/api/TeachingCourse/GetById?id=" + courseId).then((res) => {
       setCourse(res.data.result);
     });
+    
   }, [courseId]);
 
   useEffect(() => {
-    fetch("/api/TeachingCourse/" + courseId)
-      .then((response) => response.json())
-      .then((result) => {
-        setCourse(result.result[0]);
-      })
-      .catch((error) => {
-        console.error("Error fetching data:", error);
+    if (course.tutorId) {
+      instance.get("/api/User/Info?id=" + course.tutorId).then((res) => {
+        setTutor(res.data.result);     
       });
-  }, []);
+    }
+  }, [course.tutorId]);
+  
 
   const convertToVNTime = (timestamp: string): string => {
     const timeZone = "Asia/Ho_Chi_Minh";
@@ -116,10 +135,10 @@ const CourseDetail = () => {
             <div className="information">
               <div className="title">{course?.courseName}</div>
 
-              <div className="user">
-                <Avatar type="rounded" size={32} source={BlankAva} />
+              <div className="user" onClick={() => handleNavigation('/tutor-profile/' + course.tutorId)}>
+                <Avatar type="rounded" size={32} source={tutor?.image} />
                 {/* {course?.Fullname} */}
-                Lê Thị Dung
+                {tutor?.fullName}
                 <img src={Verify} />
               </div>
 
