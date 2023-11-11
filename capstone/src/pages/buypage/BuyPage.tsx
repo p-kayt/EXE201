@@ -7,11 +7,23 @@ import { BlankAva } from "../../assets/Images";
 import { Verify } from "../../assets/Icons";
 import CustomButton from "../../components/button/CustomButton";
 import { ToastContainer, toast } from "react-toastify";
+import { instance } from "../../api/api";
+import { useQuery } from "@tanstack/react-query";
+import { useSelector } from "react-redux";
+import { authSelector } from "../../store/selector";
+import {
+  Button,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogTitle,
+} from "@mui/material";
 type Props = {};
 
 const BuyPage = (props: Props) => {
   let { courseId } = useParams();
-
+  const auth = useSelector(authSelector);
+  const [open, setOpen] = React.useState(false);
   const [course, setCourse] = useState({
     courseName: "string",
     duration: 0,
@@ -54,30 +66,101 @@ const BuyPage = (props: Props) => {
   });
 
   useEffect(() => {
-    fetch("https://zunitutor.azurewebsites.net/api/TeachingCourse/" + courseId)
-      .then((response) => response.json())
-      .then((result) => {
-        setCourse(result.result[0]);
-      })
-      .catch((error) => {
-        console.error("Error fetching data:", error);
-      });
-  }, []);
-  const handleBuy = () => {
-    toast.error("Số dư không đủ để thanh toán !", {
-      position: "top-right",
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "dark",
+    instance.get("/api/TeachingCourse/GetById?id=" + courseId).then((res) => {
+      setCourse(res.data.result);
     });
+  }, [courseId]);
+
+  // useEffect(() => {
+  //   fetch("/api/TeachingCourse/" + courseId)
+  //     .then((response) => response.json())
+  //     .then((result) => {
+  //       setCourse(result.result[0]);
+  //     })
+  //     .catch((error) => {
+  //       console.error("Error fetching data:", error);
+  //     });
+  // }, []);
+  // useEffect(() => {
+  //   fetch("https://zunitutor.azurewebsites.net/api/TeachingCourse/" + courseId)
+  //     .then((response) => response.json())
+  //     .then((result) => {
+  //       setCourse(result.result[0]);
+  //     })
+  //     .catch((error) => {
+  //       console.error("Error fetching data:", error);
+  //     });
+  // }, []);
+  const walletQuery = useQuery({
+    queryKey: ["wallet", auth?.user?.Id],
+    queryFn: async () => {
+      const res = await instance.get(
+        "/api/Wallet/GetWalletByUserId?id=" + auth?.user?.Id
+      );
+
+      return res.data.result.walletAmount;
+    },
+    initialData: 0,
+    enabled: auth?.user?.Id != null,
+  });
+
+  const handleBuy = () => {
+    console.log(walletQuery.data);
+    const data = {
+      orderDate: new Date().toJSON(),
+      orderStatus: "Pending",
+      studentId: Number(auth?.user?.Id),
+      tutorId: course?.tutorId,
+      orderDetails: [
+        {
+          teachingCourseId: courseId,
+        },
+      ],
+    };
+    if (walletQuery.data < course?.coursePrice) {
+      toast.error("Số dư không đủ để thanh toán !", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+      });
+    } else {
+      instance.post("/api/Order/Create", data).then((res) => {
+        if (res.data.status === "Created") {
+          instance.put("/api/Order/PayBooking?id=" + courseId).then((res) => {
+            console.log(res.data.result);
+          });
+        }
+      });
+    }
+    handleToggle();
+  };
+  const handleToggle = () => {
+    setOpen(!open);
   };
   return (
     <>
       <div className="buypage-container">
+        <Dialog
+          open={open}
+          onClose={() => setOpen(false)}
+          aria-labelledby="alert-dialog-title"
+          aria-describedby="alert-dialog-description"
+        >
+          <DialogTitle id="alert-dialog-title">Xác nhận thanh toán</DialogTitle>
+          <DialogContent>Thanh toán cho {course?.courseName}</DialogContent>
+          <DialogActions>
+            <Button onClick={handleToggle}>Hủy</Button>
+            <Button onClick={handleBuy} autoFocus>
+              Xác nhận
+            </Button>
+          </DialogActions>
+        </Dialog>
+
         <h1>Thanh toán</h1>
         <div className="content">
           <div className="course-info">
@@ -102,7 +185,7 @@ const BuyPage = (props: Props) => {
             <div className="method">
               <h3>Thanh toán với</h3>
               <label className="radio">
-                <input className="radio" type="radio" checked />
+                <input className="radio" type="radio" defaultChecked />
                 <span>Ví zuni</span>
               </label>
             </div>
@@ -113,7 +196,7 @@ const BuyPage = (props: Props) => {
               btnText="Xác nhận"
               color={"#fff"}
               onClick={() => {
-                handleBuy();
+                handleToggle();
               }}
             />
           </div>

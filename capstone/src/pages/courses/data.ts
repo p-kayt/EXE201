@@ -15,104 +15,105 @@ import {
 export const items = [
   {
     id: 1,
-    CourseName:
+    courseName:
       "Lập trình digital và hoạt ảnh cho hoạt hình 2D, kèm tài liệu chất lượng",
-    RatingStar: 5.0,
+    ratingStar: 5.0,
     Fullname: "Lê Ngọc Sơn", //TutorName
-    CoursePrice: 700000,
-    CourseImage:
+    coursePrice: 700000,
+    courseImageURLURL:
       "https://images.idgesg.net/images/article/2019/05/cso_best_security_software_best_ideas_best_technology_lightbulb_on_horizon_of_circuit_board_landscape_with_abstract_digital_connective_technology_atmosphere_ideas_innovation_creativity_by_peshkov_gettyimages-965785212_3x2_2400x1600-100797318-large.jpg?auto=webp&quality=85,70", //MISSING
-    CourseMajorName: "Lập trình",
+
+    courseMajor: { courseMajorName: "Lập trình" },
   },
   {
     id: 2,
-    CourseName: "Thiết kế web cơ bản với HTML & CSS",
-    RatingStar: 5.0,
+    courseName: "Thiết kế web cơ bản với HTML & CSS",
+    ratingStar: 5.0,
     Fullname: "Nguyễn Minh Châu", //TutorName
-    CoursePrice: 99000,
-    CourseImage:
+    coursePrice: 99000,
+    courseImageURL:
       "https://images.idgesg.net/images/article/2019/05/cso_best_security_software_best_ideas_best_technology_lightbulb_on_horizon_of_circuit_board_landscape_with_abstract_digital_connective_technology_atmosphere_ideas_innovation_creativity_by_peshkov_gettyimages-965785212_3x2_2400x1600-100797318-large.jpg?auto=webp&quality=85,70", //MISSING
-    CourseMajorName: "Lập trình",
+    courseMajor: { courseMajorName: "Lập trình" },
   },
   {
     id: 3,
-    CourseName: "Lập trình Python cho người mới bắt đầu",
-    RatingStar: 5.0,
+    courseName: "Lập trình Python cho người mới bắt đầu",
+    ratingStar: 5.0,
     Fullname: "Phạm Bảo Ngọc", //TutorName
-    CoursePrice: 99000,
-    CourseImage:
+    coursePrice: 99000,
+    courseImageURL:
       "https://images.idgesg.net/images/article/2019/05/cso_best_security_software_best_ideas_best_technology_lightbulb_on_horizon_of_circuit_board_landscape_with_abstract_digital_connective_technology_atmosphere_ideas_innovation_creativity_by_peshkov_gettyimages-965785212_3x2_2400x1600-100797318-large.jpg?auto=webp&quality=85,70", //MISSING
-    CourseMajorName: "Lập trình",
+    courseMajor: { courseMajorName: "Lập trình" },
   },
   {
     id: 4,
-    CourseName: "Khám phá Machine Learning cho người mới bắt đầu",
-    RatingStar: 5.0,
+    courseName: "Khám phá Machine Learning cho người mới bắt đầu",
+    ratingStar: 5.0,
     Fullname: "Đỗ Thị Lan", //TutorName
-    CoursePrice: 99000,
-    CourseImage:
+    coursePrice: 99000,
+    courseImageURL:
       "https://images.idgesg.net/images/article/2019/05/cso_best_security_software_best_ideas_best_technology_lightbulb_on_horizon_of_circuit_board_landscape_with_abstract_digital_connective_technology_atmosphere_ideas_innovation_creativity_by_peshkov_gettyimages-965785212_3x2_2400x1600-100797318-large.jpg?auto=webp&quality=85,70", //MISSING
-    CourseMajorName: "Khoa học máy tính",
+    courseMajor: { courseMajorName: "Khoa học máy tính" },
   },
   {
     id: 5,
-    CourseName: "Phát triển ứng dụng mobile với React Native",
-    RatingStar: 5.0,
+    courseName: "Phát triển ứng dụng mobile với React Native",
+    ratingStar: 5.0,
     Fullname: "Lý Văn B", //TutorName
-    CoursePrice: 99000,
-    CourseImage:
+    coursePrice: 99000,
+    courseImageURL:
       "https://images.idgesg.net/images/article/2019/05/cso_best_security_software_best_ideas_best_technology_lightbulb_on_horizon_of_circuit_board_landscape_with_abstract_digital_connective_technology_atmosphere_ideas_innovation_creativity_by_peshkov_gettyimages-965785212_3x2_2400x1600-100797318-large.jpg?auto=webp&quality=85,70", //MISSING
-    CourseMajorName: "Lập trình",
+    courseMajor: { courseMajorName: "Lập trình" },
   },
   {
     id: 6,
-    CourseName: "Thiết kế đồ họa cơ bản với Adobe Illustrator",
-    RatingStar: 5.0,
+    courseName: "Thiết kế đồ họa cơ bản với Adobe Illustrator",
+    ratingStar: 5.0,
     Fullname: "Nguyễn Thanh Tùng", //TutorName
-    CoursePrice: 99000,
-    CourseImage:
+    coursePrice: 99000,
+    courseImageURL:
       "https://images.idgesg.net/images/article/2019/05/cso_best_security_software_best_ideas_best_technology_lightbulb_on_horizon_of_circuit_board_landscape_with_abstract_digital_connective_technology_atmosphere_ideas_innovation_creativity_by_peshkov_gettyimages-965785212_3x2_2400x1600-100797318-large.jpg?auto=webp&quality=85,70", //MISSING
-    CourseMajorName: "Thiết kế",
+    courseMajor: { courseMajorName: "Thiết kế" },
   },
   {
     id: 7,
-    CourseName: "Nhập môn quản lý dự án Agile với Scrum",
-    RatingStar: 5.0,
+    courseName: "Nhập môn quản lý dự án Agile với Scrum",
+    ratingStar: 5.0,
     Fullname: "Phạm Thu Hằng", //TutorName
-    CoursePrice: 99000,
-    CourseImage:
+    coursePrice: 99000,
+    courseImageURL:
       "https://images.idgesg.net/images/article/2019/05/cso_best_security_software_best_ideas_best_technology_lightbulb_on_horizon_of_circuit_board_landscape_with_abstract_digital_connective_technology_atmosphere_ideas_innovation_creativity_by_peshkov_gettyimages-965785212_3x2_2400x1600-100797318-large.jpg?auto=webp&quality=85,70", //MISSING
-    CourseMajorName: "Quản lý sản phẩm",
+    courseMajor: { courseMajorName: "Quản lý sản phẩm" },
   },
   {
     id: 8,
-    CourseName: "Nhập môn Digital Marketing",
-    RatingStar: 5.0,
+    courseName: "Nhập môn Digital Marketing",
+    ratingStar: 5.0,
     Fullname: "Trần Ngọc Mai", //TutorName
-    CoursePrice: 99000,
-    CourseImage:
+    coursePrice: 99000,
+    courseImageURL:
       "https://images.idgesg.net/images/article/2019/05/cso_best_security_software_best_ideas_best_technology_lightbulb_on_horizon_of_circuit_board_landscape_with_abstract_digital_connective_technology_atmosphere_ideas_innovation_creativity_by_peshkov_gettyimages-965785212_3x2_2400x1600-100797318-large.jpg?auto=webp&quality=85,70", //MISSING
-    CourseMajorName: "Thiết kế",
+    courseMajor: { courseMajorName: "Thiết kế" },
   },
   {
     id: 9,
-    CourseName: "Nghệ thuật nhiếp ảnh và kỹ thuật chụp ảnh cơ bản",
-    RatingStar: 5.0,
+    courseName: "Nghệ thuật nhiếp ảnh và kỹ thuật chụp ảnh cơ bản",
+    ratingStar: 5.0,
     Fullname: "Lê Thị Dung", //TutorName
-    CoursePrice: 99000,
-    CourseImage:
+    coursePrice: 99000,
+    courseImageURL:
       "https://images.idgesg.net/images/article/2019/05/cso_best_security_software_best_ideas_best_technology_lightbulb_on_horizon_of_circuit_board_landscape_with_abstract_digital_connective_technology_atmosphere_ideas_innovation_creativity_by_peshkov_gettyimages-965785212_3x2_2400x1600-100797318-large.jpg?auto=webp&quality=85,70", //MISSING
-    CourseMajorName: "Nghệ thuật",
+    courseMajor: { courseMajorName: "Nghệ thuật" },
   },
   {
     id: 10,
-    CourseName: "Nhập môn quản lý dự án Agile với Scrum",
-    RatingStar: 5.0,
+    courseName: "Nhập môn quản lý dự án Agile với Scrum",
+    ratingStar: 5.0,
     Fullname: "Phạm Thu Hằng", //TutorName
-    CoursePrice: 99000,
-    CourseImage:
+    coursePrice: 99000,
+    courseImageURL:
       "https://images.idgesg.net/images/article/2019/05/cso_best_security_software_best_ideas_best_technology_lightbulb_on_horizon_of_circuit_board_landscape_with_abstract_digital_connective_technology_atmosphere_ideas_innovation_creativity_by_peshkov_gettyimages-965785212_3x2_2400x1600-100797318-large.jpg?auto=webp&quality=85,70", //MISSING
-    CourseMajorName: "Quản lý sản phẩm",
+    courseMajor: { courseMajorName: "Quản lý sản phẩm" },
   },
 ];
 
