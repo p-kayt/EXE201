@@ -124,7 +124,7 @@ const TransactionManagement = () => {
                   {convertToVNTime(row.createAt)}
                 </TableCell>
                 <TableCell align="right"> 
-                  {row.transactionType === "withdraw" ? "Nạp " : " Rút "}{row.amountTransaction}0 vnd
+                  {row.transactionType === "withdraw" ? "Rút " : " Nạp "}{row.amountTransaction} vnd
                 </TableCell>
                 {row.transactionStatus === "Complete" ? (
                   <>
