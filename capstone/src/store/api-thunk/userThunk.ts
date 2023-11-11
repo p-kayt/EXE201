@@ -38,6 +38,7 @@ export const registerUser = createAsyncThunk(
           },
         })
       );
+
       return response;
     } catch (error: any) {
       // temp

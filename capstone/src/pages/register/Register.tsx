@@ -39,6 +39,7 @@ const Register = (props: Props) => {
         progress: undefined,
         theme: "light",
       });
+      window.alert("Tạo tài khoản thành công!");
       dispatch(setMsg(null));
       navigate("/login");
     }
