@@ -39,11 +39,11 @@ const TutorDetail = () => {
 
   return (
     <div>
-      <Document file={pdfFile} onLoadSuccess={onDocumentLoadSuccess}>
+      {/* <Document file={pdfFile} onLoadSuccess={onDocumentLoadSuccess}>
         <Page pageNumber={pageNumber}>
 
         </Page>
-        </Document>
+        </Document> */}
     </div>
   )
 }
