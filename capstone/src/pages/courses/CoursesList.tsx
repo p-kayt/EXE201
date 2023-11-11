@@ -36,6 +36,7 @@ const CoursesList = (props: Props) => {
   const dispatch = useDispatch<ThunkDispatch<any, any, any>>();
   const courses = useSelector(coursesSelector);
   let items = courses.data?.items;
+
   let totalPageCount = courses.data?.totalPagesCount;
   const [isExpand, setExpand] = React.useState(Array<string>);
   // search
@@ -58,6 +59,11 @@ const CoursesList = (props: Props) => {
   //pagination
   const [page, setPage] = React.useState(1);
   const [totalPage, setTotalPage] = React.useState(totalPageCount);
+
+  // filter byname
+  items = courses.data?.items.filter((item: any) =>
+    item.courseName.toLowerCase().includes(keyword.toLowerCase())
+  );
 
   const handleClickCard = (id: any) => {
     navigate(`./${id}`);
@@ -105,19 +111,7 @@ const CoursesList = (props: Props) => {
         pageSize,
       })
     );
-    // console.log({
-    //   keyword,
-    //   value,
-    //   rating,
-    //   courseType,
-    //   startTime,
-    //   duration,
-    //   cateList,
-    //   page,
-    //   pageSize,
-    // });
   }, [keyword, value, rating, courseType, startTime, duration, cateList, page]);
-
   const handleSearch = (e: any) => {
     setkeyword(e.target.value);
   };
