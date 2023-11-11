@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import CustomButton from "../../components/button/CustomButton";
 import { useNavigate } from "react-router-dom";
 import { useMutation, useQuery } from "@tanstack/react-query";
@@ -61,6 +61,10 @@ const Wallet = (props: Props) => {
       })
     ),
   });
+
+  useEffect(() => {
+    transactionQuery.refetch();
+  }, []);
 
   const formMethodsUpdate = useForm<IUpdateWallet>({
     defaultValues: defaultValuesUpdate,
@@ -373,10 +377,10 @@ const Wallet = (props: Props) => {
           <div className="wallet-card">
             <div className="left-card">
               <h2>Tổng Khả Dụng</h2>
-              <div className="wallet-value">
+              {/* <div className="wallet-value">
                 <p>+2.000.000 đ</p>
                 <p>Lần giao dịch gần nhất</p>
-              </div>
+              </div> */}
 
               <div className="btn-group">
                 <CustomButton
@@ -400,7 +404,7 @@ const Wallet = (props: Props) => {
               </div>
             </div>
           </div>
-          <div className="wallet-card">
+          {/* <div className="wallet-card">
             <div className="left-card">
               <h2>{walletQuery.data.bank}</h2>
               <div className="">
@@ -417,7 +421,7 @@ const Wallet = (props: Props) => {
             >
               <div className="wallet-value"></div>
             </div>
-          </div>
+          </div> */}
         </div>
         <div
           className="transaction"
@@ -513,6 +517,9 @@ const Wallet = (props: Props) => {
                   {item.transactionType.toLowerCase().includes("withdraw")
                     ? "Rút tiền"
                     : "Mua Khóa Học"}
+                  {item.transactionStatus.toLowerCase().includes("complete")
+                    ? ""
+                    : " (không thành công)"}  
                 </div>
               </div>
             ))}

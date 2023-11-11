@@ -33,6 +33,7 @@ import Dashboard from "./pages/Admin/Dashboard/Dashboard.tsx";
 import UserManagement from "./pages/Admin/UserManagement.tsx";
 import TransactionManagement from "./pages/Admin/Transaction management/TransactionManagement.tsx";
 import AdminStatistics from "./pages/profile/admin/AdminStatistics.tsx";
+import TutorDetail from "./pages/TutorDetail/TutorDetail.tsx";
 
 const router = createBrowserRouter([
   {
@@ -120,6 +121,10 @@ const router = createBrowserRouter([
           {
             path: "/course-list",
             element: <CoursesList />,
+          },
+          {
+            path: "/tutor-profile/:tutorId/",
+            element: <TutorDetail />,
           },
           {
             path: "/course-list/:courseId/",
