@@ -11,12 +11,21 @@ import { instance } from "../../../api/api";
 import Pagination from "@mui/material/Pagination";
 import { useMutation } from "@tanstack/react-query";
 import { toast } from "react-toastify";
+import { utcToZonedTime } from "date-fns-tz";
+import { format } from "date-fns";
 
 interface TransactionItem {
   id: number;
   amountTransaction: number;
   transactionDescription: string;
   transactionStatus: string;
+  createAt: string;
+  transactionType: string;
+  wallet: {
+    user: {
+      fullName:string,
+    }
+  }
 }
 
 const TransactionManagement = () => {
@@ -38,6 +47,9 @@ const TransactionManagement = () => {
           amountTransaction: item.amountTransaction,
           transactionDescription: item.transactionDescription,
           transactionStatus: item.transactionStatus,
+          createAt: item.createAt,
+          transactionType: item.transactionType,
+          wallet: item.wallet,
         })
       );
       setRows(newRows);
@@ -66,9 +78,22 @@ const TransactionManagement = () => {
     },
   });
 
+  const convertToVNTime = (timestamp: string): string => {
+    const timeZone = "Asia/Ho_Chi_Minh";
+
+    const date = new Date(timestamp);
+
+    const zonedDate = utcToZonedTime(date, timeZone);
+
+    const formattedDate = format(zonedDate, "dd/MM/yyyy");
+
+    return formattedDate;
+  };
+
   useEffect(() => {
     fetchData();
   }, [pageIndex]);
+
 
   return (
     <>
@@ -77,7 +102,8 @@ const TransactionManagement = () => {
           <TableHead>
             <TableRow style={{ backgroundColor: "#000", color: "#fff" }}>
               <TableCell>ID</TableCell>
-              <TableCell>Tên giao dịch</TableCell>
+              <TableCell>Tên người giao dịch</TableCell>
+              <TableCell>Thời gian giao dịch</TableCell>
               <TableCell align="right">Số tiền giao dịch</TableCell>
               <TableCell align="right">Tình trạng giao dịch</TableCell>
               <TableCell align="right">Action</TableCell>
@@ -92,10 +118,13 @@ const TransactionManagement = () => {
               >
                 <TableCell align="left">{row.id}</TableCell>
                 <TableCell component="th" scope="row">
-                  {row.transactionDescription}
+                  {row.wallet.user.fullName}
                 </TableCell>
-                <TableCell align="right">
-                  {row.amountTransaction}0 vnd
+                <TableCell component="th" scope="row">
+                  {convertToVNTime(row.createAt)}
+                </TableCell>
+                <TableCell align="right"> 
+                  {row.transactionType === "withdraw" ? "Nạp " : " Rút "}{row.amountTransaction}0 vnd
                 </TableCell>
                 {row.transactionStatus === "Complete" ? (
                   <>
