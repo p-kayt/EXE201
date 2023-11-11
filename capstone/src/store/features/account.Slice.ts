@@ -13,13 +13,10 @@ const accountSlice = createSlice({
       .addCase(registerUser.pending, (state: any) => {
         state.loading = "loading";
         state.error = null;
-        console.log("loading");
       })
       .addCase(registerUser.fulfilled, (state: any, action: any) => {
         state.loading = "succeeded";
         state.error = null;
-
-        console.log(action.payload);
 
         if (action.payload.message === "Create success") {
           state.message = action.payload.message;
@@ -31,8 +28,6 @@ const accountSlice = createSlice({
         state.error = null;
       })
       .addCase(registerUser.rejected, (state: any, action: any) => {
-        console.log("failed");
-
         state.loading = "failed";
         state.error = action.payload;
       })

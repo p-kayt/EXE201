@@ -11,11 +11,19 @@ import { instance } from "../../api/api";
 import { useQuery } from "@tanstack/react-query";
 import { useSelector } from "react-redux";
 import { authSelector } from "../../store/selector";
+import {
+  Button,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogTitle,
+} from "@mui/material";
 type Props = {};
 
 const BuyPage = (props: Props) => {
   let { courseId } = useParams();
   const auth = useSelector(authSelector);
+  const [open, setOpen] = React.useState(false);
   const [course, setCourse] = useState({
     courseName: "string",
     duration: 0,
@@ -95,13 +103,14 @@ const BuyPage = (props: Props) => {
     initialData: 0,
     enabled: auth?.user?.Id != null,
   });
+
   const handleBuy = () => {
     console.log(walletQuery.data);
     const data = {
-      orderDate: "2023-11-11T00:50:00.288Z",
+      orderDate: new Date().toJSON(),
       orderStatus: "Pending",
-      studentId: 0,
-      tutorId: 0,
+      studentId: Number(auth?.user?.Id),
+      tutorId: course?.tutorId,
       orderDetails: [
         {
           teachingCourseId: courseId,
@@ -120,17 +129,38 @@ const BuyPage = (props: Props) => {
         theme: "dark",
       });
     } else {
-      instance.post("/api/Order/Create").then((res) => {
-        console.log(res.data.result);
-      });
-      instance.put("/api/Order/PayBooking?id=" + courseId).then((res) => {
-        console.log(res.data.result);
+      instance.post("/api/Order/Create", data).then((res) => {
+        if (res.data.status === "Created") {
+          instance.put("/api/Order/PayBooking?id=" + courseId).then((res) => {
+            console.log(res.data.result);
+          });
+        }
       });
     }
+    handleToggle();
+  };
+  const handleToggle = () => {
+    setOpen(!open);
   };
   return (
     <>
       <div className="buypage-container">
+        <Dialog
+          open={open}
+          onClose={() => setOpen(false)}
+          aria-labelledby="alert-dialog-title"
+          aria-describedby="alert-dialog-description"
+        >
+          <DialogTitle id="alert-dialog-title">Xác nhận thanh toán</DialogTitle>
+          <DialogContent>Thanh toán cho {course?.courseName}</DialogContent>
+          <DialogActions>
+            <Button onClick={handleToggle}>Hủy</Button>
+            <Button onClick={handleBuy} autoFocus>
+              Xác nhận
+            </Button>
+          </DialogActions>
+        </Dialog>
+
         <h1>Thanh toán</h1>
         <div className="content">
           <div className="course-info">
@@ -166,7 +196,7 @@ const BuyPage = (props: Props) => {
               btnText="Xác nhận"
               color={"#fff"}
               onClick={() => {
-                handleBuy();
+                handleToggle();
               }}
             />
           </div>
