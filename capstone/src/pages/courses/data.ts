@@ -129,5 +129,5 @@ export const categories = [
   { id: 8, icon: Physics, courseMajorName: "Vật lý & Kĩ thuật" },
   { id: 9, icon: Brain, courseMajorName: "Phát triển cá nhân" },
   { id: 10, icon: Heart, courseMajorName: "Sức khỏe" },
-  { id: 11, icon: Language, courseMajorName: "ngôn ngữ" },
+  { id: 11, icon: Language, courseMajorName: "Ngôn ngữ" },
 ];

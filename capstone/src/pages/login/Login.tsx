@@ -35,7 +35,6 @@ const Login = (props: Props) => {
     }
 
     if (auth.loading === "failed") {
-      console.log("failed");
       toast.error("Sai email hoặc mật khẩu!", {
         position: "top-right",
         autoClose: 5000,
