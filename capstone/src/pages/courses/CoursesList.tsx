@@ -28,6 +28,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getCoursesList } from "../../store/api-thunk/coursesThunk";
 import { ThunkDispatch } from "@reduxjs/toolkit";
 import { coursesSelector } from "../../store/selector";
+import { forEach } from "lodash";
 
 type Props = {};
 
@@ -64,6 +65,20 @@ const CoursesList = (props: Props) => {
   items = courses.data?.items.filter((item: any) =>
     item.courseName.toLowerCase().includes(keyword.toLowerCase())
   );
+  // filter bycourseid
+  if (cateList[0] != 0) {
+    let filterCat: any[] = [];
+    cateList.forEach((item) => {
+      filterCat.push(categories.find((i) => i.id === item));
+    });
+    console.log(filterCat);
+
+    items = courses.data?.items.filter((item: any) =>
+      filterCat.some(
+        (a) => a.courseMajorName === item.courseMajor.courseMajorName
+      )
+    );
+  }
 
   const handleClickCard = (id: any) => {
     navigate(`./${id}`);
