@@ -348,7 +348,7 @@ const Wallet = (props: Props) => {
           }}
         >
           <h1>Quản lí ví</h1>
-          <div
+          {/* <div
             style={{
               width: "200px",
             }}
@@ -360,7 +360,7 @@ const Wallet = (props: Props) => {
               color={"white"}
               onClick={() => setIsUpdate(true)}
             />
-          </div>
+          </div> */}
         </div>
         <div
           style={{

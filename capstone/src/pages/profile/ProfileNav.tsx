@@ -115,12 +115,12 @@ const ADMIN_NAV = [
     path: "/admin/transactionManagement",
     title: "Quản lý giao dịch",
   },
-  {
-    id: 4,
-    icon: BookOpen,
-    path: "/created-courses",
-    title: "Khóa học đã tạo",
-  },
+  // {
+  //   id: 4,
+  //   icon: BookOpen,
+  //   path: "/created-courses",
+  //   title: "Khóa học đã tạo",
+  // },
 ];
 
 const BASE_NAV = [

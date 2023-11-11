@@ -172,7 +172,7 @@ const router = createBrowserRouter([
               },
               {
                 path: "/profile/:ID/admin/transactionManagement",
-                element: <Wallet />,
+                element: <TransactionManagement />,
               },
             ],
           },

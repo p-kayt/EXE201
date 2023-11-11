@@ -83,11 +83,12 @@ const TransactionManagement = () => {
               <TableCell align="right">Action</TableCell>
             </TableRow>
           </TableHead>
-          <TableBody style={{ backgroundColor: "#e2e2e2" }}>
+          <TableBody>
             {rows?.map((row) => (
               <TableRow
                 key={row.id}
                 sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+                style={(row.transactionStatus === "WaitingForConFirm") ? {backgroundColor:"#ffffff"} :  {backgroundColor:"#E8E8E8"}}
               >
                 <TableCell align="left">{row.id}</TableCell>
                 <TableCell component="th" scope="row">
