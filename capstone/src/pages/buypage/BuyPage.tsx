@@ -20,6 +20,7 @@ import {
 } from "@mui/material";
 import { ThunkDispatch } from "@reduxjs/toolkit";
 import { getUser } from "../../store/api-thunk/userThunk";
+import swal from "sweetalert2";
 type Props = {};
 
 const BuyPage = (props: Props) => {
@@ -28,7 +29,7 @@ const BuyPage = (props: Props) => {
   const navigate = useNavigate();
   const auth = useSelector(authSelector);
   const user = useSelector(userSelector);
-  const [open, setOpen] = React.useState(false);
+  // const [open, setOpen] = React.useState(false);
   const [course, setCourse] = useState({
     courseName: "string",
     duration: 0,
@@ -110,41 +111,77 @@ const BuyPage = (props: Props) => {
   });
 
   const handleBuy = () => {
-    if (walletQuery.data < course?.coursePrice) {
-      toast.error("Số dư không đủ để thanh toán !", {
-        position: "top-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "dark",
-      });
-    } else {
-      instance
-        .get("/api/Student/GetById?id=" + Number(auth?.user?.Id))
-        .then((res) => {
-          if (res.data.result) {
-            const data = {
-              orderDate: new Date().toJSON(),
-              orderStatus: "Pending",
-              studentId: res.data.result.id,
-              tutorId: course?.tutorId,
-              orderDetails: [
-                {
-                  teachingCourseId: Number(courseId),
-                },
-              ],
-            };
+    swal
+      .fire({
+        title: "Xác nhận thanh toán",
+        text: "Thanh toán cho " + course?.courseName,
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Xác nhận",
+      })
+      .then((result: any) => {
+        if (result.isConfirmed) {
+          if (walletQuery.data < course?.coursePrice) {
+            toast.error("Số dư không đủ để thanh toán !", {
+              position: "top-right",
+              autoClose: 5000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "dark",
+            });
+          } else {
             instance
-              .post("/api/Order/Create", data)
-              .then((res1) => {
-                if (res1.data.status === "Created") {
+              .get("/api/Student/GetById?id=" + Number(auth?.user?.Id))
+              .then((res) => {
+                if (res.data.result) {
+                  const data = {
+                    orderDate: new Date().toJSON(),
+                    orderStatus: "Pending",
+                    studentId: res.data.result.id,
+                    tutorId: course?.tutorId,
+                    orderDetails: [
+                      {
+                        teachingCourseId: Number(courseId),
+                      },
+                    ],
+                  };
                   instance
-                    .put("/api/Order/PayBooking?id=" + res1.data.result.id)
-                    .then((res) => {
-                      navigate("../course-list/" + courseId);
+                    .post("/api/Order/Create", data)
+                    .then((res1) => {
+                      if (res1.data.status === "Created") {
+                        instance
+                          .put(
+                            "/api/Order/PayBooking?id=" + res1.data.result.id
+                          )
+                          .then((res) => {
+                            swal.fire({
+                              title: "Thanh toán thành công!",
+
+                              icon: "success",
+                            });
+                            navigate("../course-list/" + courseId);
+                          })
+                          .catch((error) => {
+                            toast.error(
+                              "Thanh toán thất bại, vui lòng thử lại sau !",
+                              {
+                                position: "top-right",
+                                autoClose: 5000,
+                                hideProgressBar: false,
+                                closeOnClick: true,
+                                pauseOnHover: true,
+                                draggable: true,
+                                progress: undefined,
+                                theme: "dark",
+                              }
+                            );
+                          });
+                      }
                     })
                     .catch((error) => {
                       toast.error(
@@ -162,31 +199,20 @@ const BuyPage = (props: Props) => {
                       );
                     });
                 }
-              })
-              .catch((error) => {
-                toast.error("Thanh toán thất bại, vui lòng thử lại sau !", {
-                  position: "top-right",
-                  autoClose: 5000,
-                  hideProgressBar: false,
-                  closeOnClick: true,
-                  pauseOnHover: true,
-                  draggable: true,
-                  progress: undefined,
-                  theme: "dark",
-                });
               });
           }
-        });
-    }
-    handleToggle();
+        }
+      });
+
+    // handleToggle();
   };
-  const handleToggle = () => {
-    setOpen(!open);
-  };
+  // const handleToggle = () => {
+  //   setOpen(!open);
+  // };
   return (
     <>
       <div className="buypage-container">
-        <Dialog
+        {/* <Dialog
           open={open}
           onClose={() => setOpen(false)}
           aria-labelledby="alert-dialog-title"
@@ -200,7 +226,7 @@ const BuyPage = (props: Props) => {
               Xác nhận
             </Button>
           </DialogActions>
-        </Dialog>
+        </Dialog> */}
 
         <h1>Thanh toán</h1>
         <div className="content">
@@ -237,7 +263,7 @@ const BuyPage = (props: Props) => {
               btnText="Xác nhận"
               color={"#fff"}
               onClick={() => {
-                handleToggle();
+                handleBuy();
               }}
             />
           </div>
