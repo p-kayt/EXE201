@@ -65,6 +65,7 @@ const CourseOverview = () => {
     tutorId: 0,
     universityId: 0,
     courseMajorId: 0,
+    CourseImageURL:'string',
     units: [
       {
         unitName: "string",
@@ -140,24 +141,28 @@ const CourseOverview = () => {
 
   const handleBuy = () => {
     navigate("/course-list/" + courseId + "/buy");
-    // toast.error("Số dư không đủ để thanh toán !", {
-    //   position: "top-right",
-    //   autoClose: 5000,
-    //   hideProgressBar: false,
-    //   closeOnClick: true,
-    //   pauseOnHover: true,
-    //   draggable: true,
-    //   progress: undefined,
-    //   theme: "dark",
-    // });
   };
+
+  function getYouTubeEmbedUrl(url: string): string | undefined {
+    // Regular expression to find the YouTube video ID
+    const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|watch\?.+&v=)([^#\&\?]*).*/;
+    const match = url.match(regExp);
+  
+    if (match && match[2].length === 11) {
+      // Return the embed URL
+      return `https://www.youtube.com/embed/${match[2]}`;
+    } else {
+      // Return undefined if no valid ID is found
+      return undefined;
+    }
+  }
 
   return (
     <>
       <div className="tutor-detail-content">
         <div className="left">
           <div className="tutor-detail-header">
-            <img src={CourseImg} className="course-image" />
+            <img src={course.CourseImageURL} className="course-image" />
 
             <div className="information">
               <div className="title">{course?.courseName}</div>
@@ -245,10 +250,10 @@ const CourseOverview = () => {
             <iframe
                 width="560"
                 height="315"
-                src="https://www.youtube.com/embed/Z45SyobqbTI?si=iPUqa6VgbKlkvvxw&amp;controls=0"
+                src={getYouTubeEmbedUrl(course.courseSampleVideo)}
                 title="YouTube video player"
                 frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; ; picture-in-picture; web-share"
                 allowFullScreen
               ></iframe>
             </div>

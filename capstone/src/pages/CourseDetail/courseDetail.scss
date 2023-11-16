@@ -38,11 +38,18 @@
   }
 
   .unit-content {
+    display: flex;
+    flex-direction: column;
     width: 25%;
-    border-radius: 8px;
+    gap: 15px;
     text-align: left;
-    border: 2px solid #000;
+
     height: fit-content;
+
+    .accordion {
+      border: 2px solid #000;
+      border-radius: 8px;
+    }
 
     .css-ahj2mt-MuiTypography-root {
       font-family: "Be Vietnam Pro", sans-serif;
@@ -68,7 +75,7 @@
       box-shadow: none;
     }
 
-    .click:hover{
+    .click:hover {
       text-decoration: underline;
     }
 
