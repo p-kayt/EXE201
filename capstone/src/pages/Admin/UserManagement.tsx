@@ -46,7 +46,6 @@ const UserManagement = () => {
         })
       );
       setRows(newRows);
-      console.log(newRows);
     } catch (error) {
       console.error("Error fetching data:", error);
     }

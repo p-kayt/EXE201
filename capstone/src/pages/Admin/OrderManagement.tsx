@@ -13,12 +13,14 @@ import { useMutation } from "@tanstack/react-query";
 import { toast } from "react-toastify";
 import { utcToZonedTime } from "date-fns-tz";
 import { format } from "date-fns";
+import { items } from "../courses/data";
 interface Order {
   id: number;
-  orderDate: string;
   email: string;
-  dateOfBirth: string;
-  phoneNumber: string;
+  fullName: string;
+  orderDate: string;
+  courseName: string;
+  coursePrice: string;
   orderStatus: string;
 }
 
@@ -31,30 +33,27 @@ interface User {
   accountStatus: string;
 }
 const OrderManagement = () => {
-  const [rows, setRows] = useState<User[]>([]);
-  const [pageIndex, setPageIndex] = useState(0);
-  const [totalPage, setTotalPage] = useState(0);
+  const [rows, setRows] = useState<Order[]>([]);
+  // const [pageIndex, setPageIndex] = useState(0);
+  // const [totalPage, setTotalPage] = useState(0);
 
   const fetchData = async () => {
     try {
-      const response = await instance.get(
-        `api/Order/Get?pageIndex=${pageIndex}&pageSize=10`
-      );
+      const response = await instance.get(`api/Order/Get`);
+      // ?pageIndex=${pageIndex}&pageSize=10
+      // setTotalPage(response.data.result.totalPagesCount);
 
-      setTotalPage(response.data.result.totalPagesCount);
-
-      const newRows = response.data.result.items.map(
-        (item: any, index: number) => ({
-          id: index + pageIndex * 10 + 1,
-          fullname: item.fullName,
-          email: item.email,
-          dateOfBirth: item.dateOfBirth,
-          phoneNumber: item.phoneNumber,
-          accountStatus: item.accountStatus,
-        })
-      );
-      setRows(newRows);
-      console.log(newRows);
+      const newRows = response.data.result.map((item: any, index: number) => ({
+        id: item.id,
+        // id: index + pageIndex * 10 + 1,
+        email: item.student.user.email,
+        fullName: item.student.user.fullName,
+        orderDate: item.orderDate,
+        courseName: item.orderDetails[0].teachingCourse.courseName,
+        coursePrice: item.orderDetails[0].teachingCourse.coursePrice,
+        orderStatus: item.orderStatus,
+      }));
+      setRows(newRows.filter((e: any) => e.orderStatus !== "Pending"));
     } catch (error) {
       console.error("Error fetching data:", error);
     }
@@ -90,12 +89,10 @@ const OrderManagement = () => {
 
   useEffect(() => {
     fetchData();
-  }, [pageIndex]);
+  }, []);
 
   return (
     <>
-      <div>Order management</div>
-      {/*
       <TableContainer component={Paper}>
         <Table>
           <TableHead>
@@ -103,10 +100,10 @@ const OrderManagement = () => {
               <TableCell>ID</TableCell>
               <TableCell>Tên người dùng</TableCell>
               <TableCell>Email</TableCell>
-              <TableCell>DOB</TableCell>
-              <TableCell>Số điện thoại</TableCell>
+              <TableCell>Khóa học</TableCell>
+              <TableCell>Ngày mua</TableCell>
+              <TableCell>Giá</TableCell>
               <TableCell align="right">Status</TableCell>
-             
             </TableRow>
           </TableHead>
           <TableBody>
@@ -115,39 +112,42 @@ const OrderManagement = () => {
                 key={row.id}
                 sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                 style={
-                  row.accountStatus !== "Suspended"
+                  row.orderStatus !== "Pending"
                     ? { backgroundColor: "#ffffff" }
                     : { backgroundColor: "#E8E8E8" }
                 }
               >
                 <TableCell align="left">{row.id}</TableCell>
                 <TableCell component="th" scope="row">
-                  {row.fullname}
+                  {row.fullName}
                 </TableCell>
                 <TableCell component="th" scope="row">
                   {row.email}
                 </TableCell>
-                <TableCell component="th">
-                  {convertToVNTime(row.dateOfBirth)}
+                <TableCell component="th" scope="row">
+                  {row.courseName}
                 </TableCell>
-                <TableCell component="th">{row.phoneNumber}</TableCell>
-                {row.accountStatus === "Normal" ? (
+                <TableCell component="th">
+                  {convertToVNTime(row.orderDate)}
+                </TableCell>
+                <TableCell component="th">{row.coursePrice}đ</TableCell>
+                {row.orderStatus === "AlreadyPaid" ? (
                   <>
                     <TableCell align="right" style={{ color: "green" }}>
-                      {row.accountStatus}
+                      {row.orderStatus}
                     </TableCell>
                   </>
                 ) : (
                   <>
-                    {row.accountStatus === "Suspended" ? (
+                    {row.orderStatus === "Pending" ? (
                       <>
                         <TableCell align="right" style={{ color: "red" }}>
-                          {row.accountStatus}
+                          {row.orderStatus}
                         </TableCell>
                       </>
                     ) : (
                       <TableCell align="right" style={{ color: "" }}>
-                        {row.accountStatus}
+                        {row.orderStatus}
                       </TableCell>
                     )}
                   </>
@@ -157,7 +157,7 @@ const OrderManagement = () => {
           </TableBody>
         </Table>
       </TableContainer>
-      <div
+      {/* <div
         style={{
           display: "flex",
           justifyContent: "center",
@@ -170,8 +170,7 @@ const OrderManagement = () => {
           count={totalPage}
           onChange={(event, value) => setPageIndex(value - 1)}
         />
-      </div>
-      */}
+      </div> */}
     </>
   );
 };

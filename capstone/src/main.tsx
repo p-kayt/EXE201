@@ -35,6 +35,7 @@ import AdminStatistics from "./pages/profile/admin/AdminStatistics.tsx";
 import TutorDetail from "./pages/TutorDetail/TutorDetail.tsx";
 import CourseOverview from "./pages/CourseOverview/CourseOverview.tsx";
 import CourseDetail from "./pages/CourseDetail/CourseDetail.tsx";
+import OrderManagement from "./pages/Admin/OrderManagement.tsx";
 
 const router = createBrowserRouter([
   {
@@ -183,6 +184,10 @@ const router = createBrowserRouter([
               {
                 path: "/profile/:ID/admin/users",
                 element: <UserManagement />,
+              },
+              {
+                path: "/profile/:ID/admin/orders",
+                element: <OrderManagement />,
               },
               {
                 path: "/profile/:ID/admin/transactionManagement",

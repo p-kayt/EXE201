@@ -113,7 +113,7 @@ const ADMIN_NAV = [
   {
     id: 5,
     icon: BookStack,
-    path: "/admin/users",
+    path: "/admin/orders",
     title: "Quản lý giao dịch",
   },
   {
