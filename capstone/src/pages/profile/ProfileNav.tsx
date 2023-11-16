@@ -32,7 +32,7 @@ const ProfileNav = (props: Props) => {
   let { ID } = useParams();
 
   //
-  if (auth.user.role === "") {
+  if (auth.user.role === "Student") {
     navList = [...BASE_NAV, ...USER_NAV];
   }
 
@@ -151,24 +151,13 @@ const USER_NAV = [
     path: "/my-courses",
     title: "Khóa học đã mua",
   },
-  {
-    id: 4,
-    icon: WalletMoney,
-    path: "/wallet",
-    title: "Quản lí ví",
-  },
+
   // {
-  //   id: 4,
-  //   icon: BookOpen,
-  //   path: "/learned-course",
-  //   title: "Khóa học đã học",
+  //   id: 5,
+  //   icon: HeartCircle,
+  //   path: "/favorite-courses",
+  //   title: "Khóa học yêu thích",
   // },
-  {
-    id: 5,
-    icon: HeartCircle,
-    path: "/favorite-courses",
-    title: "Khóa học yêu thích",
-  },
 ];
 const TUTOR_NAV = [
   {
