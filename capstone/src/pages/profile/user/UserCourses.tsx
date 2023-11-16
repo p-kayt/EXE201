@@ -48,7 +48,7 @@ const UserCourses = (props: Props) => {
   let items: any = [];
 
   const handleClickCard = (id: any) => {
-    navigate(`./${id}`);
+    navigate(`../../course-list/${id}`);
     window.scrollTo(0, 0);
   };
   // const handleChangePage = (
