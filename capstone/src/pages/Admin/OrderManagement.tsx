@@ -94,6 +94,8 @@ const OrderManagement = () => {
 
   return (
     <>
+      <div>Order management</div>
+      {/*
       <TableContainer component={Paper}>
         <Table>
           <TableHead>
@@ -104,7 +106,7 @@ const OrderManagement = () => {
               <TableCell>DOB</TableCell>
               <TableCell>Số điện thoại</TableCell>
               <TableCell align="right">Status</TableCell>
-              {/* <TableCell align="right">Action</TableCell> */}
+             
             </TableRow>
           </TableHead>
           <TableBody>
@@ -150,53 +152,6 @@ const OrderManagement = () => {
                     )}
                   </>
                 )}
-
-                {/* {row.accountStatus === "WaitingForConFirm" ? (
-                  <>
-                    <TableCell align="right" style={{ color: "#c4c42b" }}>
-                      Pending
-                    </TableCell>
-                    <TableCell align="right">
-                      <button
-                        style={{
-                          padding: "12px",
-                          backgroundColor: "green",
-                          border: "none",
-                          color: "white",
-                          borderRadius: "10px",
-                          marginRight: "10px",
-                        }}
-                        onClick={() => {
-                          handleConfirm.mutate({
-                            id: row.id,
-                            status: "Complete",
-                          });
-                        }}
-                      >
-                        Approve
-                      </button>
-                      <button
-                        style={{
-                          padding: "12px",
-                          backgroundColor: "red",
-                          border: "none",
-                          color: "white",
-                          borderRadius: "10px",
-                        }}
-                        onClick={() => {
-                          handleConfirm.mutate({
-                            id: row.id,
-                            status: "Failed",
-                          });
-                        }}
-                      >
-                        Reject
-                      </button>
-                    </TableCell>
-                  </>
-                ) : (
-                  ""
-                )} */}
               </TableRow>
             ))}
           </TableBody>
@@ -216,6 +171,7 @@ const OrderManagement = () => {
           onChange={(event, value) => setPageIndex(value - 1)}
         />
       </div>
+      */}
     </>
   );
 };

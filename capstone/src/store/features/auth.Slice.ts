@@ -27,7 +27,6 @@ const authSlice = createSlice({
             "user",
             JSON.stringify({ accessToken, refreshToken })
           );
-          console.log(auth);
           state.user = auth;
         } else {
           state.error = action.payload.message;
