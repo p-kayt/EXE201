@@ -43,7 +43,7 @@ const TransactionManagement = () => {
 
       const newRows = response.data.result.items.map(
         (item: any, index: number) => ({
-          id: index + pageIndex * 10 + 1,
+          id: item.id,
           amountTransaction: item.amountTransaction,
           transactionDescription: item.transactionDescription,
           transactionStatus: item.transactionStatus,

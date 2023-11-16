@@ -25,7 +25,6 @@ import LearnedCourses from "./pages/profile/user/LearnedCourses.tsx";
 import CreatedCourses from "./pages/profile/tutor/CreatedCourses.tsx";
 import Statistics from "./pages/profile/tutor/Statistics.tsx";
 import TopUp from "./pages/topup/TopUp.tsx";
-import CourseDetail from "./pages/CourseDetail/CourseDetail.tsx";
 import AdminPage from "./pages/Admin/AdminPage.tsx";
 import PrivateRoutes from "./components/route/PrivateRoute.tsx";
 import BuyPage from "./pages/buypage/BuyPage.tsx";
@@ -34,6 +33,8 @@ import UserManagement from "./pages/Admin/UserManagement.tsx";
 import TransactionManagement from "./pages/Admin/Transaction management/TransactionManagement.tsx";
 import AdminStatistics from "./pages/profile/admin/AdminStatistics.tsx";
 import TutorDetail from "./pages/TutorDetail/TutorDetail.tsx";
+import CourseOverview from "./pages/CourseOverview/CourseOverview.tsx";
+import CourseDetail from "./pages/CourseDetail/CourseDetail.tsx";
 
 const router = createBrowserRouter([
   {
@@ -128,6 +129,10 @@ const router = createBrowserRouter([
           // },
           {
             path: "/course-list/:courseId/",
+            element: <CourseOverview />,
+          },
+          {
+            path: "/course-list/:courseId/detail",
             element: <CourseDetail />,
           },
           { path: "/course-list/:courseId/buy", element: <BuyPage /> },
