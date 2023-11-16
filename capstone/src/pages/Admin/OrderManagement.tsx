@@ -13,6 +13,15 @@ import { useMutation } from "@tanstack/react-query";
 import { toast } from "react-toastify";
 import { utcToZonedTime } from "date-fns-tz";
 import { format } from "date-fns";
+interface Order {
+  id: number;
+  orderDate: string;
+  email: string;
+  dateOfBirth: string;
+  phoneNumber: string;
+  orderStatus: string;
+}
+
 interface User {
   id: number;
   fullname: string;
@@ -21,8 +30,7 @@ interface User {
   phoneNumber: string;
   accountStatus: string;
 }
-
-const UserManagement = () => {
+const OrderManagement = () => {
   const [rows, setRows] = useState<User[]>([]);
   const [pageIndex, setPageIndex] = useState(0);
   const [totalPage, setTotalPage] = useState(0);
@@ -30,7 +38,7 @@ const UserManagement = () => {
   const fetchData = async () => {
     try {
       const response = await instance.get(
-        `api/User/GetAllUser?pageIndex=${pageIndex}&pageSize=10`
+        `api/Order/Get?pageIndex=${pageIndex}&pageSize=10`
       );
 
       setTotalPage(response.data.result.totalPagesCount);
@@ -211,4 +219,4 @@ const UserManagement = () => {
     </>
   );
 };
-export default UserManagement;
+export default OrderManagement;

@@ -176,6 +176,10 @@ const router = createBrowserRouter([
                 element: <AdminStatistics />,
               },
               {
+                path: "/profile/:ID/admin/users",
+                element: <UserManagement />,
+              },
+              {
                 path: "/profile/:ID/admin/transactionManagement",
                 element: <TransactionManagement />,
               },
