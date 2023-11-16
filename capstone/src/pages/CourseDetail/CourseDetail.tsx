@@ -1,14 +1,19 @@
 import React, { useEffect, useState } from 'react'
 import './courseDetail.scss'
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { instance } from '../../api/api';
 import { Accordion, AccordionDetails, AccordionSummary, Typography } from '@mui/material';
 import { Arrow, Verify } from '../../assets/Icons';
 import Avatar from "../../components/avatar/Avatar";
+import { useSelector } from 'react-redux';
+import { authSelector } from '../../store/selector';
+import swal from 'sweetalert';
 
 const CourseDetail = () => {
   const [activeVideo, setActiveVideo] = useState('');
-  const [tutorId, setTutorId] = useState(0);
+  const user = useSelector(authSelector);
+  const navigate = useNavigate();
+  const [isPaid, setIsPaid] = useState(false);
   const [tutor, setTutor] = useState({
     id: 0,
     fullName: "string",
@@ -26,28 +31,38 @@ const CourseDetail = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        // Fetch course details
         const courseResponse = await instance.get("/api/TeachingCourse/GetById?id=" + courseId);
-        const units = courseResponse.data.result.units;
-        setUnits(units);
+        const unitsData = courseResponse.data.result.units;
+        setUnits(unitsData);
 
-        if (units.length > 0) {
-          const videoId = getDriveVideoId(units[0].teachingMaterialFile);
+        // Check if units have data before proceeding
+        if (unitsData && unitsData.length > 0) {
+          const videoId = getDriveVideoId(unitsData[0].teachingMaterialFile);
           const embedLink = videoId ? `https://drive.google.com/file/d/${videoId}/preview` : '';
           setActiveVideo(embedLink);
         }
 
+        // Fetch tutor details
         const tutorId = courseResponse.data.result.tutorId;
-        setTutorId(tutorId);
-
         const tutorResponse = await instance.get("/api/User/Info?id=" + tutorId);
         setTutor(tutorResponse.data.result);
+
+        // Fetch student details
+        const studentResponse = await instance.get("/api/Student/GetById?id=" + user.user.Id);
+        const orderResponse = await instance.get("/api/Order/GetByStudentId?id=" + studentResponse.data.result.id);
+        orderResponse?.data?.result.map((item: any) => {
+          if (item.orderDetails[0].teachingCourseId == courseId && item.orderStatus === "AlreadyPaid") {
+            setIsPaid(true);            
+          }
+        });
       } catch (error) {
         console.error("An error occurred while fetching data", error);
+        // Handle errors appropriately, maybe update state to show error message
       }
     };
     fetchData();
-  }, [courseId]);
+  }, [courseId, user.user.Id]);
+
 
   const getDriveVideoId = (link: string) => {
     const match = link.match(/[-\w]{25,}/);
@@ -60,59 +75,65 @@ const CourseDetail = () => {
     setActiveVideo(embedLink)
   }
 
+  (!isPaid) ? swal("Bạn chưa mua khóa học này!", "", "error").then(() => navigate(-1)) : ""
+
+  console.log(isPaid)
+
   return (
-    <div className='course-detail-content'>
-      <div className='video-content'>
-        <div className='aspect-ratio-container'>
-          <iframe
-            width="560"
-            height="315"
-            src={activeVideo}
-            title="YouTube video player"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowFullScreen
-          ></iframe>
+    <>
+      {(isPaid) ? (<div className='course-detail-content'>
+        <div className='video-content'>
+          <div className='aspect-ratio-container'>
+            <iframe
+              width="560"
+              height="315"
+              src={activeVideo}
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            ></iframe>
+          </div>
+
+          <div style={{ fontSize: "24px", fontWeight: "600" }}>
+            Tác giả
+          </div>
+
+          <div className="user">
+            <Avatar type="rounded" size={32} source={tutor?.image} />
+            {/* {course?.Fullname} */}
+            {tutor?.fullName}
+            <img src={Verify} />
+          </div>
         </div>
 
-        <div style={{ fontSize: "24px", fontWeight: "600" }}>
-          Tác giả
-        </div>
-
-        <div className="user">
-          <Avatar type="rounded" size={32} source={tutor?.image} />
-          {/* {course?.Fullname} */}
-          {tutor?.fullName}
-          <img src={Verify} />
-        </div>
-      </div>
-
-      <div className='unit-content'>
-        <Accordion>
-          <AccordionSummary>
-            <Typography style={{ fontSize: "20px", fontWeight: "600" }}>
-              Nội dung khóa học
-            </Typography>
-          </AccordionSummary>
-        </Accordion>
-        {units?.map((unit, index) => (
-          <Accordion key={index}>
-            <AccordionSummary
-              expandIcon={<img src={Arrow} />}
-              aria-controls="panel1a-content"
-              id="panel1a-header"
-            >
-              <label onClick={() => handleClick(index)}>
-                <Typography className='click'>{unit.unitName} ({unit.minuteTime} phút)</Typography>
-              </label>
+        <div className='unit-content'>
+          <Accordion>
+            <AccordionSummary>
+              <Typography style={{ fontSize: "20px", fontWeight: "600" }}>
+                Nội dung khóa học
+              </Typography>
             </AccordionSummary>
-            <AccordionDetails>
-              <Typography>{unit.content}</Typography>
-            </AccordionDetails>
           </Accordion>
-        ))}
-      </div>
-    </div>
+          {units?.map((unit, index) => (
+            <Accordion key={index}>
+              <AccordionSummary
+                expandIcon={<img src={Arrow} />}
+                aria-controls="panel1a-content"
+                id="panel1a-header"
+              >
+                <label onClick={() => handleClick(index)}>
+                  <Typography className='click'>{unit.unitName} ({unit.minuteTime} phút)</Typography>
+                </label>
+              </AccordionSummary>
+              <AccordionDetails>
+                <Typography>{unit.content}</Typography>
+              </AccordionDetails>
+            </Accordion>
+          ))}
+        </div>
+      </div>) : ""}
+    </>
   )
 }
 
