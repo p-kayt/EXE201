@@ -80,7 +80,11 @@ const UserCourses = (props: Props) => {
                         <div
                           className="card"
                           key={index}
-                          onClick={() => handleClickCard(item.id)}
+                          onClick={() =>
+                            handleClickCard(
+                              item.orderDetails[0].teachingCourseId
+                            )
+                          }
                         >
                           <span className="span">
                             <div className="card-content-container">
