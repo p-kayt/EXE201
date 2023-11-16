@@ -6,6 +6,7 @@ import {
   BookOpen,
   BookStack,
   Chart,
+  Group,
   HeartCircle,
   ProfileCircle,
   WalletMoney,
@@ -103,17 +104,23 @@ const ADMIN_NAV = [
     path: "/admin/statistics",
     title: "Thống kê",
   },
-  // {
-  //   id: 6,
-  //   icon: ProfileCircle,
-  //   path: "/admin/users",
-  //   title: "Quản lý người dùng",
-  // },
   {
-    id: 7,
+    id: 4,
+    icon: Group,
+    path: "/admin/users",
+    title: "Quản lý người dùng",
+  },
+  {
+    id: 5,
+    icon: BookStack,
+    path: "/admin/users",
+    title: "Quản lý giao dịch",
+  },
+  {
+    id: 6,
     icon: WalletMoney,
     path: "/admin/transactionManagement",
-    title: "Quản lý giao dịch",
+    title: "Quản lý giao dịch qua ví",
   },
   // {
   //   id: 4,
@@ -134,7 +141,7 @@ const BASE_NAV = [
     id: 2,
     icon: WalletMoney,
     path: "/wallet",
-    title: "Quản lí ví",
+    title: "Ví của tôi",
   },
 ];
 const USER_NAV = [
@@ -145,7 +152,7 @@ const USER_NAV = [
     title: "Khóa học đã mua",
   },
   {
-    id: 2,
+    id: 4,
     icon: WalletMoney,
     path: "/wallet",
     title: "Quản lí ví",
@@ -171,13 +178,13 @@ const TUTOR_NAV = [
     title: "Thống kê",
   },
   {
-    id: 2,
+    id: 4,
     icon: WalletMoney,
     path: "/wallet",
     title: "Quản lí ví",
   },
   {
-    id: 4,
+    id: 5,
     icon: BookOpen,
     path: "/created-courses",
     title: "Khóa học đã tạo",

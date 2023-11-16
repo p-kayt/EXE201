@@ -137,18 +137,44 @@ const BuyPage = (props: Props) => {
                 },
               ],
             };
-            instance.post("/api/Order/Create", data).then((res1) => {
-              if (res1.data.status === "Created") {
-                instance
-                  .put("/api/Order/PayBooking?id=" + res1.data.result.id)
-                  .then(() => {
-                    navigate("../course-list/" + courseId);
-                  });
-                // .then((res) => {
-                //   console.log(res.data.result);
-                // });
-              }
-            });
+            instance
+              .post("/api/Order/Create", data)
+              .then((res1) => {
+                if (res1.data.status === "Created") {
+                  instance
+                    .put("/api/Order/PayBooking?id=" + res1.data.result.id)
+                    .then((res) => {
+                      navigate("../course-list/" + courseId);
+                    })
+                    .catch((error) => {
+                      toast.error(
+                        "Thanh toán thất bại, vui lòng thử lại sau !",
+                        {
+                          position: "top-right",
+                          autoClose: 5000,
+                          hideProgressBar: false,
+                          closeOnClick: true,
+                          pauseOnHover: true,
+                          draggable: true,
+                          progress: undefined,
+                          theme: "dark",
+                        }
+                      );
+                    });
+                }
+              })
+              .catch((error) => {
+                toast.error("Thanh toán thất bại, vui lòng thử lại sau !", {
+                  position: "top-right",
+                  autoClose: 5000,
+                  hideProgressBar: false,
+                  closeOnClick: true,
+                  pauseOnHover: true,
+                  draggable: true,
+                  progress: undefined,
+                  theme: "dark",
+                });
+              });
           }
         });
     }
