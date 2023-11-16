@@ -13,6 +13,15 @@ import { useMutation } from "@tanstack/react-query";
 import { toast } from "react-toastify";
 import { utcToZonedTime } from "date-fns-tz";
 import { format } from "date-fns";
+interface Order {
+  id: number;
+  orderDate: string;
+  email: string;
+  dateOfBirth: string;
+  phoneNumber: string;
+  orderStatus: string;
+}
+
 interface User {
   id: number;
   fullname: string;
@@ -21,8 +30,7 @@ interface User {
   phoneNumber: string;
   accountStatus: string;
 }
-
-const UserManagement = () => {
+const OrderManagement = () => {
   const [rows, setRows] = useState<User[]>([]);
   const [pageIndex, setPageIndex] = useState(0);
   const [totalPage, setTotalPage] = useState(0);
@@ -30,7 +38,7 @@ const UserManagement = () => {
   const fetchData = async () => {
     try {
       const response = await instance.get(
-        `api/User/GetAllUser?pageIndex=${pageIndex}&pageSize=10`
+        `api/Order/Get?pageIndex=${pageIndex}&pageSize=10`
       );
 
       setTotalPage(response.data.result.totalPagesCount);
@@ -86,6 +94,8 @@ const UserManagement = () => {
 
   return (
     <>
+      <div>Order management</div>
+      {/*
       <TableContainer component={Paper}>
         <Table>
           <TableHead>
@@ -96,7 +106,7 @@ const UserManagement = () => {
               <TableCell>DOB</TableCell>
               <TableCell>Số điện thoại</TableCell>
               <TableCell align="right">Status</TableCell>
-              {/* <TableCell align="right">Action</TableCell> */}
+             
             </TableRow>
           </TableHead>
           <TableBody>
@@ -142,53 +152,6 @@ const UserManagement = () => {
                     )}
                   </>
                 )}
-
-                {/* {row.accountStatus === "WaitingForConFirm" ? (
-                  <>
-                    <TableCell align="right" style={{ color: "#c4c42b" }}>
-                      Pending
-                    </TableCell>
-                    <TableCell align="right">
-                      <button
-                        style={{
-                          padding: "12px",
-                          backgroundColor: "green",
-                          border: "none",
-                          color: "white",
-                          borderRadius: "10px",
-                          marginRight: "10px",
-                        }}
-                        onClick={() => {
-                          handleConfirm.mutate({
-                            id: row.id,
-                            status: "Complete",
-                          });
-                        }}
-                      >
-                        Approve
-                      </button>
-                      <button
-                        style={{
-                          padding: "12px",
-                          backgroundColor: "red",
-                          border: "none",
-                          color: "white",
-                          borderRadius: "10px",
-                        }}
-                        onClick={() => {
-                          handleConfirm.mutate({
-                            id: row.id,
-                            status: "Failed",
-                          });
-                        }}
-                      >
-                        Reject
-                      </button>
-                    </TableCell>
-                  </>
-                ) : (
-                  ""
-                )} */}
               </TableRow>
             ))}
           </TableBody>
@@ -208,7 +171,8 @@ const UserManagement = () => {
           onChange={(event, value) => setPageIndex(value - 1)}
         />
       </div>
+      */}
     </>
   );
 };
-export default UserManagement;
+export default OrderManagement;
