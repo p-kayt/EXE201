@@ -64,6 +64,8 @@
           font-size: 18px;
           width: 100%;
           border-color: transparent;
+          color: $neutral-4;
+          background-color: transparent;
           &:focus {
             outline: none;
           }

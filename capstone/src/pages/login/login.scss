@@ -81,7 +81,8 @@
         color: $neutral-4;
         input {
           font-size: 18px;
-
+          background-color: transparent;
+          color: $neutral-4;
           width: 100%;
           border-color: transparent;
           &:focus {
