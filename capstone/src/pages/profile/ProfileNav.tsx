@@ -42,8 +42,9 @@ const ProfileNav = (props: Props) => {
 
   const endOfURL = location.pathname.split("/").pop();
   useEffect(() => {
+    console.log(endOfURL);
     navList.map((items) => {
-      if (items.path === "/" + endOfURL) {
+      if (items.path.split("/").pop() === endOfURL) {
         setSelected(items.id);
       }
     });
