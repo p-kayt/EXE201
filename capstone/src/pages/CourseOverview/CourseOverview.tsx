@@ -273,7 +273,7 @@ const CourseOverview = () => {
 
               <div className="syllabus-detail">
                 {course?.units?.map((unit, index) => (
-                  <Accordion key={index}>
+                  <Accordion key={index} style={{border: "2px solid #000", borderBottom:"none"}}>
                     <AccordionSummary
                       expandIcon={<img src={Arrow} />}
                       aria-controls="panel1a-content"

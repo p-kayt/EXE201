@@ -145,26 +145,13 @@
 
       .syllabus-detail {
         border-radius: 8px;
-        border: 2px solid #000;
+        // border: 2px solid #000;
+        border-bottom: 2px solid #000;
 
         .css-ahj2mt-MuiTypography-root {
           font-family: "Be Vietnam Pro", sans-serif;
           font-size: 18px;
-        }
-
-        .css-1elwnq4-MuiPaper-root-MuiAccordion-root:before {
-          background-color: #fff;
-          border-bottom: 2px solid #000 !important;
           font-weight: 400;
-        }
-
-        .css-1elwnq4-MuiPaper-root-MuiAccordion-root:before {
-          opacity: 100;
-        }
-
-        .css-1elwnq4-MuiPaper-root-MuiAccordion-root.Mui-expanded
-          + .css-1elwnq4-MuiPaper-root-MuiAccordion-root.Mui-expanded {
-          border-top: 2px solid #000 !important;
         }
 
         .Mui-expanded {
