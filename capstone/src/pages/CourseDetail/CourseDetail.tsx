@@ -123,7 +123,7 @@ const CourseDetail = () => {
 
 
           <div className='accordion'>
-            <Accordion>
+            <Accordion style={{border: "2px solid #000"}}>
               <AccordionSummary>
                 <Typography style={{ fontSize: "20px", fontWeight: "600" }}>
                   Nội dung khóa học
@@ -131,7 +131,7 @@ const CourseDetail = () => {
               </AccordionSummary>
             </Accordion>
             {units?.map((unit, index) => (
-              <Accordion key={index} style={(index == indexActiveVideo) ? { backgroundColor: "#FECE00" } : {}}>
+              <Accordion key={index} style={(index == indexActiveVideo) ? { backgroundColor: "#FECE00", borderLeft: "2px solid #000", borderRight: "2px solid #000", borderBottom: "2px solid #000" } : {borderLeft: "2px solid #000", borderRight: "2px solid #000", borderBottom: "2px solid #000"}}>
                 <AccordionSummary
                   expandIcon={<img src={Arrow} />}
                   aria-controls="panel1a-content"
