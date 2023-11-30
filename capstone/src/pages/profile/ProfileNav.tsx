@@ -111,12 +111,12 @@ const ADMIN_NAV = [
     path: "/admin/users",
     title: "Quản lý người dùng",
   },
-  {
-    id: 5,
-    icon: BookStack,
-    path: "/admin/orders",
-    title: "Quản lý giao dịch",
-  },
+  // {
+  //   id: 5,
+  //   icon: BookStack,
+  //   path: "/admin/orders",
+  //   title: "Quản lý giao dịch",
+  // },
   {
     id: 6,
     icon: WalletMoney,
